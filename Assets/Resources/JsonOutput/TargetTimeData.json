@@ -1,0 +1,16 @@
+[
+  {
+    "Id": "TargetTime_10000",
+    "TargetTimeMs": 10000,
+    "PerfectWindowMs": 500,
+    "NiceWindowMs": 800,
+    "GoodWindowMs": 1200
+  },
+  {
+    "Id": "TargetTime_3000",
+    "TargetTimeMs": 3000,
+    "PerfectWindowMs": 150,
+    "NiceWindowMs": 350,
+    "GoodWindowMs": 750
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "Id": "Stage_001",
+    "TargetTimeId": "TargetTime_10000",
+    "SabotageId": null
+  },
+  {
+    "Id": "Stage_002",
+    "TargetTimeId": "TargetTime_10000",
+    "SabotageId": null
+  }
+]
