@@ -3,7 +3,7 @@
 public static class GameUtil
 {
     //초를 밀리초로 바꿀 때 곱하는 값
-    private const int MillisecondsPerSecond = 1000;
+    public const int MillisecondsPerSecond = 1000;
 
     //삶기 버튼부터 흐른 초와 목표 시간(ms)의 차이를 밀리초 int로 돌려준다
     public static int CalculateTimingErrorMs(double elapsedSeconds, int targetTimeMs)
