@@ -1,5 +1,6 @@
 ﻿//입력 액션을 켜고 끄며, 빼기 입력 시간을 이벤트로 알리는 매니저
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class InputManager : SingletonBase<InputManager>
 {
@@ -17,5 +18,11 @@ public class InputManager : SingletonBase<InputManager>
         }
 
         _gameInputActions = new GameInputActions();
+        _gameInputActions.Stage.Pull.performed += HandlePullPerformed;
+    }
+
+    private void HandlePullPerformed(InputAction.CallbackContext context)
+    {
+        PullInputEvent?.Invoke(context.time);
     }
 }
