@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class StageManager : SingletonBase<StageManager>
 {
+    public const int NoInputTimingErrorMs = -1;
     private const int FailGracePeriodMs = 5000;
 
     private StageState _currentStageState = StageState.None;
@@ -49,7 +50,23 @@ public class StageManager : SingletonBase<StageManager>
 
         InputManager.Instance.PullInputEvent -= HandlePullInput;
     }
-    
+
+    private void Update()
+    {
+        if (_currentStageState != StageState.Boiling)
+        {
+            return;
+        }
+
+        double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _boilStartTime;
+        if (elapsedSeconds < _timeLimitSeconds)
+        {
+            return;
+        }
+
+        FailStageByTimeLimit();
+    }
+
     public void PrepareStage(string stageId)
     {
         StageData stageData = GameDataManager.Instance.GetStageData(stageId);
@@ -100,6 +117,16 @@ public class StageManager : SingletonBase<StageManager>
         double elapsedSeconds = pullTime - _boilStartTime;
         CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
         CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
+
+        ChangeStageState(StageState.JudgmentComplete);
+    }
+
+    private void FailStageByTimeLimit()
+    {
+        InputManager.Instance.DisableStageInput();
+
+        CurrentJudgmentGrade = JudgmentGrade.Fail;
+        CurrentTimingErrorMs = NoInputTimingErrorMs;
 
         ChangeStageState(StageState.JudgmentComplete);
     }
