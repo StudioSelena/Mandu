@@ -21,8 +21,29 @@ public class InputManager : SingletonBase<InputManager>
         _gameInputActions.Stage.Pull.performed += HandlePullPerformed;
     }
 
+    public void EnableStageInput()
+    {
+        _gameInputActions.Stage.Enable();
+    }
+
+    public void DisableStageInput()
+    {
+        _gameInputActions.Stage.Disable();
+    }
+
     private void HandlePullPerformed(InputAction.CallbackContext context)
     {
         PullInputEvent?.Invoke(context.time);
+    }
+
+    private void OnDestroy()
+    {
+        if (_gameInputActions == null)
+        {
+            return;
+        }
+
+        _gameInputActions.Stage.Pull.performed -= HandlePullPerformed;
+        _gameInputActions.Dispose();
     }
 }
