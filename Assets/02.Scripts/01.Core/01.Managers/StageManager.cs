@@ -25,6 +25,31 @@ public class StageManager : SingletonBase<StageManager>
         }
     }
 
+    private void Start()
+    {
+        if (Instance != this)
+        { 
+            return; 
+        }
+
+        InputManager.Instance.PullInputEvent += HandlePullInput;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance != this)
+        { 
+            return; 
+        }
+
+        if (InputManager.Instance == null)
+        { 
+            return; 
+        }
+
+        InputManager.Instance.PullInputEvent -= HandlePullInput;
+    }
+    
     public void PrepareStage(string stageId)
     {
         StageData stageData = GameDataManager.Instance.GetStageData(stageId);
@@ -49,6 +74,34 @@ public class StageManager : SingletonBase<StageManager>
         CurrentTimingErrorMs = 0;
 
         ChangeStageState(StageState.Ready);
+    }
+
+    public void RequestStartBoiling()
+    {
+        if (_currentStageState != StageState.Ready)
+        {
+            return;
+        }
+
+        _boilStartTime = Time.realtimeSinceStartupAsDouble;
+        InputManager.Instance.EnableStageInput();
+
+        ChangeStageState(StageState.Boiling);
+    }
+
+    private void HandlePullInput(double pullTime)
+    {
+        if (_currentStageState != StageState.Boiling)
+        {
+            return;
+        }
+
+        InputManager.Instance.DisableStageInput();
+        double elapsedSeconds = pullTime - _boilStartTime;
+        CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
+        CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
+
+        ChangeStageState(StageState.JudgmentComplete);
     }
 
     private void ChangeStageState(StageState newStageState)
