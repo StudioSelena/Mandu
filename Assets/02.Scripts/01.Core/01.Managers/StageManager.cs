@@ -24,4 +24,41 @@ public class StageManager : SingletonBase<StageManager>
             return;
         }
     }
+
+    public void PrepareStage(string stageId)
+    {
+        StageData stageData = GameDataManager.Instance.GetStageData(stageId);
+        if (stageData == null)
+        {
+            return;
+        }
+
+        TargetTimeData targetTimeData = GameDataManager.Instance.GetTargetTimeData(stageData.TargetTimeId);
+        if (targetTimeData == null)
+        {
+            return;
+        }
+
+        _currentTargetTimeData = targetTimeData;
+
+        int timeLimitMs = _currentTargetTimeData.TargetTimeMs + _currentTargetTimeData.GoodWindowMs + FailGracePeriodMs;
+        _timeLimitSeconds = (double)timeLimitMs / GameUtil.MillisecondsPerSecond;
+
+        _boilStartTime = 0;
+        CurrentJudgmentGrade = JudgmentGrade.None;
+        CurrentTimingErrorMs = 0;
+
+        ChangeStageState(StageState.Ready);
+    }
+
+    private void ChangeStageState(StageState newStageState)
+    {
+        if ( newStageState == _currentStageState )
+        {
+            return;
+        }
+
+        _currentStageState = newStageState;
+        StageStateChangedEvent?.Invoke(newStageState);
+    }
 }
