@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class ResultUI : UIBase
 {
-    private const string SecondsTimeFormat = "0.00";
-    private const string NoInputTimeText = "-.--";
     private const string TimingErrorUnitText = "MS";
     private const string NoInputTimingErrorText = "-";
 
@@ -26,25 +24,9 @@ public class ResultUI : UIBase
     public void SetStageResult(JudgmentGrade judgmentGrade, int targetTimeMs, int inputTimeMs, int timingErrorMs)
     {
         Text_Grade.text = judgmentGrade.ToString();
-        Text_TargetTime.text = GetSecondsDisplayText(targetTimeMs);
-        Text_InputTime.text = GetInputTimeDisplayText(inputTimeMs);
+        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(targetTimeMs);
+        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(inputTimeMs);
         Text_TimingError.text = GetTimingErrorDisplayText(timingErrorMs);
-    }
-
-    private string GetSecondsDisplayText(int timeMs)
-    {
-        double timeSeconds = (double)timeMs / GameUtil.MillisecondsPerSecond;
-        return timeSeconds.ToString(SecondsTimeFormat, CultureInfo.InvariantCulture);
-    }
-
-    private string GetInputTimeDisplayText(int inputTimeMs)
-    {
-        if (inputTimeMs == StageManager.NoInputTimeMs)
-        {
-            return NoInputTimeText;
-        }
-
-        return GetSecondsDisplayText(inputTimeMs);
     }
 
     private string GetTimingErrorDisplayText(int timingErrorMs)
