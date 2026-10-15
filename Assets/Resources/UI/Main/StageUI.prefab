@@ -196,6 +196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2dc7c20de0caf5429c5f0d66532e3be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StageUI
+  Button_Boil: {fileID: 5247473744457464489}
 --- !u!1 &9196981529084473187
 GameObject:
   m_ObjectHideFlags: 0
