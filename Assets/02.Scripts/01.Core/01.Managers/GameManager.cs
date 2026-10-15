@@ -14,13 +14,40 @@ public class GameManager : SingletonBase<GameManager>
             return;
         }
 
+        StageManager.Instance.StageStateChangedEvent += HandleStageStateChanged;
+
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
         PrepareCurrentStage();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance != this)
+        {
+            return;
+        }
+
+        if(StageManager.Instance == null)
+        {
+            return;
+        }
+
+        StageManager.Instance.StageStateChangedEvent -= HandleStageStateChanged;
     }
 
     private void PrepareCurrentStage()
     {
         string stageId = GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
         StageManager.Instance.PrepareStage(stageId);
+    }
+
+    private void HandleStageStateChanged(StageState stageState)
+    {
+        if (stageState != StageState.ShowingResult)
+        {
+            return;
+        }
+
+        UIManager.Instance.OpenUI(UIRootType.Popup, UIType.ResultUI);
     }
 }
