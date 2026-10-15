@@ -154,6 +154,7 @@ public class StageManager : SingletonBase<StageManager>
         CurrentJudgmentGrade = JudgmentGrade.Fail;
         CurrentTimingErrorMs = NoInputTimingErrorMs;
 
+        _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
     }
 
