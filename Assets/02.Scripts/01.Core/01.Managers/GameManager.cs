@@ -27,12 +27,25 @@ public class GameManager : SingletonBase<GameManager>
             return;
         }
 
-        if(StageManager.Instance == null)
+        if (StageManager.Instance == null)
         {
             return;
         }
 
         StageManager.Instance.StageStateChangedEvent -= HandleStageStateChanged;
+    }
+
+    public void RequestNextStage()
+    {
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+
+        _currentStageIndex++;
+        if (_currentStageIndex >= GameDataManager.Instance.StageDataList.Count)
+        {
+            _currentStageIndex = FirstStageIndex;
+        }
+
+        PrepareCurrentStage();
     }
 
     private void PrepareCurrentStage()
@@ -48,6 +61,13 @@ public class GameManager : SingletonBase<GameManager>
             return;
         }
 
-        UIManager.Instance.OpenUI(UIRootType.Popup, UIType.ResultUI);
+        UIBase openedUI = UIManager.Instance.OpenUI(UIRootType.Popup, UIType.ResultUI);
+        ResultUI resultUI = openedUI as ResultUI;
+        if (resultUI == null)
+        {
+            return;
+        }
+
+        resultUI.SetStageResult(StageManager.Instance.CurrentJudgmentGrade, StageManager.Instance.CurrentTimingErrorMs);
     }
 }
