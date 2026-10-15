@@ -48,6 +48,12 @@ public class GameManager : SingletonBase<GameManager>
         PrepareCurrentStage();
     }
 
+    public void RequestRetryStage()
+    {
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+        PrepareCurrentStage();
+    }
+
     private void PrepareCurrentStage()
     {
         string stageId = GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
@@ -68,6 +74,11 @@ public class GameManager : SingletonBase<GameManager>
             return;
         }
 
-        resultUI.SetStageResult(StageManager.Instance.CurrentJudgmentGrade, StageManager.Instance.CurrentTimingErrorMs);
+        StageManager stageManager = StageManager.Instance;
+        resultUI.SetStageResult(
+            judgmentGrade: stageManager.CurrentJudgmentGrade,
+            targetTimeMs: stageManager.CurrentTargetTimeMs,
+            inputTimeMs: stageManager.CurrentInputTimeMs,
+            timingErrorMs: stageManager.CurrentTimingErrorMs);
     }
 }

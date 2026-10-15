@@ -1707,7 +1707,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResultUI
   Text_Grade: {fileID: 5105845559077718790}
+  Text_TargetTime: {fileID: 5641526247167513936}
+  Text_InputTime: {fileID: 3395153923334630363}
   Text_TimingError: {fileID: 1238154415664067629}
+  Button_Retry: {fileID: 1909073222897675368}
   Button_Next: {fileID: 3592031870641284889}
 --- !u!1 &9053775661573045349
 GameObject:
@@ -1959,6 +1962,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c63ee66e95d527045a6a8b4cc4fe7b27, type: 3}
+--- !u!114 &1909073222897675368 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6595676085620991866, guid: c63ee66e95d527045a6a8b4cc4fe7b27, type: 3}
+  m_PrefabInstance: {fileID: 4753249854698605330}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87915cb15c933394fa6bb41c40b59334, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::UIButton
 --- !u!224 &3139431416411179107 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7667219703032382321, guid: c63ee66e95d527045a6a8b4cc4fe7b27, type: 3}

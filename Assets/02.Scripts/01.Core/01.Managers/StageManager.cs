@@ -4,6 +4,7 @@ using UnityEngine;
 public class StageManager : SingletonBase<StageManager>
 {
     public const int NoInputTimingErrorMs = -1;
+    public const int NoInputTimeMs = -1;
     private const int FailGracePeriodMs = 5000;
 
     private StageState _currentStageState = StageState.None;
@@ -16,6 +17,8 @@ public class StageManager : SingletonBase<StageManager>
 
     public JudgmentGrade CurrentJudgmentGrade { get; private set; }
     public int CurrentTimingErrorMs { get; private set; }
+    public int CurrentTargetTimeMs { get; private set; }
+    public int CurrentInputTimeMs { get; private set; }
 
     public event System.Action<StageState> StageStateChangedEvent;
 
@@ -114,6 +117,8 @@ public class StageManager : SingletonBase<StageManager>
         _judgmentCompleteTime = 0;
         CurrentJudgmentGrade = JudgmentGrade.None;
         CurrentTimingErrorMs = 0;
+        CurrentTargetTimeMs = _currentTargetTimeData.TargetTimeMs;
+        CurrentInputTimeMs = NoInputTimeMs;
 
         ChangeStageState(StageState.Ready);
     }
@@ -140,6 +145,7 @@ public class StageManager : SingletonBase<StageManager>
 
         InputManager.Instance.DisableStageInput();
         double elapsedSeconds = pullTime - _boilStartTime;
+        CurrentInputTimeMs = (int)(elapsedSeconds * GameUtil.MillisecondsPerSecond);
         CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
         CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
 
@@ -153,6 +159,7 @@ public class StageManager : SingletonBase<StageManager>
 
         CurrentJudgmentGrade = JudgmentGrade.Fail;
         CurrentTimingErrorMs = NoInputTimingErrorMs;
+        CurrentInputTimeMs = NoInputTimeMs;
 
         _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
