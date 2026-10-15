@@ -12,4 +12,6 @@ public enum UIRootType
 public enum UIType
 {
     None,
+    StageUI,
+    ResultUI,
 }

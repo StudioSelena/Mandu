@@ -4,15 +4,21 @@ using UnityEngine;
 public class StageManager : SingletonBase<StageManager>
 {
     public const int NoInputTimingErrorMs = -1;
+    public const int NoInputTimeMs = -1;
     private const int FailGracePeriodMs = 5000;
 
     private StageState _currentStageState = StageState.None;
     private TargetTimeData _currentTargetTimeData;
     private double _boilStartTime;
     private double _timeLimitSeconds;
+    private double _judgmentCompleteTime;
+
+    [SerializeField] private int _resultDelayMs = 3000;
 
     public JudgmentGrade CurrentJudgmentGrade { get; private set; }
     public int CurrentTimingErrorMs { get; private set; }
+    public int CurrentTargetTimeMs { get; private set; }
+    public int CurrentInputTimeMs { get; private set; }
 
     public event System.Action<StageState> StageStateChangedEvent;
 
@@ -53,11 +59,20 @@ public class StageManager : SingletonBase<StageManager>
 
     private void Update()
     {
-        if (_currentStageState != StageState.Boiling)
+        switch (_currentStageState)
         {
-            return;
-        }
+            case StageState.Boiling:
+                CheckBoilingTimeLimit();
+                break;
 
+            case StageState.JudgmentComplete:
+                CheckResultDelay();
+                break;
+        }
+    }
+
+    private void CheckBoilingTimeLimit()
+    {
         double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _boilStartTime;
         if (elapsedSeconds < _timeLimitSeconds)
         {
@@ -65,6 +80,18 @@ public class StageManager : SingletonBase<StageManager>
         }
 
         FailStageByTimeLimit();
+    }
+
+    private void CheckResultDelay()
+    {
+        double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _judgmentCompleteTime;
+        double resultDelaySeconds = (double)_resultDelayMs / GameUtil.MillisecondsPerSecond;
+        if (elapsedSeconds < resultDelaySeconds)
+        {
+            return;
+        }
+
+        ChangeStageState(StageState.ShowingResult);
     }
 
     public void PrepareStage(string stageId)
@@ -87,8 +114,11 @@ public class StageManager : SingletonBase<StageManager>
         _timeLimitSeconds = (double)timeLimitMs / GameUtil.MillisecondsPerSecond;
 
         _boilStartTime = 0;
+        _judgmentCompleteTime = 0;
         CurrentJudgmentGrade = JudgmentGrade.None;
         CurrentTimingErrorMs = 0;
+        CurrentTargetTimeMs = _currentTargetTimeData.TargetTimeMs;
+        CurrentInputTimeMs = NoInputTimeMs;
 
         ChangeStageState(StageState.Ready);
     }
@@ -115,9 +145,11 @@ public class StageManager : SingletonBase<StageManager>
 
         InputManager.Instance.DisableStageInput();
         double elapsedSeconds = pullTime - _boilStartTime;
+        CurrentInputTimeMs = (int)(elapsedSeconds * GameUtil.MillisecondsPerSecond);
         CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
         CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
 
+        _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
     }
 
@@ -127,7 +159,9 @@ public class StageManager : SingletonBase<StageManager>
 
         CurrentJudgmentGrade = JudgmentGrade.Fail;
         CurrentTimingErrorMs = NoInputTimingErrorMs;
+        CurrentInputTimeMs = NoInputTimeMs;
 
+        _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
     }
 

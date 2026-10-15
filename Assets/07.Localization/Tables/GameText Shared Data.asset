@@ -25,6 +25,21 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698459609759983
+  - m_Id: 1790797452517376
+    m_Key: UI_Button_Next
+    m_Metadata:
+      m_Items:
+      - rid: 5292698572341117015
+  - m_Id: 1843675143708672
+    m_Key: UI_Button_Exit
+    m_Metadata:
+      m_Items:
+      - rid: 5292698577362485248
+  - m_Id: 1843675185651712
+    m_Key: UI_Button_Retry
+    m_Metadata:
+      m_Items:
+      - rid: 5292698577362485249
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -44,3 +59,15 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: "\uBE7C\uAE30 \uBC84\uD2BC"
+    - rid: 5292698572341117015
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB2E4\uC74C \uBC84\uD2BC"
+    - rid: 5292698577362485248
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB098\uAC00\uAE30 \uBC84\uD2BC"
+    - rid: 5292698577362485249
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB2E4\uC2DC\uD558\uAE30 \uBC84\uD2BC"

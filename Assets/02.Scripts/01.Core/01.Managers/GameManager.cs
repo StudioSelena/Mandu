@@ -1,6 +1,84 @@
-﻿using UnityEngine;
+﻿//게임 전체 흐름(스테이지 시작과 다음 스테이지 전환)을 관리하는 매니저
+using UnityEngine;
 
 public class GameManager : SingletonBase<GameManager>
 {
-    
+    private const int FirstStageIndex = 0;
+
+    private int _currentStageIndex = FirstStageIndex;
+
+    private void Start()
+    {
+        if (Instance != this)
+        {
+            return;
+        }
+
+        StageManager.Instance.StageStateChangedEvent += HandleStageStateChanged;
+
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
+        PrepareCurrentStage();
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance != this)
+        {
+            return;
+        }
+
+        if (StageManager.Instance == null)
+        {
+            return;
+        }
+
+        StageManager.Instance.StageStateChangedEvent -= HandleStageStateChanged;
+    }
+
+    public void RequestNextStage()
+    {
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+
+        _currentStageIndex++;
+        if (_currentStageIndex >= GameDataManager.Instance.StageDataList.Count)
+        {
+            _currentStageIndex = FirstStageIndex;
+        }
+
+        PrepareCurrentStage();
+    }
+
+    public void RequestRetryStage()
+    {
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+        PrepareCurrentStage();
+    }
+
+    private void PrepareCurrentStage()
+    {
+        string stageId = GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
+        StageManager.Instance.PrepareStage(stageId);
+    }
+
+    private void HandleStageStateChanged(StageState stageState)
+    {
+        if (stageState != StageState.ShowingResult)
+        {
+            return;
+        }
+
+        UIBase openedUI = UIManager.Instance.OpenUI(UIRootType.Popup, UIType.ResultUI);
+        ResultUI resultUI = openedUI as ResultUI;
+        if (resultUI == null)
+        {
+            return;
+        }
+
+        StageManager stageManager = StageManager.Instance;
+        resultUI.SetStageResult(
+            judgmentGrade: stageManager.CurrentJudgmentGrade,
+            targetTimeMs: stageManager.CurrentTargetTimeMs,
+            inputTimeMs: stageManager.CurrentInputTimeMs,
+            timingErrorMs: stageManager.CurrentTimingErrorMs);
+    }
 }

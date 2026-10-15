@@ -1,3 +1,6 @@
 ﻿Key,Shared Comments,English(en),Korean(ko)
 UI_Button_Boil,삶기 버튼,Boil,삶기
-UI_Button_Pull,빼기 버튼,,빼기
+UI_Button_Pull,빼기 버튼,Pull,빼기
+UI_Button_Next,결과 화면 다음 버튼,Next,다음
+UI_Button_Exit,결과 화면 나가기 버튼,Exit,나가기
+UI_Button_Retry,결과 화면 다시하기 버튼,Retry,다시하기
