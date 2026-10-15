@@ -10,6 +10,9 @@ public class StageManager : SingletonBase<StageManager>
     private TargetTimeData _currentTargetTimeData;
     private double _boilStartTime;
     private double _timeLimitSeconds;
+    private double _judgmentCompleteTime;
+
+    [SerializeField] private int _resultDelayMs = 3000;
 
     public JudgmentGrade CurrentJudgmentGrade { get; private set; }
     public int CurrentTimingErrorMs { get; private set; }
@@ -53,11 +56,20 @@ public class StageManager : SingletonBase<StageManager>
 
     private void Update()
     {
-        if (_currentStageState != StageState.Boiling)
+        switch (_currentStageState)
         {
-            return;
-        }
+            case StageState.Boiling:
+                CheckBoilingTimeLimit();
+                break;
 
+            case StageState.JudgmentComplete:
+                CheckResultDelay();
+                break;
+        }
+    }
+
+    private void CheckBoilingTimeLimit()
+    {
         double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _boilStartTime;
         if (elapsedSeconds < _timeLimitSeconds)
         {
@@ -65,6 +77,18 @@ public class StageManager : SingletonBase<StageManager>
         }
 
         FailStageByTimeLimit();
+    }
+
+    private void CheckResultDelay()
+    {
+        double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _judgmentCompleteTime;
+        double resultDelaySeconds = (double)_resultDelayMs / GameUtil.MillisecondsPerSecond;
+        if (elapsedSeconds < resultDelaySeconds)
+        {
+            return;
+        }
+
+        ChangeStageState(StageState.ShowingResult);
     }
 
     public void PrepareStage(string stageId)
@@ -87,6 +111,7 @@ public class StageManager : SingletonBase<StageManager>
         _timeLimitSeconds = (double)timeLimitMs / GameUtil.MillisecondsPerSecond;
 
         _boilStartTime = 0;
+        _judgmentCompleteTime = 0;
         CurrentJudgmentGrade = JudgmentGrade.None;
         CurrentTimingErrorMs = 0;
 
@@ -118,6 +143,7 @@ public class StageManager : SingletonBase<StageManager>
         CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
         CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
 
+        _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
     }
 
