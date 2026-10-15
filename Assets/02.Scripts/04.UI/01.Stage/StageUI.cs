@@ -1,9 +1,14 @@
 ﻿//플레이 중 화면. 삶기 버튼, 시간 표시, 입력 안내를 맡는 UI
+using TMPro;
 using UnityEngine;
 
 public class StageUI : UIBase
 {
     [SerializeField] private UIButton Button_Boil;
+    [SerializeField] private GameObject Row_TargetTime;
+    [SerializeField] private TMP_Text Text_TargetTime;
+    [SerializeField] private GameObject Row_InputTime;
+    [SerializeField] private TMP_Text Text_InputTime;
 
     private void OnEnable()
     {
@@ -34,11 +39,37 @@ public class StageUI : UIBase
         {
             case StageState.Ready:
                 Button_Boil.gameObject.SetActive(true);
+                ShowTargetTime();
+                Row_InputTime.SetActive(false);
                 break;
 
             case StageState.Boiling:
                 Button_Boil.gameObject.SetActive(false);
+                Row_TargetTime.SetActive(false);
+                Row_InputTime.SetActive(false);
+                break;
+
+            case StageState.JudgmentComplete:
+                ShowTargetTime();
+                ShowInputTime();
+                break;
+
+            case StageState.ShowingResult:
+                Row_TargetTime.SetActive(false);
+                Row_InputTime.SetActive(false);
                 break;
         }
+    }
+
+    private void ShowTargetTime()
+    {
+        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(StageManager.Instance.CurrentTargetTimeMs);
+        Row_TargetTime.SetActive(true);
+    }
+
+    private void ShowInputTime()
+    {
+        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(StageManager.Instance.CurrentInputTimeMs);
+        Row_InputTime.SetActive(true);
     }
 }
