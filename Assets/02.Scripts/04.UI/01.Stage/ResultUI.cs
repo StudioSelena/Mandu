@@ -21,12 +21,12 @@ public class ResultUI : UIBase
         Button_Next.BindOnClickButtonEvent(OnClick_Next);
     }
 
-    public void SetStageResult(JudgmentGrade judgmentGrade, int targetTimeMs, int inputTimeMs, int timingErrorMs)
+    public void SetStageResult(StagePlayResult stagePlayResult)
     {
-        Text_Grade.text = judgmentGrade.ToString();
-        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(targetTimeMs);
-        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(inputTimeMs);
-        Text_TimingError.text = GetTimingErrorDisplayText(timingErrorMs);
+        Text_Grade.text = stagePlayResult.JudgmentGrade.ToString();
+        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(stagePlayResult.TargetTimeMs);
+        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(stagePlayResult.InputTimeMs);
+        Text_TimingError.text = GetTimingErrorDisplayText(stagePlayResult.TimingErrorMs);
     }
 
     private string GetTimingErrorDisplayText(int timingErrorMs)

@@ -10,7 +10,7 @@ public static class GameUtil
     private const string SecondsDisplayFormat = "0.00";
 
     //입력이 없을 때 초 자리에 보여줄 글자
-    private const string NoInputSecondsDisplayText = "-.---";
+    private const string NoInputSecondsDisplayText = "-.--";
 
     //삶기 버튼부터 흐른 초와 목표 시간(ms)의 차이를 밀리초 int로 돌려준다
     public static int CalculateTimingErrorMs(double elapsedSeconds, int targetTimeMs)

@@ -75,10 +75,12 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         StageManager stageManager = StageManager.Instance;
-        resultUI.SetStageResult(
+        StagePlayResult stagePlayResult = new StagePlayResult(
             judgmentGrade: stageManager.CurrentJudgmentGrade,
             targetTimeMs: stageManager.CurrentTargetTimeMs,
             inputTimeMs: stageManager.CurrentInputTimeMs,
             timingErrorMs: stageManager.CurrentTimingErrorMs);
+
+        resultUI.SetStageResult(stagePlayResult);
     }
 }
