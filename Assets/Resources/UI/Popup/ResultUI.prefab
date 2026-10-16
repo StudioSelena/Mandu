@@ -1710,6 +1710,7 @@ MonoBehaviour:
   Text_TargetTime: {fileID: 5641526247167513936}
   Text_InputTime: {fileID: 3395153923334630363}
   Text_TimingError: {fileID: 1238154415664067629}
+  Text_TryCount: {fileID: 5956055240505363342}
   Button_Retry: {fileID: 1909073222897675368}
   Button_Next: {fileID: 3592031870641284889}
 --- !u!1 &9053775661573045349
