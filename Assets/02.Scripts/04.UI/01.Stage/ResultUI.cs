@@ -12,6 +12,7 @@ public class ResultUI : UIBase
     [SerializeField] private TMP_Text Text_TargetTime;
     [SerializeField] private TMP_Text Text_InputTime;
     [SerializeField] private TMP_Text Text_TimingError;
+    [SerializeField] private TMP_Text Text_TryCount;
     [SerializeField] private UIButton Button_Retry;
     [SerializeField] private UIButton Button_Next;
 
@@ -21,12 +22,13 @@ public class ResultUI : UIBase
         Button_Next.BindOnClickButtonEvent(OnClick_Next);
     }
 
-    public void SetStageResult(StagePlayResult stagePlayResult)
+    public void SetStageResult(StagePlayResult stagePlayResult, int tryCount)
     {
         Text_Grade.text = stagePlayResult.JudgmentGrade.ToString();
         Text_TargetTime.text = GameUtil.GetSecondsDisplayText(stagePlayResult.TargetTimeMs);
         Text_InputTime.text = GameUtil.GetInputTimeDisplayText(stagePlayResult.InputTimeMs);
         Text_TimingError.text = GetTimingErrorDisplayText(stagePlayResult.TimingErrorMs);
+        Text_TryCount.text = tryCount.ToString(CultureInfo.InvariantCulture);
     }
 
     private string GetTimingErrorDisplayText(int timingErrorMs)

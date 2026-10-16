@@ -1,4 +1,5 @@
 ﻿//게임 전체 흐름(스테이지 시작과 다음 스테이지 전환)을 관리하는 매니저
+using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : SingletonBase<GameManager>
@@ -6,6 +7,7 @@ public class GameManager : SingletonBase<GameManager>
     private const int FirstStageIndex = 0;
 
     private int _currentStageIndex = FirstStageIndex;
+    private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
 
     private void Start()
     {
@@ -56,17 +58,49 @@ public class GameManager : SingletonBase<GameManager>
 
     private void PrepareCurrentStage()
     {
-        string stageId = GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
-        StageManager.Instance.PrepareStage(stageId);
+        StageManager.Instance.PrepareStage(GetCurrentStageId());
+    }
+
+    private string GetCurrentStageId()
+    {
+        return GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
     }
 
     private void HandleStageStateChanged(StageState stageState)
     {
-        if (stageState != StageState.ShowingResult)
+        switch (stageState)
         {
-            return;
+            case StageState.Boiling:
+                IncreaseCurrentStageTryCount();
+                break;
+
+            case StageState.ShowingResult:
+                OpenResultUI();
+                break;
+        }
+    }
+
+    private void IncreaseCurrentStageTryCount()
+    {
+        StageRecordModel stageRecordModel = GetStageRecordModel(GetCurrentStageId());
+        stageRecordModel.IncreaseTryCount();
+    }
+
+    //처음 도전하는 스테이지면 기록을 새로 만든다
+    private StageRecordModel GetStageRecordModel(string stageId)
+    {
+        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
+        {
+            return stageRecordModel;
         }
 
+        stageRecordModel = new StageRecordModel();
+        _stageRecordModels.Add(stageId, stageRecordModel);
+        return stageRecordModel;
+    }
+
+    private void OpenResultUI()
+    {
         UIBase openedUI = UIManager.Instance.OpenUI(UIRootType.Popup, UIType.ResultUI);
         ResultUI resultUI = openedUI as ResultUI;
         if (resultUI == null)
@@ -81,6 +115,7 @@ public class GameManager : SingletonBase<GameManager>
             inputTimeMs: stageManager.CurrentInputTimeMs,
             timingErrorMs: stageManager.CurrentTimingErrorMs);
 
-        resultUI.SetStageResult(stagePlayResult);
+        int tryCount = GetStageRecordModel(GetCurrentStageId()).TryCount;
+        resultUI.SetStageResult(stagePlayResult, tryCount);
     }
 }
