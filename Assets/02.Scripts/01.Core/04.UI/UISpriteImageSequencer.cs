@@ -1,6 +1,5 @@
 ﻿// 스프라이트 배열을 순서대로 교체해 재생하는 UI 이미지 시퀀서 (timeScale 영향 없음)
 using Cysharp.Threading.Tasks;
-using System;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
@@ -40,15 +39,29 @@ public class UISpriteImageSequencer : MonoBehaviour
 
         StopAnimation();
         _cancelToken = new CancellationTokenSource();
+        CancellationToken token = _cancelToken.Token;
 
         int currentIndex = 0;
+        _image.sprite = SpriteArray_Sprite[currentIndex];
+
+        // 다음 그림으로 넘어갈 예정 시각. 시각표처럼 간격만큼 더해 가므로 늦어진 시간이 쌓이지 않는다
+        double nextFrameTime = Time.unscaledTimeAsDouble + _sequenceInterval;
 
         while (true)
         {
-            _image.sprite = SpriteArray_Sprite[currentIndex];
+            bool isCanceled = await UniTask.Yield(PlayerLoopTiming.Update, token).SuppressCancellationThrow();
+            if (isCanceled)
+            {
+                return;
+            }
 
-            await UniTask.Delay(TimeSpan.FromSeconds(_sequenceInterval), ignoreTimeScale: true, cancellationToken: _cancelToken.Token);
+            if (Time.unscaledTimeAsDouble < nextFrameTime)
+            {
+                continue;
+            }
 
+            // 한 번 갱신에 한 장만 넘긴다. 렉이 걸려도 모든 그림이 나오게 하기 위해서다
+            nextFrameTime += _sequenceInterval;
             currentIndex++;
 
             if (currentIndex >= SpriteArray_Sprite.Length)
@@ -62,6 +75,8 @@ public class UISpriteImageSequencer : MonoBehaviour
                     break;
                 }
             }
+
+            _image.sprite = SpriteArray_Sprite[currentIndex];
         }
     }
 
