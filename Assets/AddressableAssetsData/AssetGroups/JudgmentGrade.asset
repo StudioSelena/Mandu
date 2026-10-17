@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: JudgmentGrade
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: JudgmentGrade
+  m_GUID: 0946726672182af428a3b92e3ff0e97d
+  m_SerializeEntries:
+  - m_GUID: 2b86e87f71f35d94b916b31fee64c5a8
+    m_Address: JudgmentGrade_Nice
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3336764eb1a05854fb8c19545dca408d
+    m_Address: JudgmentGrade_Fail
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: afa2c79d8432a464e8e2cf551e3e8ffd
+    m_Address: JudgmentGrade_Good
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cdd411a22633efd4389876477608d2ac
+    m_Address: JudgmentGrade_Monster
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dc2190799779fdd49b2ab7e95823c1af
+    m_Address: JudgmentGrade_Perfect
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: f362c6b6aa1a69d4c8b7e5cc7f3211e1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: be92e1b270a963a4894cb6c696e8e511, type: 2}
+    - {fileID: 11400000, guid: 393a1f3e79b60b74f995fbf4371409a4, type: 2}
