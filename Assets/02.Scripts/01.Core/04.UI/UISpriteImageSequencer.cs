@@ -89,7 +89,7 @@ public class UISpriteImageSequencer : MonoBehaviour
 
                     case SequenceEndMode.ReturnToFirstFrame:
                         _image.sprite = SpriteArray_Sprite[0];
-                        break;
+                        return;
 
                     default:
                         return;
