@@ -12,6 +12,9 @@ public static class GameUtil
     //입력이 없을 때 초 자리에 보여줄 글자
     private const string NoInputSecondsDisplayText = "-.--";
 
+    //등급 이미지 어드레서블 주소 앞부분. 뒤에 등급 이름을 붙인다. (예: JudgmentGrade_Perfect)
+    private const string JudgmentGradeAddressPrefix = "JudgmentGrade_";
+
     //삶기 버튼부터 흐른 초와 목표 시간(ms)의 차이를 밀리초 int로 돌려준다
     public static int CalculateTimingErrorMs(double elapsedSeconds, int targetTimeMs)
     {
@@ -71,5 +74,11 @@ public static class GameUtil
         }
 
         return GetSecondsDisplayText(inputTimeMs);
+    }
+
+    //등급에 맞는 등급 이미지 어드레서블 주소를 돌려준다
+    public static string GetJudgmentGradeAddress(JudgmentGrade judgmentGrade)
+    {
+        return JudgmentGradeAddressPrefix + judgmentGrade.ToString();
     }
 }
