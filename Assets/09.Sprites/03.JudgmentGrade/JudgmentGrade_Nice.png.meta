@@ -1,0 +1,1572 @@
+fileFormatVersion: 2
+guid: 2b86e87f71f35d94b916b31fee64c5a8
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfb985afc50fbbb47a601ac94d7de58a
+      internalID: -767251745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_1
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43ffc326c00fc1847bec134f0dcf7d11
+      internalID: 951537251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_2
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 815bb304220f5914f91aeb77db01d16d
+      internalID: -359589804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_3
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a086cf05dabb344089eecfc1e5311fa
+      internalID: 1792457377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_4
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 009bf0efeebb7544e8ac8e4a36b902d8
+      internalID: -1756438565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_5
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8dabc2578b2399479887583e147482b
+      internalID: 934400595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_6
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c87e7d88612ff14b8ea1d8edb97d618
+      internalID: -447047073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_7
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 1456
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9971c28e2db7a504aa4cffa6f14ada47
+      internalID: 825646354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8b033a498fb6ec4aab43a5bdfe76f30
+      internalID: 2000230072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_9
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a76e82f5da9b1bb4aa06c304110601e9
+      internalID: 1194358900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_10
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a98fa06ed30a26438c105b2f28295a7
+      internalID: 233390241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_11
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb062c434520556419b4fcb469dcc1ff
+      internalID: 294076227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_12
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e862fd9debbaad444852c275c736f9fe
+      internalID: -1003709952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_13
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02e610e7492a3884d87b5e4e616caeb9
+      internalID: 1797720963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_14
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3560150e83dcda48b24ca22ffdf2ea5
+      internalID: -1913243323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_15
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 1248
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d341f6d9672ad074ca2d420699c1f980
+      internalID: 1623354330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f52942260fabcf04db7819b55d218c21
+      internalID: 902307815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_17
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d220a3df10fa304cb96f1bec3511a1e
+      internalID: -482286012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_18
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94fc6b3647c6c3841886064936d640b6
+      internalID: -2047691585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_19
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d709d9f9bbc6b8a47a95435b0ebc4233
+      internalID: 1771892441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_20
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e2f4aef6841bfa4e8e367235e903c9a
+      internalID: 827435967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_21
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87861cacccf4b0e4cb996e4f127f7241
+      internalID: -1341704903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_22
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d013e71272ab0e942ad2541e87f4e181
+      internalID: 1941879676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_23
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 1040
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19c8d868169c0024db2bcfa17a80f2f4
+      internalID: -1695616678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af56f7d7a283704d8678ca93762eabe
+      internalID: 646542376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_25
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f055ab32884b5314099ead0eb12013d6
+      internalID: 303682632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_26
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5b5385c424c89942ae4248b27dae365
+      internalID: 1541171888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_27
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f321b1946ec567f408c0fb455998ef57
+      internalID: 1107410440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_28
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff92f8ca9bfe8014ca4bff93fed57542
+      internalID: -413793031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_29
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40a8e14aa2d77744d8df298c037cba7a
+      internalID: 1002294335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_30
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6752df75d8e04c549adfc1636c42c5a1
+      internalID: 2010230560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_31
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 832
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 679c496cb194bd94ea13d90be6ea8da7
+      internalID: 1964619693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa551f92ab36be34fb35936f0b308b76
+      internalID: 1922772546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_33
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90afaf66e4c334a4ea19dd7c4199ffe0
+      internalID: 218340233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_34
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab17fe0b87130f4b8bc65587ed15bc3
+      internalID: 192121210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_35
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8c87b5a03a83da449919b69bf1bbefb
+      internalID: -327750797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_36
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b083bc08467e2d4384f3475c7838ae9
+      internalID: 1874344044
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_37
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4d7966f513abec4a87638bad655e247
+      internalID: -1355991453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_38
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8c7e63c4b9372947a8d5c7fbcb7be6d
+      internalID: 1156788215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_39
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 624
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae5c1e1b1082a484c974b4211014e602
+      internalID: 729297246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49a28cfb9396de40a4a951253235772
+      internalID: -842422496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_41
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9881cefb502f6a449c69ade95511cad
+      internalID: 241621514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_42
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb3bf48149707094191617b2092fc051
+      internalID: -1169187505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_43
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a901114045c940549b8e84d528b2a052
+      internalID: -1285026295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_44
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b04e70dacf79373418c453bb3e597445
+      internalID: -101454147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_45
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a33201cab9cfa7f47b80aea10e8862b5
+      internalID: 1867296026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_46
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac6bd4f0b23fe0408cdecc5306e2783
+      internalID: 800849062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_47
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 416
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38717815b42fcad40aed84aaefbc6267
+      internalID: -1584570926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c12532a696c621b44a4490328f2bfba1
+      internalID: -42985895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_49
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1386ee8187e758744ad8518807b400ce
+      internalID: -2081014191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_50
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3e334687292b50469b19d84c1720b24
+      internalID: -1335621268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_51
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50e60fea92ed35a4695fe1f5f9d8956c
+      internalID: 2142969177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_52
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4f62cd893562cf4285bd63e7758beb8
+      internalID: 1277564999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_53
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4696610dc0dee04c93a918891bffc66
+      internalID: -1719602601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_54
+      rect:
+        serializedVersion: 2
+        x: 2448
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7a709b91a3b9e7428d26ba62adb231b
+      internalID: 1544516711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_55
+      rect:
+        serializedVersion: 2
+        x: 2856
+        y: 208
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ee3f611a85584d49a157f43321de58b
+      internalID: 348271341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2504dc44fdc83cf4788a8c25c6cbe791
+      internalID: -309914478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_57
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0503aa2f8af4f71458f29d806e212bcc
+      internalID: 532100959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_58
+      rect:
+        serializedVersion: 2
+        x: 816
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be73cfcf5bfa64244bdeb22758b816af
+      internalID: -425969685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_59
+      rect:
+        serializedVersion: 2
+        x: 1224
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1195297ae6a508a419cd919ab1d23671
+      internalID: -1823160619
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_60
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 793f168b8661f8a4ab172b1bf8ba6e11
+      internalID: -1783890762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Nice_61
+      rect:
+        serializedVersion: 2
+        x: 2040
+        y: 0
+        width: 408
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fbb5efbb5613284f8c03993020f4595
+      internalID: -1491051800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 42b9c7649f8033b43bd0d9ffac967c40
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":408.0,"y":208.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      JudgmentGrade_Nice_0: -767251745
+      JudgmentGrade_Nice_1: 951537251
+      JudgmentGrade_Nice_10: 233390241
+      JudgmentGrade_Nice_11: 294076227
+      JudgmentGrade_Nice_12: -1003709952
+      JudgmentGrade_Nice_13: 1797720963
+      JudgmentGrade_Nice_14: -1913243323
+      JudgmentGrade_Nice_15: 1623354330
+      JudgmentGrade_Nice_16: 902307815
+      JudgmentGrade_Nice_17: -482286012
+      JudgmentGrade_Nice_18: -2047691585
+      JudgmentGrade_Nice_19: 1771892441
+      JudgmentGrade_Nice_2: -359589804
+      JudgmentGrade_Nice_20: 827435967
+      JudgmentGrade_Nice_21: -1341704903
+      JudgmentGrade_Nice_22: 1941879676
+      JudgmentGrade_Nice_23: -1695616678
+      JudgmentGrade_Nice_24: 646542376
+      JudgmentGrade_Nice_25: 303682632
+      JudgmentGrade_Nice_26: 1541171888
+      JudgmentGrade_Nice_27: 1107410440
+      JudgmentGrade_Nice_28: -413793031
+      JudgmentGrade_Nice_29: 1002294335
+      JudgmentGrade_Nice_3: 1792457377
+      JudgmentGrade_Nice_30: 2010230560
+      JudgmentGrade_Nice_31: 1964619693
+      JudgmentGrade_Nice_32: 1922772546
+      JudgmentGrade_Nice_33: 218340233
+      JudgmentGrade_Nice_34: 192121210
+      JudgmentGrade_Nice_35: -327750797
+      JudgmentGrade_Nice_36: 1874344044
+      JudgmentGrade_Nice_37: -1355991453
+      JudgmentGrade_Nice_38: 1156788215
+      JudgmentGrade_Nice_39: 729297246
+      JudgmentGrade_Nice_4: -1756438565
+      JudgmentGrade_Nice_40: -842422496
+      JudgmentGrade_Nice_41: 241621514
+      JudgmentGrade_Nice_42: -1169187505
+      JudgmentGrade_Nice_43: -1285026295
+      JudgmentGrade_Nice_44: -101454147
+      JudgmentGrade_Nice_45: 1867296026
+      JudgmentGrade_Nice_46: 800849062
+      JudgmentGrade_Nice_47: -1584570926
+      JudgmentGrade_Nice_48: -42985895
+      JudgmentGrade_Nice_49: -2081014191
+      JudgmentGrade_Nice_5: 934400595
+      JudgmentGrade_Nice_50: -1335621268
+      JudgmentGrade_Nice_51: 2142969177
+      JudgmentGrade_Nice_52: 1277564999
+      JudgmentGrade_Nice_53: -1719602601
+      JudgmentGrade_Nice_54: 1544516711
+      JudgmentGrade_Nice_55: 348271341
+      JudgmentGrade_Nice_56: -309914478
+      JudgmentGrade_Nice_57: 532100959
+      JudgmentGrade_Nice_58: -425969685
+      JudgmentGrade_Nice_59: -1823160619
+      JudgmentGrade_Nice_6: -447047073
+      JudgmentGrade_Nice_60: -1783890762
+      JudgmentGrade_Nice_61: -1491051800
+      JudgmentGrade_Nice_62: -527431979
+      JudgmentGrade_Nice_7: 825646354
+      JudgmentGrade_Nice_8: 2000230072
+      JudgmentGrade_Nice_9: 1194358900
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
