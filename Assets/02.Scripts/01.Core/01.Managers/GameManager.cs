@@ -1,4 +1,6 @@
 ﻿//게임 전체 흐름(스테이지 시작과 다음 스테이지 전환)을 관리하는 매니저
+using Cysharp.Threading.Tasks;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +19,7 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         StageManager.Instance.StageStateChangedEvent += HandleStageStateChanged;
+        LoadAllJudgmentGradeSprites();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
         PrepareCurrentStage();
@@ -28,6 +31,8 @@ public class GameManager : SingletonBase<GameManager>
         {
             return;
         }
+
+        ReleaseAllJudgmentGradeSprites();
 
         if (StageManager.Instance == null)
         {
@@ -117,5 +122,38 @@ public class GameManager : SingletonBase<GameManager>
 
         int tryCount = GetStageRecordModel(GetCurrentStageId()).TryCount;
         resultUI.SetStageResult(stagePlayResult, tryCount);
+    }
+
+    //플레이 구간 동안 결과 화면에서 쓸 등급 이미지를 미리 불러둔다. 로비가 생기면 해제 시점을 로비로 나갈 때로 옮김
+    private void LoadAllJudgmentGradeSprites()
+    {
+        foreach (JudgmentGrade judgmentGrade in Enum.GetValues(typeof(JudgmentGrade)))
+        {
+            if (judgmentGrade == JudgmentGrade.None)
+            {
+                continue;
+            }
+
+            string address = GameUtil.GetJudgmentGradeAddress(judgmentGrade);
+            ResourceManager.Instance.LoadAsset<Sprite[]>(address).Forget();
+        }
+    }
+
+    private void ReleaseAllJudgmentGradeSprites()
+    {
+        if (ResourceManager.Instance == null)
+        {
+            return;
+        }
+
+        foreach (JudgmentGrade judgmentGrade in Enum.GetValues(typeof(JudgmentGrade)))
+        {
+            if (judgmentGrade == JudgmentGrade.None)
+            {
+                continue;
+            }
+
+            ResourceManager.Instance.Release(GameUtil.GetJudgmentGradeAddress(judgmentGrade));
+        }
     }
 }

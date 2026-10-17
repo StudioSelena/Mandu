@@ -1,0 +1,1779 @@
+fileFormatVersion: 2
+guid: dc2190799779fdd49b2ab7e95823c1af
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 68.3
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d281151b37c7ca74e8848924a7e779ca
+      internalID: -1561077322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_1
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23fda191f38c8634c993a4cb7c54841d
+      internalID: -534343922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_2
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b546619983bcd064e97698034ad1f7d2
+      internalID: 1731171717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_3
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3558159a8af9804fa898ede9ae4fb44
+      internalID: 902464081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_4
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bed06de86f01ad4eb3516fe7a4e5b4b
+      internalID: -1644958718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_5
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c34147d76d673445b3f6bbaf87954f9
+      internalID: -735701127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_6
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4171d1118dc7c6439d9dc261ba3e9a1
+      internalID: 1177924745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_7
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 960
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b68ee4f3bf13ce4b8c3a884063f4ef8
+      internalID: 373479729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb21d57e4240dae488f3d7898f6a4806
+      internalID: 1898424568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_9
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 605b28e414ab5ac4c8c0a5069b01324b
+      internalID: 2093691066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_10
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a797a0db5d0dbf4fa0830c469e68ecf
+      internalID: 1954005836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_11
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc805dd72d8e8a84d8e2f97b9796c06e
+      internalID: -1204946135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_12
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bb7b6041ee7f05489b2b4beda210e25
+      internalID: -900491354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_13
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b70c52099409ac644991a24ed4519deb
+      internalID: -1313769041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_14
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7e302ca1dc1cf141bc04e4e054b4755
+      internalID: 486180395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_15
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 840
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e922eeeee33b7488f420d3cf299672
+      internalID: 437544041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad8a00ec5f4f2b84e9ec719ead356ace
+      internalID: 407083579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_17
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03fb3bf89324be14c8d25dc8723c93a8
+      internalID: 2053099714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_18
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240f5e47c075a20419f0d850706e9ee5
+      internalID: -1838736380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_19
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1111c47f060a0943a34d574f407a302
+      internalID: -393441802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_20
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49863c50f1998742985de3a0dfe9c3a
+      internalID: -820677656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_21
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2ea767323a04294cb12d0d1430a1bcc
+      internalID: -423731787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_22
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aec3dc9583f67f4194a6b6a836c551a
+      internalID: -1332297867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_23
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 720
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 868f88de883761c4c9ccd5383deee6ee
+      internalID: -422385793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a481dd3e2e5e3a94ba314933d5bd4444
+      internalID: 1658509138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_25
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bbb50d428407024abd861b61c22dbac
+      internalID: 1933736328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_26
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88cb53690e710d94a987496b9536a138
+      internalID: 140361491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_27
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f07ec90927d4c6b49ae170866bd70ec5
+      internalID: -1025458190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_28
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7eba182ed3b36948befe3f6c67ed12a
+      internalID: -165951034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_29
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bcbf547967bad445ab915f20ee8e092
+      internalID: -1360798459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_30
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f0c7188f5f3e0428d387b316bec0ff
+      internalID: 981124905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_31
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 600
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56975c4b3fefe0c4d97f9d344e754b61
+      internalID: 1152273199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dee5929d531948a47b9ee68efa509c21
+      internalID: 730817744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_33
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b592671743eed64db2fd57d7d0ff9d5
+      internalID: -1832642220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_34
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fa06be1e79db9d449c9aaa4459c0097
+      internalID: 66989145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_35
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e60534dd0d2e754db40f747a97aee2c
+      internalID: -48212163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_36
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f29293a00157add429a07b10b94845c5
+      internalID: 905603482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_37
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa5a480b01843d4ab5e248290aad9f8
+      internalID: -271834606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_38
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44034208875c918428285c68f6da2b9d
+      internalID: -1856022551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_39
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 480
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd167cbc1365ce4d93b34315cda5273
+      internalID: 461393832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f7fa5fe61d81c449b848d284e469bd4
+      internalID: -1014790641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_41
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4797d51054cb21a43a86633c9cf201c9
+      internalID: 2072123775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_42
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3106c2633861f6c4b960d882291b1491
+      internalID: -1954766879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_43
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 184e0d2a625450d4c8c43c81e5e98e9f
+      internalID: 2027494169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_44
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a2fe1de37c5e749a2a390269c17394
+      internalID: 349220251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_45
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94adf8de9e111f941a7db6c190a71dbd
+      internalID: -119580512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_46
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d54ab7b55b747a42b8370a9cb3bca0f
+      internalID: 843347570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_47
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 360
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30b1a2d67d5302e4d8313b01295899f6
+      internalID: -850554101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47fce706e1b0aa44f86af6e039e72924
+      internalID: -1301795318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_49
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dec91f1772dba3d4f90d70e7ef5f1b42
+      internalID: -667445813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_50
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05b71c0faf7788748862c14fed66c286
+      internalID: -1513299268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_51
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0744141a6cb07a54bb3f4b5d1ac76435
+      internalID: 534931104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_52
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fa391010a511a40bc0e15fa8ca8a65
+      internalID: -1351183016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_53
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee471ca622ace184bac6001511c036b0
+      internalID: -1934305710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_54
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d83361d1da56de147ae20c60f433408c
+      internalID: -1679555400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_55
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 240
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e5894f3d89685f47a652634979b076c
+      internalID: -497832425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3001a854b5be94f868b654490790b4
+      internalID: 1063321251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_57
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13392d446a14ec64db224d9c902018d7
+      internalID: -226419917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_58
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dbccf69133fb147be9ed9d3c69d05d
+      internalID: -1510043994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_59
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e7ef5552dc0884a8d231f72b70e5a2
+      internalID: 225709119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_60
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f58b57486475b9546973847c9285daee
+      internalID: 1126898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_61
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9d89c2160d7af4890176842bc0abd2
+      internalID: 1896875797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_62
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb083d3b2221ba4fb5deda3961c57f5
+      internalID: -2031008175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_63
+      rect:
+        serializedVersion: 2
+        x: 3304
+        y: 120
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92775de018214974fb0202098c6c6c01
+      internalID: 1121495607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed0505dc5e9ac84bb96594c536cfd0c
+      internalID: 591009416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_65
+      rect:
+        serializedVersion: 2
+        x: 472
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e39047d6aa662ef4c82059bde3dcf588
+      internalID: 237364334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_66
+      rect:
+        serializedVersion: 2
+        x: 944
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 434a1be76f9f64f46829579c80f924cb
+      internalID: -290671692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_67
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a9b4ebb42d84b34e8ecc03505ad9119
+      internalID: -1116290526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_68
+      rect:
+        serializedVersion: 2
+        x: 1888
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae261ec6329c6a644b5de5b55ed1fa50
+      internalID: 2055025344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_69
+      rect:
+        serializedVersion: 2
+        x: 2360
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2093d16d596ca0344869ac48f5bff582
+      internalID: 1479226436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Perfect_70
+      rect:
+        serializedVersion: 2
+        x: 2832
+        y: 0
+        width: 472
+        height: 120
+      alignment: 9
+      pivot: {x: 0.5, y: 0.43}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4472453e9ed334ba7d74e383c7dcc3
+      internalID: -928113630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 08d3ba97247708447bc0d18230d26e5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":472.0,"y":120.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.4300000071525574},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":9,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      JudgmentGrade_Perfect_0: -1561077322
+      JudgmentGrade_Perfect_1: -534343922
+      JudgmentGrade_Perfect_10: 1954005836
+      JudgmentGrade_Perfect_11: -1204946135
+      JudgmentGrade_Perfect_12: -900491354
+      JudgmentGrade_Perfect_13: -1313769041
+      JudgmentGrade_Perfect_14: 486180395
+      JudgmentGrade_Perfect_15: 437544041
+      JudgmentGrade_Perfect_16: 407083579
+      JudgmentGrade_Perfect_17: 2053099714
+      JudgmentGrade_Perfect_18: -1838736380
+      JudgmentGrade_Perfect_19: -393441802
+      JudgmentGrade_Perfect_2: 1731171717
+      JudgmentGrade_Perfect_20: -820677656
+      JudgmentGrade_Perfect_21: -423731787
+      JudgmentGrade_Perfect_22: -1332297867
+      JudgmentGrade_Perfect_23: -422385793
+      JudgmentGrade_Perfect_24: 1658509138
+      JudgmentGrade_Perfect_25: 1933736328
+      JudgmentGrade_Perfect_26: 140361491
+      JudgmentGrade_Perfect_27: -1025458190
+      JudgmentGrade_Perfect_28: -165951034
+      JudgmentGrade_Perfect_29: -1360798459
+      JudgmentGrade_Perfect_3: 902464081
+      JudgmentGrade_Perfect_30: 981124905
+      JudgmentGrade_Perfect_31: 1152273199
+      JudgmentGrade_Perfect_32: 730817744
+      JudgmentGrade_Perfect_33: -1832642220
+      JudgmentGrade_Perfect_34: 66989145
+      JudgmentGrade_Perfect_35: -48212163
+      JudgmentGrade_Perfect_36: 905603482
+      JudgmentGrade_Perfect_37: -271834606
+      JudgmentGrade_Perfect_38: -1856022551
+      JudgmentGrade_Perfect_39: 461393832
+      JudgmentGrade_Perfect_4: -1644958718
+      JudgmentGrade_Perfect_40: -1014790641
+      JudgmentGrade_Perfect_41: 2072123775
+      JudgmentGrade_Perfect_42: -1954766879
+      JudgmentGrade_Perfect_43: 2027494169
+      JudgmentGrade_Perfect_44: 349220251
+      JudgmentGrade_Perfect_45: -119580512
+      JudgmentGrade_Perfect_46: 843347570
+      JudgmentGrade_Perfect_47: -850554101
+      JudgmentGrade_Perfect_48: -1301795318
+      JudgmentGrade_Perfect_49: -667445813
+      JudgmentGrade_Perfect_5: -735701127
+      JudgmentGrade_Perfect_50: -1513299268
+      JudgmentGrade_Perfect_51: 534931104
+      JudgmentGrade_Perfect_52: -1351183016
+      JudgmentGrade_Perfect_53: -1934305710
+      JudgmentGrade_Perfect_54: -1679555400
+      JudgmentGrade_Perfect_55: -497832425
+      JudgmentGrade_Perfect_56: 1063321251
+      JudgmentGrade_Perfect_57: -226419917
+      JudgmentGrade_Perfect_58: -1510043994
+      JudgmentGrade_Perfect_59: 225709119
+      JudgmentGrade_Perfect_6: 1177924745
+      JudgmentGrade_Perfect_60: 1126898
+      JudgmentGrade_Perfect_61: 1896875797
+      JudgmentGrade_Perfect_62: -2031008175
+      JudgmentGrade_Perfect_63: 1121495607
+      JudgmentGrade_Perfect_64: 591009416
+      JudgmentGrade_Perfect_65: 237364334
+      JudgmentGrade_Perfect_66: -290671692
+      JudgmentGrade_Perfect_67: -1116290526
+      JudgmentGrade_Perfect_68: 2055025344
+      JudgmentGrade_Perfect_69: 1479226436
+      JudgmentGrade_Perfect_7: 373479729
+      JudgmentGrade_Perfect_70: -928113630
+      JudgmentGrade_Perfect_71: 1964840794
+      JudgmentGrade_Perfect_8: 1898424568
+      JudgmentGrade_Perfect_9: 2093691066
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

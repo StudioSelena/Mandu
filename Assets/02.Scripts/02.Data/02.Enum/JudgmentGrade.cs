@@ -6,5 +6,5 @@ public enum JudgmentGrade
     Good,
     Nice,
     Perfect,
-    Monster, //숨겨진 등급. 오차 0ms. 화면에는 Perfect로 표시
+    Monster,    //오차 0ms일 때만 받는 등급. 결과 화면에 MONSTER로 표시
 }

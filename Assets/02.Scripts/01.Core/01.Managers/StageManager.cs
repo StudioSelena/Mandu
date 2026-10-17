@@ -167,7 +167,7 @@ public class StageManager : SingletonBase<StageManager>
 
     private void ChangeStageState(StageState newStageState)
     {
-        if ( newStageState == _currentStageState )
+        if (newStageState == _currentStageState)
         {
             return;
         }
