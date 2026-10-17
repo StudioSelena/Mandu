@@ -63,13 +63,13 @@ public class StageUI : UIBase
 
     private void ShowTargetTime()
     {
-        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(StageManager.Instance.CurrentTargetTimeMs);
+        Text_TargetTime.text = TimeUtil.GetSecondsDisplayText(StageManager.Instance.CurrentTargetTimeMs);
         Row_TargetTime.SetActive(true);
     }
 
     private void ShowInputTime()
     {
-        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(StageManager.Instance.CurrentInputTimeMs);
+        Text_InputTime.text = TimeUtil.GetInputTimeDisplayText(StageManager.Instance.CurrentInputTimeMs);
         Row_InputTime.SetActive(true);
     }
 }

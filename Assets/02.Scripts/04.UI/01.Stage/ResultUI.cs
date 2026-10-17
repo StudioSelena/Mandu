@@ -33,8 +33,8 @@ public class ResultUI : UIBase
     public void SetStageResult(StagePlayResult stagePlayResult, int tryCount)
     {
         ShowGradeImage(stagePlayResult.JudgmentGrade).Forget();
-        Text_TargetTime.text = GameUtil.GetSecondsDisplayText(stagePlayResult.TargetTimeMs);
-        Text_InputTime.text = GameUtil.GetInputTimeDisplayText(stagePlayResult.InputTimeMs);
+        Text_TargetTime.text = TimeUtil.GetSecondsDisplayText(stagePlayResult.TargetTimeMs);
+        Text_InputTime.text = TimeUtil.GetInputTimeDisplayText(stagePlayResult.InputTimeMs);
         Text_TimingError.text = GetTimingErrorDisplayText(stagePlayResult.TimingErrorMs);
         Text_TryCount.text = tryCount.ToString(CultureInfo.InvariantCulture);
     }

@@ -85,7 +85,7 @@ public class StageManager : SingletonBase<StageManager>
     private void CheckResultDelay()
     {
         double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _judgmentCompleteTime;
-        double resultDelaySeconds = (double)_resultDelayMs / GameUtil.MillisecondsPerSecond;
+        double resultDelaySeconds = (double)_resultDelayMs / TimeUtil.MillisecondsPerSecond;
         if (elapsedSeconds < resultDelaySeconds)
         {
             return;
@@ -111,7 +111,7 @@ public class StageManager : SingletonBase<StageManager>
         _currentTargetTimeData = targetTimeData;
 
         int timeLimitMs = _currentTargetTimeData.TargetTimeMs + _currentTargetTimeData.GoodWindowMs + FailGracePeriodMs;
-        _timeLimitSeconds = (double)timeLimitMs / GameUtil.MillisecondsPerSecond;
+        _timeLimitSeconds = (double)timeLimitMs / TimeUtil.MillisecondsPerSecond;
 
         _boilStartTime = 0;
         _judgmentCompleteTime = 0;
@@ -145,7 +145,7 @@ public class StageManager : SingletonBase<StageManager>
 
         InputManager.Instance.DisableStageInput();
         double elapsedSeconds = pullTime - _boilStartTime;
-        CurrentInputTimeMs = (int)(elapsedSeconds * GameUtil.MillisecondsPerSecond);
+        CurrentInputTimeMs = (int)(elapsedSeconds * TimeUtil.MillisecondsPerSecond);
         CurrentTimingErrorMs = GameUtil.CalculateTimingErrorMs(elapsedSeconds, _currentTargetTimeData.TargetTimeMs);
         CurrentJudgmentGrade = GameUtil.JudgeTimingGrade(CurrentTimingErrorMs, _currentTargetTimeData);
 
