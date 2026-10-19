@@ -20,6 +20,8 @@ public class StageManager : SingletonBase<StageManager>
     public int CurrentTargetTimeMs { get; private set; }
     public int CurrentInputTimeMs { get; private set; }
 
+    public string CurrentSabotageId { get; private set; } //방해요소가 없는 스테이지면 null 또는 빈 문자열
+
     public event System.Action<StageState> StageStateChangedEvent;
 
     protected override void Awake()
@@ -119,6 +121,7 @@ public class StageManager : SingletonBase<StageManager>
         CurrentTimingErrorMs = 0;
         CurrentTargetTimeMs = _currentTargetTimeData.TargetTimeMs;
         CurrentInputTimeMs = NoInputTimeMs;
+        CurrentSabotageId = stageData.SabotageId;
 
         ChangeStageState(StageState.Ready);
     }
