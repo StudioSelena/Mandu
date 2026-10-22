@@ -45,7 +45,6 @@ public class StageUI : UIBase
 
             case StageState.Boiling:
                 Button_Boil.gameObject.SetActive(false);
-                Row_TargetTime.SetActive(false);
                 Row_InputTime.SetActive(false);
                 break;
 
