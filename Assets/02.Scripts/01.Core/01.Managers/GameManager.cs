@@ -4,6 +4,8 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
+//다른 매니저(기본 0)가 모두 이벤트 구독을 마친 뒤 첫 스테이지를 시작하도록 늦게 실행한다
+[DefaultExecutionOrder(100)]
 public class GameManager : SingletonBase<GameManager>
 {
     private const int FirstStageIndex = 0;
