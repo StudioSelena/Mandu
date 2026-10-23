@@ -19,6 +19,7 @@ public class StageManager : SingletonBase<StageManager>
     public int CurrentTimingErrorMs { get; private set; }
     public int CurrentTargetTimeMs { get; private set; }
     public int CurrentInputTimeMs { get; private set; }
+    public int CurrentStageNumber { get; private set; } //화면에 보이는 스테이지 번호. 1부터 시작
 
     public string CurrentSabotageId { get; private set; } //방해요소가 없는 스테이지면 null 또는 빈 문자열
 
@@ -96,7 +97,7 @@ public class StageManager : SingletonBase<StageManager>
         ChangeStageState(StageState.ShowingResult);
     }
 
-    public void PrepareStage(string stageId)
+    public void PrepareStage(string stageId, int stageNumber)
     {
         StageData stageData = GameDataManager.Instance.GetStageData(stageId);
         if (stageData == null)
@@ -122,6 +123,7 @@ public class StageManager : SingletonBase<StageManager>
         CurrentTargetTimeMs = _currentTargetTimeData.TargetTimeMs;
         CurrentInputTimeMs = NoInputTimeMs;
         CurrentSabotageId = stageData.SabotageId;
+        CurrentStageNumber = stageNumber;
 
         ChangeStageState(StageState.Ready);
     }

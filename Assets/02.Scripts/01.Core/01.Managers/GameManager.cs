@@ -9,6 +9,8 @@ using UnityEngine;
 public class GameManager : SingletonBase<GameManager>
 {
     private const int FirstStageIndex = 0;
+    //화면에 보이는 스테이지 번호는 1부터 센다. 인덱스는 0부터라 1을 더한다
+    private const int StageNumberOffset = 1;
 
     private int _currentStageIndex = FirstStageIndex;
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
@@ -65,12 +67,17 @@ public class GameManager : SingletonBase<GameManager>
 
     private void PrepareCurrentStage()
     {
-        StageManager.Instance.PrepareStage(GetCurrentStageId());
+        StageManager.Instance.PrepareStage(GetCurrentStageId(), GetCurrentStageNumber());
     }
 
     private string GetCurrentStageId()
     {
         return GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
+    }
+
+    private int GetCurrentStageNumber()
+    {
+        return _currentStageIndex + StageNumberOffset;
     }
 
     private void HandleStageStateChanged(StageState stageState)

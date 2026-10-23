@@ -9,6 +9,7 @@ public class StageUI : UIBase
     [SerializeField] private TMP_Text Text_TargetTime;
     [SerializeField] private GameObject Row_InputTime;
     [SerializeField] private TMP_Text Text_InputTime;
+    [SerializeField] private TMP_Text Text_StageNumber;
 
     private void OnEnable()
     {
@@ -39,6 +40,7 @@ public class StageUI : UIBase
         {
             case StageState.Ready:
                 Button_Boil.gameObject.SetActive(true);
+                ShowStageNumber();
                 ShowTargetTime();
                 Row_InputTime.SetActive(false);
                 break;
@@ -70,5 +72,10 @@ public class StageUI : UIBase
     {
         Text_InputTime.text = TimeUtil.GetInputTimeDisplayText(StageManager.Instance.CurrentInputTimeMs);
         Row_InputTime.SetActive(true);
+    }
+
+    private void ShowStageNumber()
+    {
+        Text_StageNumber.text = StageManager.Instance.CurrentStageNumber.ToString();
     }
 }
