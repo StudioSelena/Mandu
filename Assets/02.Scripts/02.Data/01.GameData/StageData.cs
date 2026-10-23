@@ -5,5 +5,5 @@ using System;
 public class StageData : GameDataBase
 {
     public string TargetTimeId;
-    public string SabotageId; //방해 요소가 없으면 null or 빈 문자열. 쓰는 쪽에서 string.IsNullorEmpty로 확인
+    public string SabotageId; //방해 요소가 없으면 null or 빈 문자열. 쓰는 쪽에서 string.IsNullOrEmpty로 확인
 }

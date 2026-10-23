@@ -1,0 +1,14 @@
+[
+  {
+    "Id": "FakeNumberEvent_001",
+    "SabotageId": "Sabotage_FakeNumber_01",
+    "ShowTimeMs": 7000,
+    "DisplayText": "3"
+  },
+  {
+    "Id": "FakeNumberEvent_002",
+    "SabotageId": "Sabotage_FakeNumber_01",
+    "ShowTimeMs": 8500,
+    "DisplayText": "1"
+  }
+]

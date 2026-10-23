@@ -8,5 +8,10 @@
     "Id": "Stage_002",
     "TargetTimeId": "TargetTime_10000",
     "SabotageId": null
+  },
+  {
+    "Id": "Stage_003",
+    "TargetTimeId": "TargetTime_10000",
+    "SabotageId": "Sabotage_FakeNumber_01"
   }
 ]
