@@ -12,5 +12,33 @@
     "PerfectWindowMs": 150,
     "NiceWindowMs": 350,
     "GoodWindowMs": 750
+  },
+  {
+    "Id": "TargetTime_5000",
+    "TargetTimeMs": 5000,
+    "PerfectWindowMs": 250,
+    "NiceWindowMs": 400,
+    "GoodWindowMs": 600
+  },
+  {
+    "Id": "TargetTime_7000",
+    "TargetTimeMs": 7000,
+    "PerfectWindowMs": 350,
+    "NiceWindowMs": 560,
+    "GoodWindowMs": 840
+  },
+  {
+    "Id": "TargetTime_8000",
+    "TargetTimeMs": 8000,
+    "PerfectWindowMs": 400,
+    "NiceWindowMs": 640,
+    "GoodWindowMs": 960
+  },
+  {
+    "Id": "TargetTime_12000",
+    "TargetTimeMs": 12000,
+    "PerfectWindowMs": 600,
+    "NiceWindowMs": 960,
+    "GoodWindowMs": 1440
   }
 ]
