@@ -1,17 +1,42 @@
 [
   {
     "Id": "Stage_001",
-    "TargetTimeId": "TargetTime_10000",
+    "TargetTimeId": "TargetTime_3000",
     "SabotageId": null
   },
   {
     "Id": "Stage_002",
-    "TargetTimeId": "TargetTime_10000",
+    "TargetTimeId": "TargetTime_5000",
     "SabotageId": null
   },
   {
     "Id": "Stage_003",
     "TargetTimeId": "TargetTime_10000",
+    "SabotageId": null
+  },
+  {
+    "Id": "Stage_004",
+    "TargetTimeId": "TargetTime_7000",
+    "SabotageId": null
+  },
+  {
+    "Id": "Stage_005",
+    "TargetTimeId": "TargetTime_8000",
+    "SabotageId": null
+  },
+  {
+    "Id": "Stage_006",
+    "TargetTimeId": "TargetTime_10000",
     "SabotageId": "Sabotage_FakeNumber_01"
+  },
+  {
+    "Id": "Stage_007",
+    "TargetTimeId": "TargetTime_12000",
+    "SabotageId": "Sabotage_FakeNumber_02"
+  },
+  {
+    "Id": "Stage_008",
+    "TargetTimeId": "TargetTime_7000",
+    "SabotageId": null
   }
 ]

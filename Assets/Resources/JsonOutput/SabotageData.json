@@ -2,5 +2,9 @@
   {
     "Id": "Sabotage_FakeNumber_01",
     "TypeName": "FakeNumber"
+  },
+  {
+    "Id": "Sabotage_FakeNumber_02",
+    "TypeName": "FakeNumber"
   }
 ]
