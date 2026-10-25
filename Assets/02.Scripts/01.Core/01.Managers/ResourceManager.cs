@@ -39,12 +39,7 @@ public class ResourceManager : SingletonBase<ResourceManager>
             Debug.LogError($"[ResourceManager] 에셋 로드 실패. {address} / {e.Message}");
 #endif
 
-            //기다리는 사이 이미 해제된 번호표라면 반납할 것이 없다
-            if (handle.IsValid() == true)
-            {
-                Release(address);
-            }
-
+            //실패해도 반납은 부른 쪽이 한다. 빌려간 수는 이미 올라가 있어 부른 쪽의 Release와 짝이 맞는다
             return null;
         }
 

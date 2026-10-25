@@ -33,6 +33,9 @@ public class GameObjectManager : SingletonBase<GameObjectManager>
         GameObject prefab = await ResourceManager.Instance.LoadAsset<GameObject>(address);
         if (prefab == null)
         {
+            //로드에 실패해도 빌려간 수는 올라가 있으므로 반납한다
+            ResourceManager.Instance.Release(address);
+
 #if UNITY_EDITOR
             Debug.LogWarning($"[GameObjectManager] 프리팹을 불러오지 못해 만들지 않습니다. {address}");
 #endif
