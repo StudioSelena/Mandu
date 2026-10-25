@@ -15,4 +15,5 @@ public enum UIType
     StageUI,
     ResultUI,
     FakeNumberSabotageUI,
+    DevModeUI,
 }
