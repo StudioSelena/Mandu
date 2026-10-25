@@ -99,6 +99,9 @@ public class StageManager : SingletonBase<StageManager>
 
     public void PrepareStage(string stageId, int stageNumber)
     {
+        //삶는 도중 다른 스테이지로 바뀌어도 Ready는 늘 빼기 입력이 꺼진 채 시작한다
+        InputManager.Instance.DisableStageInput();
+
         StageData stageData = GameDataManager.Instance.GetStageData(stageId);
         if (stageData == null)
         {

@@ -36,6 +36,8 @@ public class SabotageManager : SingletonBase<SabotageManager>
         switch (stageState)
         {
             case StageState.Ready:
+                //삶는 도중 스테이지가 바뀌면 멈추지 않은 방해요소가 남아 있으므로 준비 전에 먼저 멈춘다
+                StopCurrentSabotage();
                 PrepareCurrentSabotage();
                 break;
             
