@@ -29,6 +29,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Debug",
+            "id": "06ba932f-23ed-43d3-843b-5dc95d6a1aee",
+            "actions": [
+                {
+                    "name": "ToggleDevMode",
+                    "type": "Button",
+                    "id": "6bd9f996-451a-4350-92af-9e65146a9a5e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7477adb2-5cce-4d6b-9e8f-fdf2d3c4e64c",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleDevMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
