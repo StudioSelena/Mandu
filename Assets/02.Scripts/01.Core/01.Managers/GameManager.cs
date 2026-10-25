@@ -11,9 +11,11 @@ public class GameManager : SingletonBase<GameManager>
     private const int FirstStageIndex = 0;
     //화면에 보이는 스테이지 번호는 1부터 센다. 인덱스는 0부터라 1을 더한다
     public const int StageNumberOffset = 1;
+    private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
 
     private int _currentStageIndex = FirstStageIndex;
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
+    private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //게임 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
 
     private void Start()
     {
@@ -28,8 +30,7 @@ public class GameManager : SingletonBase<GameManager>
 #endif
         LoadAllJudgmentGradeSprites();
 
-        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
-        PrepareCurrentStage();
+        StartGameAfterSpawn().Forget();
     }
 
     private void OnDestroy()
@@ -40,6 +41,7 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         ReleaseAllJudgmentGradeSprites();
+        DestroyPlayerMandu();
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         if (InputManager.Instance != null)
@@ -201,5 +203,36 @@ public class GameManager : SingletonBase<GameManager>
 
             ResourceManager.Instance.Release(GameUtil.GetJudgmentGradeAddress(judgmentGrade));
         }
+    }
+
+    //월드 오브젝트가 모두 만들어진 뒤에 첫 화면과 스테이지를 연다. 스테이지 전환 연출이 생기면 이 함수 앞뒤에 덮기와 걷기를 붙인다
+    private async UniTaskVoid StartGameAfterSpawn()
+    {
+        await SpawnPlayerMandu();
+
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
+        PrepareCurrentStage();
+    }
+
+    private async UniTask SpawnPlayerMandu()
+    {
+        _playerManduInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(PlayerManduAddress);
+    }
+
+    private void DestroyPlayerMandu()
+    {
+        if (GameObjectManager.Instance == null)
+        {
+            return;
+        }
+
+        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
+        if (_playerManduInstanceId == GameObjectManager.InvalidInstanceId)
+        {
+            return;
+        }
+
+        GameObjectManager.Instance.RequestDestroyWorldObject(_playerManduInstanceId);
+        _playerManduInstanceId = GameObjectManager.InvalidInstanceId;
     }
 }
