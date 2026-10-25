@@ -10,7 +10,7 @@ public class GameManager : SingletonBase<GameManager>
 {
     private const int FirstStageIndex = 0;
     //화면에 보이는 스테이지 번호는 1부터 센다. 인덱스는 0부터라 1을 더한다
-    private const int StageNumberOffset = 1;
+    public const int StageNumberOffset = 1;
 
     private int _currentStageIndex = FirstStageIndex;
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
@@ -23,6 +23,9 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         StageManager.Instance.StageStateChangedEvent += HandleStageStateChanged;
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        InputManager.Instance.ToggleDevModeEvent += HandleToggleDevMode;
+#endif
         LoadAllJudgmentGradeSprites();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
@@ -37,6 +40,13 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         ReleaseAllJudgmentGradeSprites();
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.ToggleDevModeEvent -= HandleToggleDevMode;
+        }
+#endif
 
         if (StageManager.Instance == null)
         {
@@ -64,6 +74,33 @@ public class GameManager : SingletonBase<GameManager>
         UIManager.Instance.CloseUI(UIType.ResultUI);
         PrepareCurrentStage();
     }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    //개발자 패널에서 고른 스테이지로 바로 시작한다. 삶는 중이어도 각 매니저가 Ready 에서 정리한다
+    public void RequestStartStage(int stageIndex)
+    {
+        if (stageIndex < FirstStageIndex || stageIndex >= GameDataManager.Instance.StageDataList.Count)
+        {
+            return;
+        }
+
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+        _currentStageIndex = stageIndex;
+        PrepareCurrentStage();
+    }
+
+    //백틱 키로 개발자 패널을 열고 닫는다
+    private void HandleToggleDevMode()
+    {
+        if (UIManager.Instance.IsOpenedUI(UIType.DevModeUI))
+        {
+            UIManager.Instance.CloseUI(UIType.DevModeUI);
+            return;
+        }
+
+        UIManager.Instance.OpenUI(UIRootType.VeryFront, UIType.DevModeUI);
+    }
+#endif
 
     private void PrepareCurrentStage()
     {
