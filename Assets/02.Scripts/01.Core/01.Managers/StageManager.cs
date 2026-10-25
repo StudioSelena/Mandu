@@ -128,6 +128,8 @@ public class StageManager : SingletonBase<StageManager>
         CurrentSabotageId = stageData.SabotageId;
         CurrentStageNumber = stageNumber;
 
+        //새 판 준비는 이전 상태와 상관없이 Ready를 다시 알린다. Ready에서 다른 스테이지를 고를 때를 위해서다
+        _currentStageState = StageState.None;
         ChangeStageState(StageState.Ready);
     }
 
