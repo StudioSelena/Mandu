@@ -76,7 +76,7 @@ public class StageManager : SingletonBase<StageManager>
 
     private void CheckBoilingTimeLimit()
     {
-        double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _boilStartTime;
+        double elapsedSeconds = GetBoilingElapsedSeconds();
         if (elapsedSeconds < _timeLimitSeconds)
         {
             return;
@@ -139,6 +139,12 @@ public class StageManager : SingletonBase<StageManager>
         InputManager.Instance.EnableStageInput();
 
         ChangeStageState(StageState.Boiling);
+    }
+
+    //삶기 시작부터 흐른 시간(초). Boiling상태에서만 의미가 있다
+    public double GetBoilingElapsedSeconds()
+    {
+        return Time.realtimeSinceStartupAsDouble - _boilStartTime;
     }
 
     private void HandlePullInput(double pullTime)

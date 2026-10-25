@@ -9,7 +9,6 @@ public class FakeNumberSabotage : UIBase, ISabotage
 
     private IReadOnlyList<FakeNumberEventData> _eventDataList; //매 프레임 확인하므로 준비할 때 한 번 받아 둔다
     private int _showDurationMs;
-    private double _startTime;
     private int _nextEventIndex;
     private int _hideTimeMs; //지금 떠 있는 숫자를 숨길 시각. 삶기 시작부터 잰 밀리초
 
@@ -28,7 +27,6 @@ public class FakeNumberSabotage : UIBase, ISabotage
 
     public void StartSabotage()
     {
-        _startTime = Time.realtimeSinceStartupAsDouble;
         _nextEventIndex = 0;
 
         gameObject.SetActive(true); //켜져 있는 동안만 업데이트가 불린다
@@ -42,7 +40,7 @@ public class FakeNumberSabotage : UIBase, ISabotage
 
     private void Update()
     {
-        double elapsedSeconds = Time.realtimeSinceStartupAsDouble - _startTime;
+        double elapsedSeconds = StageManager.Instance.GetBoilingElapsedSeconds();
         int elapsedMs = (int)(elapsedSeconds * TimeUtil.MillisecondsPerSecond);
 
         HideFakeNumberIfExpired(elapsedMs);
