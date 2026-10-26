@@ -12,10 +12,12 @@ public class GameManager : SingletonBase<GameManager>
     //화면에 보이는 스테이지 번호는 1부터 센다. 인덱스는 0부터라 1을 더한다
     public const int StageNumberOffset = 1;
     private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
+    private const string BackgroundAddress = "Background"; //망점 배경 프리팹 어드레서블 주소
 
     private int _currentStageIndex = FirstStageIndex;
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
     private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //게임 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
+    private int _backgroundInstanceId = GameObjectManager.InvalidInstanceId; //게임 시작부터 끝까지 쓰는 배경 번호. 로비가 생겨도 그대로 둔다
 
     private void Start()
     {
@@ -42,6 +44,7 @@ public class GameManager : SingletonBase<GameManager>
 
         ReleaseAllJudgmentGradeSprites();
         DestroyPlayerMandu();
+        DestroyBackground();
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         if (InputManager.Instance != null)
@@ -208,6 +211,7 @@ public class GameManager : SingletonBase<GameManager>
     //월드 오브젝트가 모두 만들어진 뒤에 첫 화면과 스테이지를 연다. 스테이지 전환 연출이 생기면 이 함수 앞뒤에 덮기와 걷기를 붙인다
     private async UniTaskVoid StartGameAfterSpawn()
     {
+        await SpawnBackground();
         await SpawnPlayerMandu();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
@@ -234,5 +238,27 @@ public class GameManager : SingletonBase<GameManager>
 
         GameObjectManager.Instance.RequestDestroyWorldObject(_playerManduInstanceId);
         _playerManduInstanceId = GameObjectManager.InvalidInstanceId;
+    }
+
+    private async UniTask SpawnBackground()
+    {
+        _backgroundInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(BackgroundAddress);
+    }
+
+    private void DestroyBackground()
+    {
+        if (GameObjectManager.Instance == null)
+        {
+            return;
+        }
+
+        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
+        if (_backgroundInstanceId == GameObjectManager.InvalidInstanceId)
+        {
+            return;
+        }
+
+        GameObjectManager.Instance.RequestDestroyWorldObject(_backgroundInstanceId);
+        _backgroundInstanceId = GameObjectManager.InvalidInstanceId;
     }
 }
