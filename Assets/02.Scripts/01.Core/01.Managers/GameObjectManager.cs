@@ -55,6 +55,20 @@ public class GameObjectManager : SingletonBase<GameObjectManager>
         return instanceId;
     }
 
+    //번호의 오브젝트를 돌려준다. 없는 번호면 null
+    public GameObject GetWorldObject(int instanceId)
+    {
+        if (_spawnedObjectInfos.TryGetValue(instanceId, out SpawnedObjectInfo spawnedObjectInfo) == false)
+        {
+#if UNITY_EDITOR
+            Debug.LogWarning($"[GameObjectManager] 없는 번호라 돌려줄 오브젝트가 없습니다. {instanceId}");
+#endif
+            return null;
+        }
+
+        return spawnedObjectInfo.SpawnedObject;
+    }
+
     //번호의 오브젝트를 없애고 빌려온 프리팹을 반납한다. 없는 번호면 경고만 남긴다
     public void RequestDestroyWorldObject(int instanceId)
     {
