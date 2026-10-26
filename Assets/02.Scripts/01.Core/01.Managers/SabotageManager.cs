@@ -1,4 +1,5 @@
 ﻿//스테이지 상태에 맞춰 방해요소를 열고, 시작하고, 멈추고, 닫는 매니저
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class SabotageManager : SingletonBase<SabotageManager>
@@ -38,7 +39,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
             case StageState.Ready:
                 //삶는 도중 스테이지가 바뀌면 멈추지 않은 방해요소가 남아 있으므로 준비 전에 먼저 멈춘다
                 StopCurrentSabotage();
-                PrepareCurrentSabotage();
+                PrepareCurrentSabotage().Forget();
                 break;
             
             case StageState.Boiling:
@@ -52,7 +53,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
     }
 
     //새 스테이지의 방해요소를 준비한다. 같은 종류면 재사용하고, 다르면 이전 것을 닫고 새로 연다
-    private void PrepareCurrentSabotage()
+    private async UniTaskVoid PrepareCurrentSabotage()
     {
         string newSabotageId = StageManager.Instance.CurrentSabotageId;
 
@@ -73,7 +74,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
         }
 
         //4.새로 열고 준비한다
-        ISabotage openedSabotage = OpenSabotage(newSabotageId);
+        ISabotage openedSabotage = await OpenSabotage(newSabotageId);
         if (openedSabotage == null)
         {
             return;
@@ -85,7 +86,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
     }
 
     //종류에 맞는 곳에서 방해요소를 연다. 방해요소 종류가 늘면 여기와 CloseCurrentSabotage에 case를 더한다
-    private ISabotage OpenSabotage(string sabotageId)
+    private async UniTask<ISabotage> OpenSabotage(string sabotageId)
     {
         SabotageData sabotageData = GameDataManager.Instance.GetSabotageData(sabotageId);
         if (sabotageData == null)
