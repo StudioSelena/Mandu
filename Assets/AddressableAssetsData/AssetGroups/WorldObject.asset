@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: WorldObject
   m_GUID: b293d52504fb5ed48bbd957e0a6c8e18
   m_SerializeEntries:
+  - m_GUID: 2040ae0538ce1504aa0f084fce544f8d
+    m_Address: DancingManduPool
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 866cdfcf6353a934ab50fdede73c01aa
     m_Address: PlayerMandu
     m_ReadOnly: 0
