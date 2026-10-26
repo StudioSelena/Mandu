@@ -12,6 +12,8 @@ public class GameDataManager : SingletonBase<GameDataManager>
     private Dictionary<string, SabotageData> _sabotageDataDictionary = new Dictionary<string, SabotageData>();
     private Dictionary<string, FakeNumberSabotageData> _fakeNumberSabotageDataDictionary = new Dictionary<string, FakeNumberSabotageData>();
     private Dictionary<string, List<FakeNumberEventData>> _fakeNumberEventDataListDictionary = new Dictionary<string, List<FakeNumberEventData>>(); //방해요소 Id별 노린 타이밍 목록. 시각 순서
+    private Dictionary<string, DancingManduSabotageData> _dancingManduSabotageDataDictionary = new Dictionary<string, DancingManduSabotageData>();
+    private Dictionary<string, List<DancingManduBeatData>> _dancingManduBeatDataListDictionary = new Dictionary<string, List<DancingManduBeatData>>();  //방해요소 Id별 박자 목록. 한 묶음 안의 시각 순서
     private List<StageData> _stageDataList = new List<StageData>(); //엑셀 행 순서가 곧 스테이지 순서
 
     //스테이지 순서 목록. 밖에서는 읽기만 가능
@@ -54,6 +56,12 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
         List<FakeNumberEventData> fakeNumberEventDataList = LoadDataList<FakeNumberEventData>(nameof(FakeNumberEventData));
         _fakeNumberEventDataListDictionary = BuildFakeNumberEventDataListDictionary(fakeNumberEventDataList);
+
+        List<DancingManduSabotageData> dancingManduSabotageDataList = LoadDataList<DancingManduSabotageData>(nameof(DancingManduSabotageData));
+        _dancingManduSabotageDataDictionary = BuildDataDictionary(dancingManduSabotageDataList);
+
+        List<DancingManduBeatData> dancingManduBeatDataList = LoadDataList<DancingManduBeatData>(nameof(DancingManduBeatData));
+        _dancingManduBeatDataListDictionary = BuildDancingManduBeatDataListDictionary(dancingManduBeatDataList);
 
         List<SabotageData> sabotageDataList = LoadDataList<SabotageData>(nameof(SabotageData));
         _sabotageDataDictionary = BuildDataDictionary(sabotageDataList);
@@ -186,6 +194,51 @@ public class GameDataManager : SingletonBase<GameDataManager>
         return eventDataListDictionary;
     }
 
+    //박자 행을 방해요소 Id로 묶는다. 없는 방해요소를 가리키거나, 반복 간격 밖이거나, 시각 순서가 어긋난 행은 건너뛰고 에러로 알린다
+    private Dictionary<string, List<DancingManduBeatData>> BuildDancingManduBeatDataListDictionary(List<DancingManduBeatData> beatDataList)
+    {
+        Dictionary<string, List<DancingManduBeatData>> beatDataListDictionary = new Dictionary<string, List<DancingManduBeatData>>();
+
+        foreach (DancingManduBeatData beatData in beatDataList)
+        {
+            if (string.IsNullOrEmpty(beatData.SabotageId) || !_dancingManduSabotageDataDictionary.TryGetValue(beatData.SabotageId, out DancingManduSabotageData sabotageData))
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[GameDataManager] {beatData.Id}가 춤추는 만두 표에 없는 방해요소를 가리킵니다. {beatData.SabotageId}");
+#endif
+                continue;
+            }
+
+            //박자 시각은 한 묶음 안의 시각이라 0 이상, 반복 간격 미만이어야 한다
+            if (beatData.BeatTimeMs < 0 || beatData.BeatTimeMs >= sabotageData.LoopDurationMs)
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[GameDataManager] {beatData.Id}의 시각이 반복 간격 밖입니다. 시각 {beatData.BeatTimeMs}, 반복 간격 {sabotageData.LoopDurationMs}");
+#endif
+                continue;
+            }
+
+            if (!beatDataListDictionary.TryGetValue(beatData.SabotageId, out List<DancingManduBeatData> sabotageBeatDataList))
+            {
+                sabotageBeatDataList = new List<DancingManduBeatData>();
+                beatDataListDictionary.Add(beatData.SabotageId, sabotageBeatDataList);
+            }
+
+            int lastIndex = sabotageBeatDataList.Count - 1;
+            if (lastIndex >= 0 && sabotageBeatDataList[lastIndex].BeatTimeMs > beatData.BeatTimeMs)
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[GameDataManager] {beatData.Id}의 시각이 앞 행보다 이릅니다. 표를 시각 순서로 적어 주세요.");
+#endif
+                continue;
+            }
+
+            sabotageBeatDataList.Add(beatData);
+        }
+
+        return beatDataListDictionary;
+    }
+
     //방해요소 표의 종류 글자를 enum으로 바꾸고 종류에 맞는 상세 표에 같은 Id가 있는지 검사한다
     private void ParseAndValidateSabotageTypes()
     {
@@ -215,6 +268,9 @@ public class GameDataManager : SingletonBase<GameDataManager>
         {
             case SabotageType.FakeNumber:
                 return _fakeNumberSabotageDataDictionary.ContainsKey(sabotageId);
+
+            case SabotageType.DancingMandu:
+                return _dancingManduSabotageDataDictionary.ContainsKey(sabotageId);
         }
         
         return false;
@@ -339,6 +395,44 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
 #if UNITY_EDITOR
         Debug.LogWarning($"[GameDataManager] 노린 타이밍 목록이 없는 방해요소입니다. {sabotageId}");
+#endif
+        return null;
+    }
+
+    //Id로 춤추는 만두 설정을 찾는다. 없으면 null
+    public DancingManduSabotageData GetDancingManduSabotageData(string sabotageId)
+    {
+        if (string.IsNullOrEmpty(sabotageId))
+        {
+            return null;
+        }
+
+        if (_dancingManduSabotageDataDictionary.TryGetValue(sabotageId, out DancingManduSabotageData dancingManduSabotageData))
+        {
+            return dancingManduSabotageData;
+        }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"[GameDataManager] DancingManduSabotageData에 없는 Id입니다. {sabotageId}");
+#endif
+        return null;
+    }
+
+    //방해요소 Id의 박자 목록을 한 묶음 안의 시각 순서로 돌려준다. 없으면 null. 밖에서는 읽기만 가능
+    public IReadOnlyList<DancingManduBeatData> GetDancingManduBeatDataList(string sabotageId)
+    {
+        if (string.IsNullOrEmpty(sabotageId))
+        {
+            return null;
+        }
+
+        if (_dancingManduBeatDataListDictionary.TryGetValue(sabotageId, out List<DancingManduBeatData> beatDataList))
+        {
+            return beatDataList;
+        }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"[GameDataManager] 박자 목록이 없는 방해요소입니다. {sabotageId}");
 #endif
         return null;
     }
