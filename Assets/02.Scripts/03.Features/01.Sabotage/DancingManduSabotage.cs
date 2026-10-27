@@ -1,4 +1,5 @@
 ﻿//춤추는 만두 방해요소. 삶기 시작 뒤 박자에 맞춰 화면 여기저기에 만두를 잠깐 띄워 플레이어가 박자를 따라 세게 만든다
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,11 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
     [SerializeField] private Vector2 _excludedAreaHalfSize = new Vector2(2f, 2f); //메인만두를 피하는 가운데 범위의 반쪽
 
     private IReadOnlyList<DancingManduBeatData> _beatDataList; //매 프레임 확인하므로 준비할 때 한 번 받아둔다
-    private int _danceDurationMs;
     private int _loopDurationMs;
     private int _nextBeatIndex; //지금 묶음 안에서 다음 나올 박자 순번
     private int _loopCount; //지금까지 끝낸 묶음 수
     private int[] _slotHideTimeMs; //자리별로 만두를 숨길 시각. 삶기 시작부터 잰 밀리초. Slot_DancingMandus와 같은 번호끼리 짝
+    private Dictionary<string, AudioClip> _beatSoundClips = new Dictionary<string, AudioClip>();
 
     private void Awake()
     {
@@ -26,6 +27,20 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         enabled = false;
     }
 
+    //빌려둔 박자소리를 반납한다. 사보타지매니저가 이 방해요소를 닫아 오브젝트가 없어질 때 반복한다
+    private void OnDestory()
+    {
+        if (ResourceManager.Instance != null)
+        {
+            foreach (string soundAddress in _beatSoundClips.Keys)
+            {
+                ResourceManager.Instance.Release(soundAddress);
+            }
+        }
+
+        _beatSoundClips.Clear();
+    }
+
     public void PrepareSabotage(string sabotageId)
     {
         _beatDataList = GameDataManager.Instance.GetDancingManduBeatDataList(sabotageId);
@@ -33,11 +48,12 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         DancingManduSabotageData sabotageData = GameDataManager.Instance.GetDancingManduSabotageData(sabotageId);
         if (sabotageData != null)
         {
-            _danceDurationMs = sabotageData.DanceDurationMs;
             _loopDurationMs = sabotageData.LoopDurationMs;
         }
 
         HideAllDancingMandus();
+
+        LoadBeatSounds().Forget(); //준비할 때 소리 빌림
     }
 
     public void StartSabotage()
@@ -105,7 +121,8 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
             return;
         }
 
-        ShowDancingManduAtRandomPosition(beatTimeMs);
+        PlayBeatSound(_beatDataList[_nextBeatIndex].SoundAddress);
+        ShowDancingManduAtRandomPosition(beatTimeMs, CalculateNextBeatTimeMs());
 
         _nextBeatIndex++;
         if (_nextBeatIndex >= _beatDataList.Count)
@@ -115,8 +132,20 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         }
     }
 
-    //빈자리 하나를 랜덤 위치로 옮겨 켠다. 빈 자리가 없으면 그 박자는 건너뛴다
-    private void ShowDancingManduAtRandomPosition(int beatTimeMs)
+    //다음에 올 박자의 시각. 묶음의 마지막 박자면 다음 묶음의 첫 박자다. 만두를 이 시각에 숨겨 화면 변화가 박자에만 생기게 한다
+    private int CalculateNextBeatTimeMs()
+    {
+        int nextBeatIndex = _nextBeatIndex + 1;
+        if (nextBeatIndex < _beatDataList.Count)
+        {
+            return _loopCount * _loopDurationMs + _beatDataList[nextBeatIndex].BeatTimeMs;
+        }
+
+        return (_loopCount + 1) * _loopDurationMs + _beatDataList[0].BeatTimeMs;
+    }
+
+    //빈자리 하나를 랜덤 위치로 옮겨 켜고 다음 박자에 숨긴다. 빈 자리가 없으면 그 박자는 건너뛴다
+    private void ShowDancingManduAtRandomPosition(int beatTimeMs, int hideTimeMs)
     {
         int emptySlotIndex = FindEmptySlotIndex();
         if (emptySlotIndex == NoEmptySlotIndex)
@@ -129,7 +158,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
 
         Transform slot = Slot_DancingMandus[emptySlotIndex];
         slot.localPosition = PickRandomSpawnPosition();
-        _slotHideTimeMs[emptySlotIndex] = beatTimeMs + _danceDurationMs;
+        _slotHideTimeMs[emptySlotIndex] = hideTimeMs;
         slot.gameObject.SetActive(true);
     }
 
@@ -164,5 +193,51 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         }
 
         return position;
+    }
+
+    //박자 표에 나오는 소리를 주소마다 한 번씩만 빌려둔다. 다시하기로 다시 준비해도 이미 빌린 주소는 건너뛴다
+    private async UniTaskVoid LoadBeatSounds()
+    {
+        if (_beatDataList == null)
+        {
+            return;
+        }
+
+        foreach (DancingManduBeatData beatData in _beatDataList)
+        {
+            string soundAddress = beatData.SoundAddress;
+            if (string.IsNullOrEmpty(soundAddress) || _beatSoundClips.ContainsKey(soundAddress))
+            {
+                continue;
+            }
+
+            //기다리는 사이 같은 주소를 또 빌리지 않도록 자리를 먼저 잡아둠
+            _beatSoundClips.Add(soundAddress, null);
+            AudioClip clip = await ResourceManager.Instance.LoadAsset<AudioClip>(soundAddress);
+
+            //기다리는 사이 오브젝트가 닫혀 목록이 비었으면 반납이 이미 끝났으니 더 빌리지 않음
+            if (_beatSoundClips.ContainsKey(soundAddress) == false)
+            {
+                return;
+            }
+
+            _beatSoundClips[soundAddress] = clip;
+        }
+    }
+
+    //박자 소리를 낸다. 아직 불러오는 중이거나 주소가 비어 있으면 소리 없이 넘어간다
+    private void PlayBeatSound(string soundAddress)
+    {
+        if (string.IsNullOrEmpty(soundAddress))
+        {
+            return;
+        }
+
+        if (_beatSoundClips.TryGetValue(soundAddress, out AudioClip clip) == false)
+        {
+            return;
+        }
+
+        SoundManager.Instance.PlaySFX(clip);
     }
 }
