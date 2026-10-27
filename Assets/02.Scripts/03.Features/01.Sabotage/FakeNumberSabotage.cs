@@ -50,7 +50,7 @@ public class FakeNumberSabotage : UIBase, ISabotage
     //떠있는 숫자의 시간이 다 됐으면 숨긴다
     private void HideFakeNumberIfExpired(int elapsedMs)
     {
-        if (!Text_FakeNumber.gameObject.activeSelf)
+        if (Text_FakeNumber.gameObject.activeSelf == false)
         {
             return;
         }

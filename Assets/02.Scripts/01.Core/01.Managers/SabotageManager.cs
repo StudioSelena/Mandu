@@ -124,7 +124,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
         }
 
         //취소된 준비는 일부러 null을 돌려주므로 에러가 아니다
-        if (openedSabotage == null && !cancelToken.IsCancellationRequested)
+        if (openedSabotage == null && cancelToken.IsCancellationRequested == false)
         {
 #if UNITY_EDITOR
             Debug.LogError($"[SabotageManager] {sabotageId}를 열지 못했습니다. 종류 {sabotageData.Type}");

@@ -11,13 +11,13 @@ public class SabotageData : GameDataBase
     //TypeName을 SabotageType으로 바꿔 Type에 넣는다. 없는 이름이거나 None이면 false
     public bool TryParseTypeName()
     {
-        if (!Enum.TryParse(TypeName, out SabotageType parsedType))
+        if (Enum.TryParse(TypeName, out SabotageType parsedType) == false)
         {
             return false;
         }
 
         //"5"같은 숫자 글자도 TryParse 는 성공시키므로 정의된 값인지 한 번 더 확인
-        if (!Enum.IsDefined(typeof(SabotageType), parsedType) || parsedType == SabotageType.None)
+        if (Enum.IsDefined(typeof(SabotageType), parsedType) == false || parsedType == SabotageType.None)
         {
             return false;
         }
