@@ -93,7 +93,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         for (int i = 0; i < Slot_DancingMandus.Length; i++)
         {
             GameObject slotObject = Slot_DancingMandus[i].gameObject;
-            if (!slotObject.activeSelf)
+            if (slotObject.activeSelf == false)
             {
                 continue;
             }
@@ -184,7 +184,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
     {
         for (int i = 0; i < Slot_DancingMandus.Length; i++)
         {
-            if (!Slot_DancingMandus[i].gameObject.activeSelf)
+            if (Slot_DancingMandus[i].gameObject.activeSelf == false)
             {
                 return i;
             }
@@ -204,7 +204,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
             position.y = Random.Range(-_spawnAreaHalfSize.y, _spawnAreaHalfSize.y);
 
             bool isInExcludedArea = Mathf.Abs(position.x) < _excludedAreaHalfSize.x && Mathf.Abs(position.y) < _excludedAreaHalfSize.y;
-            if (!isInExcludedArea)
+            if (isInExcludedArea == false)
             {
                 return position;
             }

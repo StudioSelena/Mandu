@@ -149,7 +149,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
                 continue;
             }
 
-            if (!_targetTimeDataDictionary.ContainsKey(stageData.TargetTimeId))
+            if (_targetTimeDataDictionary.ContainsKey(stageData.TargetTimeId) == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {stageData.Id}가 목표 시간 표에 없는 Id를 가리킵니다. {stageData.TargetTimeId}");
@@ -165,7 +165,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
         foreach (FakeNumberEventData eventData in eventDataList)
         {
-            if (string.IsNullOrEmpty(eventData.SabotageId) || !_fakeNumberSabotageDataDictionary.ContainsKey(eventData.SabotageId))
+            if (string.IsNullOrEmpty(eventData.SabotageId) || _fakeNumberSabotageDataDictionary.ContainsKey(eventData.SabotageId) == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {eventData.Id}가 가짜 숫자 표에 없는 방해 요소를 가리킵니다. {eventData.SabotageId}");
@@ -173,7 +173,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
                 continue;
             }
 
-            if (!eventDataListDictionary.TryGetValue(eventData.SabotageId, out List<FakeNumberEventData> sabotageEventDataList))
+            if (eventDataListDictionary.TryGetValue(eventData.SabotageId, out List<FakeNumberEventData> sabotageEventDataList) == false)
             {
                 sabotageEventDataList = new List<FakeNumberEventData>();
                 eventDataListDictionary.Add(eventData.SabotageId, sabotageEventDataList);
@@ -201,7 +201,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
         foreach (DancingManduBeatData beatData in beatDataList)
         {
-            if (string.IsNullOrEmpty(beatData.SabotageId) || !_dancingManduSabotageDataDictionary.TryGetValue(beatData.SabotageId, out DancingManduSabotageData sabotageData))
+            if (string.IsNullOrEmpty(beatData.SabotageId) || _dancingManduSabotageDataDictionary.TryGetValue(beatData.SabotageId, out DancingManduSabotageData sabotageData) == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {beatData.Id}가 춤추는 만두 표에 없는 방해요소를 가리킵니다. {beatData.SabotageId}");
@@ -218,7 +218,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
                 continue;
             }
 
-            if (!beatDataListDictionary.TryGetValue(beatData.SabotageId, out List<DancingManduBeatData> sabotageBeatDataList))
+            if (beatDataListDictionary.TryGetValue(beatData.SabotageId, out List<DancingManduBeatData> sabotageBeatDataList) == false)
             {
                 sabotageBeatDataList = new List<DancingManduBeatData>();
                 beatDataListDictionary.Add(beatData.SabotageId, sabotageBeatDataList);
@@ -244,7 +244,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
     {
         foreach (SabotageData sabotageData in _sabotageDataDictionary.Values)
         {
-            if (!sabotageData.TryParseTypeName())
+            if (sabotageData.TryParseTypeName() == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {sabotageData.Id}의 종류 이름이 SabotageType에 없습니다. {sabotageData.TypeName}");
@@ -252,7 +252,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
                 continue;
             }
 
-            if (!HasSabotageDetailData(sabotageData.Type, sabotageData.Id))
+            if (HasSabotageDetailData(sabotageData.Type, sabotageData.Id) == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {sabotageData.Id}의 상세 행이 {sabotageData.Type} 표에 없습니다.");
@@ -289,7 +289,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
                 continue;
             }
 
-            if (!_sabotageDataDictionary.ContainsKey(stageData.SabotageId))
+            if (_sabotageDataDictionary.ContainsKey(stageData.SabotageId) == false)
             {
 #if UNITY_EDITOR
                 Debug.LogError($"[GameDataManager] {stageData.Id}가 방해요소 표에 없는 Id를 가리킵니다. {stageData.SabotageId}");
