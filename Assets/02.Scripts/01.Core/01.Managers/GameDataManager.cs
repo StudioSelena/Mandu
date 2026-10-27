@@ -271,6 +271,9 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
             case SabotageType.DancingMandu:
                 return _dancingManduSabotageDataDictionary.ContainsKey(sabotageId);
+
+            case SabotageType.ClickBait:
+                return true; //상세 표가 없는 종류라 공통 표 한 줄로 충분하다
         }
         
         return false;

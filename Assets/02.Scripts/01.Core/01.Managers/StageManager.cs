@@ -82,7 +82,7 @@ public class StageManager : SingletonBase<StageManager>
             return;
         }
 
-        FailStageByTimeLimit();
+        FailStage();
     }
 
     private void CheckResultDelay()
@@ -169,7 +169,7 @@ public class StageManager : SingletonBase<StageManager>
         ChangeStageState(StageState.JudgmentComplete);
     }
 
-    private void FailStageByTimeLimit()
+    private void FailStage()
     {
         InputManager.Instance.DisableStageInput();
 
@@ -179,6 +179,18 @@ public class StageManager : SingletonBase<StageManager>
 
         _judgmentCompleteTime = Time.realtimeSinceStartupAsDouble;
         ChangeStageState(StageState.JudgmentComplete);
+    }
+
+    //클릭 낚시 버튼을 누르면 부른다. 삶는 중일 때만 실패로 처리한다
+    public void RequestFailStageByClickBait()
+    {
+        if (_currentStageState != StageState.Boiling)
+        {
+            return;
+        }
+
+        //도전과제 알림 자리. 클릭 낚시 도전과제는 4단계 이후 연결
+        FailStage();
     }
 
     private void ChangeStageState(StageState newStageState)

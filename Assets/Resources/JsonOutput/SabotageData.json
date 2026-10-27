@@ -10,5 +10,9 @@
   {
     "Id": "Sabotage_DancingMandu_01",
     "TypeName": "DancingMandu"
+  },
+  {
+    "Id": "Sabotage_ClickBait_01",
+    "TypeName": "ClickBait"
   }
 ]

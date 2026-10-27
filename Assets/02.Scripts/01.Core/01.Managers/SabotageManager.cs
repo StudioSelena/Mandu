@@ -116,6 +116,11 @@ public class SabotageManager : SingletonBase<SabotageManager>
             case SabotageType.DancingMandu:
                 openedSabotage = await OpenWorldSabotage(DancingManduPoolAddress, cancelToken);
                 break;
+
+            case SabotageType.ClickBait:
+                UIBase openedClickBaitUI = UIManager.Instance.OpenUI(UIRootType.Content, UIType.ClickBaitSabotageUI, false);
+                openedSabotage = openedClickBaitUI as ISabotage;
+                break;
         }
 
         //취소된 준비는 일부러 null을 돌려주므로 에러가 아니다
@@ -176,6 +181,10 @@ public class SabotageManager : SingletonBase<SabotageManager>
 
                 case SabotageType.DancingMandu:
                     GameObjectManager.Instance.RequestDestroyWorldObject(_currentInstanceId);
+                    break;
+
+                case SabotageType.ClickBait:
+                    UIManager.Instance.CloseUI(UIType.ClickBaitSabotageUI);
                     break;
             }
         }
