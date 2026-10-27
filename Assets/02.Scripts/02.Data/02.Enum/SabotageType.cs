@@ -5,4 +5,5 @@ public enum SabotageType
     None,
     FakeNumber,
     DancingMandu,
+    ClickBait,
 }
