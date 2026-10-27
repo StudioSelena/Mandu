@@ -126,10 +126,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 16
-        width: 158
-        height: 98
+        x: 0
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,10 +148,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_1
       rect:
         serializedVersion: 2
-        x: 304
-        y: 16
-        width: 158
-        height: 96
+        x: 262
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -170,10 +170,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_2
       rect:
         serializedVersion: 2
-        x: 560
-        y: 16
-        width: 158
-        height: 136
+        x: 524
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -192,10 +192,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_3
       rect:
         serializedVersion: 2
-        x: 816
-        y: 16
-        width: 158
-        height: 234
+        x: 786
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -214,10 +214,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_4
       rect:
         serializedVersion: 2
-        x: 1072
-        y: 16
-        width: 158
-        height: 184
+        x: 0
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -236,10 +236,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_5
       rect:
         serializedVersion: 2
-        x: 1328
-        y: 16
-        width: 158
-        height: 118
+        x: 262
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -258,10 +258,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_6
       rect:
         serializedVersion: 2
-        x: 1584
-        y: 16
-        width: 158
-        height: 96
+        x: 524
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -280,10 +280,10 @@ TextureImporter:
       name: Mandu_ResultSuccess_7
       rect:
         serializedVersion: 2
-        x: 1840
-        y: 16
-        width: 158
-        height: 98
+        x: 786
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -312,7 +312,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":64.0},"gridSpriteOffset":{"x":3.0,"y":0.0},"gridSpritePadding":{"x":5.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":262.0,"y":246.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Mandu_ResultSuccess_0: -294967434
       Mandu_ResultSuccess_1: -675006939

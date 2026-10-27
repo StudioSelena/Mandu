@@ -126,10 +126,10 @@ TextureImporter:
       name: Mandu_Boiling_0
       rect:
         serializedVersion: 2
-        x: 508
-        y: 84
-        width: 1536
-        height: 1504
+        x: 0
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -138,7 +138,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e90f8e850e6c51b488d0e707edde508a
+      spriteID: 049c06b4e4e19824c94e39a2d4b3b638
       internalID: -1454602960
       vertices: []
       indices: 
@@ -148,10 +148,10 @@ TextureImporter:
       name: Mandu_Boiling_1
       rect:
         serializedVersion: 2
-        x: 2556
-        y: 84
-        width: 1536
-        height: 1568
+        x: 262
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -160,7 +160,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41be16411e7816043bb57f835216c397
+      spriteID: 59f09b1bd0a34a74aaf3485ab9ce72ab
       internalID: -362158001
       vertices: []
       indices: 
@@ -170,10 +170,10 @@ TextureImporter:
       name: Mandu_Boiling_2
       rect:
         serializedVersion: 2
-        x: 4604
-        y: 84
-        width: 1536
-        height: 1600
+        x: 524
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -182,7 +182,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27b4fbd6be0f768429f6d889cce1a9db
+      spriteID: 2a0a0e56d1d80614bbbff20cfbad6ef8
       internalID: 1411642367
       vertices: []
       indices: 
@@ -192,10 +192,10 @@ TextureImporter:
       name: Mandu_Boiling_3
       rect:
         serializedVersion: 2
-        x: 6652
-        y: 84
-        width: 1536
-        height: 1648
+        x: 786
+        y: 246
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -204,7 +204,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e1b9943153b531247a617b6154866d15
+      spriteID: fd6239ca0db809f48a8967531f522f9c
       internalID: -1045822667
       vertices: []
       indices: 
@@ -214,10 +214,10 @@ TextureImporter:
       name: Mandu_Boiling_4
       rect:
         serializedVersion: 2
-        x: 8700
-        y: 82
-        width: 1536
-        height: 1600
+        x: 0
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -226,7 +226,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ecf5894688f9514fb5f95005bfd4fcc
+      spriteID: ecefc6b2c3647ed4fa2ddced0f680025
       internalID: -1957900930
       vertices: []
       indices: 
@@ -236,10 +236,10 @@ TextureImporter:
       name: Mandu_Boiling_5
       rect:
         serializedVersion: 2
-        x: 10748
-        y: 84
-        width: 1536
-        height: 1512
+        x: 262
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,7 +248,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a3d3436d9880dc94c909509411568475
+      spriteID: 20220154a220c4b448c66b59e7aaa7d3
       internalID: 2025714518
       vertices: []
       indices: 
@@ -258,10 +258,10 @@ TextureImporter:
       name: Mandu_Boiling_6
       rect:
         serializedVersion: 2
-        x: 12796
-        y: 84
-        width: 1536
-        height: 1432
+        x: 524
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -270,7 +270,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bed9953bb6b773249bf2b2c996c033f8
+      spriteID: 3212075896f4ef14c86a9bd0dad1de40
       internalID: 222571968
       vertices: []
       indices: 
@@ -280,10 +280,10 @@ TextureImporter:
       name: Mandu_Boiling_7
       rect:
         serializedVersion: 2
-        x: 14844
-        y: 84
-        width: 1536
-        height: 1528
+        x: 786
+        y: 0
+        width: 262
+        height: 246
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -292,7 +292,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8ee76bd536d59f64cbec7f13ba7a8eda
+      spriteID: 1ae41d04cfdd8074f87747f4fddbc79b
       internalID: -1738823332
       vertices: []
       indices: 
@@ -312,7 +312,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":6.0,"y":1.0},"gridSpriteSize":{"x":128.0,"y":64.0},"gridSpriteOffset":{"x":3.0,"y":0.0},"gridSpritePadding":{"x":5.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":262.0,"y":246.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.0},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":7,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Mandu_Boiling_0: -1454602960
       Mandu_Boiling_1: -362158001
