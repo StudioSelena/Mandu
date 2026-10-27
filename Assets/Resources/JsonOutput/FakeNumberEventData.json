@@ -8,7 +8,7 @@
   {
     "Id": "FakeNumberEvent_002",
     "SabotageId": "Sabotage_FakeNumber_01",
-    "ShowTimeMs": 8500,
+    "ShowTimeMs": 8000,
     "DisplayText": "10"
   },
   {
