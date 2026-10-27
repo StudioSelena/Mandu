@@ -107,7 +107,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         }
     }
 
-    //다음 박자 시각이 지났으면 만두를 띄우고 다음 박자로 넘어간다. 한 묶음이 끝나면 처음 박자로 돌아가 반복한다
+    //다음 박자 시각이 지났으면 만두를 띄우고 다음 박자로 넘어간다. 밀린 박자는 건너뛴다
     private void ShowNextDancingManduIfReached(int elapsedMs)
     {
         if (_beatDataList == null || _beatDataList.Count == 0)
@@ -115,21 +115,22 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
             return;
         }
 
-        int beatTimeMs = _loopCount * _loopDurationMs + _beatDataList[_nextBeatIndex].BeatTimeMs;
-        if (elapsedMs < beatTimeMs)
+        if (elapsedMs < CalculateCurrentBeatTimeMs())
         {
             return;
         }
 
+        //일시정지나 창 전환으로 여러 박자가 밀렸으면 지난 박자는 건너뛰고 가장 최근 박자만 출력
+        while (CalculateNextBeatTimeMs() <= elapsedMs)
+        {
+            AdvanceToNextBeat();
+        }
+
+        int beatTimeMs = CalculateCurrentBeatTimeMs();
         PlayBeatSound(_beatDataList[_nextBeatIndex].SoundAddress);
         ShowDancingManduAtRandomPosition(beatTimeMs, CalculateNextBeatTimeMs());
 
-        _nextBeatIndex++;
-        if (_nextBeatIndex >= _beatDataList.Count)
-        {
-            _nextBeatIndex = 0;
-            _loopCount++;
-        }
+        AdvanceToNextBeat();
     }
 
     //다음에 올 박자의 시각. 묶음의 마지막 박자면 다음 묶음의 첫 박자다. 만두를 이 시각에 숨겨 화면 변화가 박자에만 생기게 한다
@@ -142,6 +143,23 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         }
 
         return (_loopCount + 1) * _loopDurationMs + _beatDataList[0].BeatTimeMs;
+    }
+
+    //지금 차례인 박자의 시각. 묶음 수만큼 반복 간격을 더한다
+    private int CalculateCurrentBeatTimeMs()
+    {
+        return _loopCount * _loopDurationMs + _beatDataList[_nextBeatIndex].BeatTimeMs;
+    }
+
+    //다음 박자로 넘어간다. 묶음의 마지막 박자였으면 처음 박자로 돌아가서 묶음 수를 센다
+    private void AdvanceToNextBeat()
+    {
+        _nextBeatIndex++;
+        if (_nextBeatIndex >= _beatDataList.Count)
+        {
+            _nextBeatIndex = 0;
+            _loopCount++;
+        }
     }
 
     //빈자리 하나를 랜덤 위치로 옮겨 켜고 다음 박자에 숨긴다. 빈 자리가 없으면 그 박자는 건너뛴다
