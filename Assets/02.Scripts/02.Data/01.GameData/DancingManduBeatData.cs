@@ -6,4 +6,5 @@ public class DancingManduBeatData : GameDataBase
 {
     public string SabotageId; //어느 춤추는 만두 방해요소의 박자인지
     public int BeatTimeMs; //한 묶음 안에서의 시각. 반복 간격보다 작아야 한다
+    public string SoundAddress;
 }
