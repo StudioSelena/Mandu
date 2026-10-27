@@ -38,6 +38,10 @@ MonoBehaviour:
     m_Localized: Retry
     m_Metadata:
       m_Items: []
+  - m_Id: 6173766464151552
+    m_Localized: Don't Push
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

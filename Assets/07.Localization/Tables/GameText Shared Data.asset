@@ -40,6 +40,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698577362485249
+  - m_Id: 6173766464151552
+    m_Key: UI_Button_DontPush
+    m_Metadata:
+      m_Items:
+      - rid: 5292698847993397248
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -71,3 +76,7 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB2E4\uC2DC\uD558\uAE30 \uBC84\uD2BC"
+    - rid: 5292698847993397248
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD074\uB9AD \uB09A\uC2DC \uBC84\uD2BC"
