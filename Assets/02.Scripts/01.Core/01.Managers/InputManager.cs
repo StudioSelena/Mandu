@@ -62,7 +62,7 @@ public class InputManager : SingletonBase<InputManager>
         _gameInputActions.Stage.Pull.performed -= HandlePullPerformed;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         _gameInputActions.Debug.ToggleDevMode.performed -= HandleToggleDevModePerformed;
-        _gameInputActions.Dispose();
 #endif
+        _gameInputActions.Dispose();
     }
 }
