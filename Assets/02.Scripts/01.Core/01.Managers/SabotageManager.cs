@@ -12,6 +12,8 @@ public class SabotageManager : SingletonBase<SabotageManager>
     private int _currentInstanceId = GameObjectManager.InvalidInstanceId; //월드 방해요소를 닫을 때 쓰는 번호. 만들때만 생기는 값이라 받아 적어 둠
     private CancellationTokenSource _prepareCancelTokenSource; //생성을 기다리는 준비가 있을 때 새 준비가 오면 이전 것을 취소하는 데 쓴다
 
+    public event System.Action SabotagePreparedEvent; //방해요소 준비가 끝나면 알린다. 방해요소가 없는 스테이지도 알린다
+
     private void Start()
     {
         if (Instance != this)
@@ -70,7 +72,8 @@ public class SabotageManager : SingletonBase<SabotageManager>
         //1.다시하기처럼 같은 방해요소면 다시 준비만 한다
         if (_currentSabotage != null && newSabotageId == _currentSabotageId)
         {
-            _currentSabotage.PrepareSabotage(newSabotageId);
+            await _currentSabotage.PrepareSabotage(newSabotageId);
+            NotifySabotagePrepared(cancelToken);
             return;
         }
 
@@ -80,6 +83,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
         //3. 방해요소 없는 스테이지
         if (string.IsNullOrEmpty(newSabotageId))
         {
+            NotifySabotagePrepared(cancelToken);
             return;
         }
 
@@ -87,12 +91,28 @@ public class SabotageManager : SingletonBase<SabotageManager>
         ISabotage openedSabotage = await OpenSabotage(newSabotageId, cancelToken);
         if (openedSabotage == null)
         {
+            NotifySabotagePrepared(cancelToken);
             return;
         }
 
         _currentSabotageId = newSabotageId;
         _currentSabotage = openedSabotage;
-        _currentSabotage.PrepareSabotage(newSabotageId);
+        await _currentSabotage.PrepareSabotage(newSabotageId);
+        NotifySabotagePrepared(cancelToken);
+    }
+
+    //취소되지 않은 준비만 끝났다고 알린다. 낡은 준비가 새 스테이지의 준비 끝을 대신 알리지 않게 한다
+    private void NotifySabotagePrepared(CancellationToken cancelToken)
+    {
+        if (cancelToken.IsCancellationRequested)
+        {
+            return;
+        }
+
+#if UNITY_EDITOR
+        Debug.Log($"[SabotageManager] 방해요소 준비 끝 {_currentSabotageId}");
+#endif
+        SabotagePreparedEvent?.Invoke();
     }
 
     //종류에 맞는 곳에서 방해요소를 연다. 방해요소 종류가 늘면 여기와 CloseCurrentSabotage에 case를 더한다
