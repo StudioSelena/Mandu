@@ -18,6 +18,7 @@ public class GameManager : SingletonBase<GameManager>
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
     private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //게임 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
     private int _backgroundInstanceId = GameObjectManager.InvalidInstanceId; //게임 시작부터 끝까지 쓰는 배경 번호. 로비가 생겨도 그대로 둔다
+    private UniTaskCompletionSource _sabotagePreparedSource; //다음 스테이지 준비를 기다리는 동안만 있다. 없을 때 온 준비 끝을 무시(다시하기, 개발자 모드)
 
     private void Start()
     {
@@ -27,6 +28,7 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         StageManager.Instance.StageStateChangedEvent += HandleStageStateChanged;
+        SabotageManager.Instance.SabotagePreparedEvent += HandleSabotagePrepared;
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         InputManager.Instance.ToggleDevModeEvent += HandleToggleDevMode;
 #endif
@@ -46,6 +48,11 @@ public class GameManager : SingletonBase<GameManager>
         DestroyPlayerMandu();
         DestroyBackground();
 
+        if (SabotageManager.Instance != null)
+        {
+            SabotageManager.Instance.SabotagePreparedEvent -= HandleSabotagePrepared;
+        }
+
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
         if (InputManager.Instance != null)
         {
@@ -63,15 +70,7 @@ public class GameManager : SingletonBase<GameManager>
 
     public void RequestNextStage()
     {
-        UIManager.Instance.CloseUI(UIType.ResultUI);
-
-        _currentStageIndex++;
-        if (_currentStageIndex >= GameDataManager.Instance.StageDataList.Count)
-        {
-            _currentStageIndex = FirstStageIndex;
-        }
-
-        PrepareCurrentStage();
+        TransitionToNextStage().Forget();
     }
 
     public void RequestRetryStage()
@@ -110,6 +109,66 @@ public class GameManager : SingletonBase<GameManager>
     private void PrepareCurrentStage()
     {
         StageManager.Instance.PrepareStage(GetCurrentStageId(), GetCurrentStageNumber());
+    }
+
+    //김으로 덮은 뒤 결과 화면을 닫고 다음 스테이지를 준비한다. 준비가 끝나면 김을 걷는다
+    private async UniTaskVoid TransitionToNextStage()
+    {
+        TransitionUI transitionUI = OpenTransitionUI();
+        if (transitionUI == null)
+        {
+            return;
+        }
+
+        await transitionUI.CoverAsync();
+
+        UIManager.Instance.CloseUI(UIType.ResultUI);
+        AdvanceToNextStageIndex();
+        await PrepareCurrentStageAndWaitAsync();
+
+        await UncoverAndCloseTransitionAsync(transitionUI);
+    }
+
+    //마지막 스테이지 다음은 첫 스테이지로 돌아간다
+    private void AdvanceToNextStageIndex()
+    {
+        _currentStageIndex++;
+        if (_currentStageIndex >= GameDataManager.Instance.StageDataList.Count)
+        {
+            _currentStageIndex = FirstStageIndex;
+        }
+    }
+
+    //스테이지를 준비하고 방해요소 준비 끝까지 기다린다. 방해요소가 없으면 준비 한 줄 안에서 바로 끝이 오므로 대상을 먼저 만든다
+    private async UniTask PrepareCurrentStageAndWaitAsync()
+    {
+        _sabotagePreparedSource = new UniTaskCompletionSource();
+        PrepareCurrentStage();
+
+        await _sabotagePreparedSource.Task;
+        _sabotagePreparedSource = null;
+    }
+
+    private void HandleSabotagePrepared()
+    {
+        if (_sabotagePreparedSource == null)
+        {
+            return;
+        }
+
+        _sabotagePreparedSource.TrySetResult();
+    }
+
+    private TransitionUI OpenTransitionUI()
+    {
+        UIBase openedUI = UIManager.Instance.OpenUI(UIRootType.VeryFront, UIType.TransitionUI);
+        return openedUI as TransitionUI;
+    }
+
+    private async UniTask UncoverAndCloseTransitionAsync(TransitionUI transitionUI)
+    {
+        await transitionUI.UncoverAsync();
+        UIManager.Instance.CloseUI(UIType.TransitionUI);
     }
 
     private string GetCurrentStageId()
@@ -208,14 +267,24 @@ public class GameManager : SingletonBase<GameManager>
         }
     }
 
-    //월드 오브젝트가 모두 만들어진 뒤에 첫 화면과 스테이지를 연다. 스테이지 전환 연출이 생기면 이 함수 앞뒤에 덮기와 걷기를 붙인다
+    //김으로 덮인 화면에서 시작해 월드 오브젝트를 만들고 첫 스테이지를 준비한다. 준비가 끝나면 김을 걷는다
     private async UniTaskVoid StartGameAfterSpawn()
     {
+        TransitionUI transitionUI = OpenTransitionUI();
+        if (transitionUI == null)
+        {
+            return;
+        }
+
+        transitionUI.CoverImmediately();
+        
         await SpawnBackground();
         await SpawnPlayerMandu();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageUI);
-        PrepareCurrentStage();
+        await PrepareCurrentStageAndWaitAsync();
+
+        await UncoverAndCloseTransitionAsync(transitionUI);
     }
 
     private async UniTask SpawnPlayerMandu()

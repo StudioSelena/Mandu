@@ -41,7 +41,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         _beatSoundClips.Clear();
     }
 
-    public void PrepareSabotage(string sabotageId)
+    public async UniTask PrepareSabotage(string sabotageId)
     {
         _beatDataList = GameDataManager.Instance.GetDancingManduBeatDataList(sabotageId);
 
@@ -53,7 +53,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
 
         HideAllDancingMandus();
 
-        LoadBeatSounds().Forget(); //준비할 때 소리 빌림
+        await LoadBeatSounds(); //준비할 때 소리 빌림. 다 빌려야 준비가 끝난다
     }
 
     public void StartSabotage()
@@ -214,7 +214,7 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
     }
 
     //박자 표에 나오는 소리를 주소마다 한 번씩만 빌려둔다. 다시하기로 다시 준비해도 이미 빌린 주소는 건너뛴다
-    private async UniTaskVoid LoadBeatSounds()
+    private async UniTask LoadBeatSounds()
     {
         if (_beatDataList == null)
         {
