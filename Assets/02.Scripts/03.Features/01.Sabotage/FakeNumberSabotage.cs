@@ -1,4 +1,5 @@
 ﻿//가짜 숫자 방해요소. 삶기 시작 뒤 정해진 시각에 숫자를 잠깐 띄워 플레이어의 체감 시간을 흔든다
+using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -12,7 +13,7 @@ public class FakeNumberSabotage : UIBase, ISabotage
     private int _nextEventIndex;
     private int _hideTimeMs; //지금 떠 있는 숫자를 숨길 시각. 삶기 시작부터 잰 밀리초
 
-    public void PrepareSabotage(string sabotageId)
+    public UniTask PrepareSabotage(string sabotageId)
     {
         _eventDataList = GameDataManager.Instance.GetFakeNumberEventDataList(sabotageId);
 
@@ -23,6 +24,8 @@ public class FakeNumberSabotage : UIBase, ISabotage
         }
 
         Text_FakeNumber.gameObject.SetActive(false);
+
+        return UniTask.CompletedTask;
     }
 
     public void StartSabotage()

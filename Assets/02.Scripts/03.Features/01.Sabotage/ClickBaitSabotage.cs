@@ -1,4 +1,5 @@
 ﻿//클릭낚시 방해요소. 삶는 동안 누르지 말라는 버튼을 띄우고, 누르면 그 판을 실패로 만든다
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 public class ClickBaitSabotage : UIBase, ISabotage
@@ -12,9 +13,9 @@ public class ClickBaitSabotage : UIBase, ISabotage
     }
 
     //상세 표가 없어 준비할 것이 없다. 숨긴 채로 열리고 삶기 시작에 켜진다
-    public void PrepareSabotage(string sabotageId)
+    public UniTask PrepareSabotage(string sabotageId)
     {
-
+        return UniTask.CompletedTask;
     }
 
     public void StartSabotage()
