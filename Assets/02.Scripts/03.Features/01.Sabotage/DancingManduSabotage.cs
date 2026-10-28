@@ -27,8 +27,8 @@ public class DancingManduSabotage : MonoBehaviour, ISabotage
         enabled = false;
     }
 
-    //빌려둔 박자소리를 반납한다. 사보타지매니저가 이 방해요소를 닫아 오브젝트가 없어질 때 반복한다
-    private void OnDestory()
+    //빌려둔 박자소리를 반납한다. 사보타지매니저가 이 방해요소를 닫아 오브젝트가 없어질 때 반납한다
+    private void OnDestroy()
     {
         if (ResourceManager.Instance != null)
         {
