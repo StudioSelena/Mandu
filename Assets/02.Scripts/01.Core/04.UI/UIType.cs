@@ -17,4 +17,5 @@ public enum UIType
     FakeNumberSabotageUI,
     ClickBaitSabotageUI,
     DevModeUI,
+    TransitionUI,
 }
