@@ -8,7 +8,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Button))]
 public class UIButtonPunchEffect : MonoBehaviour, IPointerDownHandler
 {
-    private const float PunchScaleMultiplier = 1.15f;
+    private const float PunchScaleMultiplier = 1.075f;
     private const float ScaleUpDurationSeconds = 0.08f;
     private const float ScaleDownDurationSeconds = 0.12f;
 
