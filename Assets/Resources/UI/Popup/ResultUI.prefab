@@ -440,7 +440,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UISpriteImageSequencer
   SpriteArray_Sprite: []
-  _sequenceInterval: 0.02
+  _sequenceInterval: 0.025
   _sequenceEndMode: 1
   _isMatchSpriteSize: 1
 --- !u!1 &4082044230614347421

@@ -8,6 +8,9 @@ public class ResultUI : UIBase
 {
     private const string TimingErrorUnitText = "MS";
     private const string NoInputTimingErrorText = "-";
+    private const int DefaultGradeFrameStep = 1;        //모든 장을 보여준다
+    private const int GoodAndNiceGradeFrameStep = 2;    //2장마다 1장을 보여준다
+    private const int PerfectGradeFrameStep = 4;        //4장마다 1장을 보여준다
 
     [SerializeField] private UISpriteImageSequencer ImageSequencer_Grade;
     [SerializeField] private TMP_Text Text_TargetTime;
@@ -69,7 +72,8 @@ public class ResultUI : UIBase
             return;
         }
 
-        ImageSequencer_Grade.PlaySequence(gradeSprites, GetGradeSequenceEndMode(judgmentGrade));
+        Sprite[] pickedSprites = PickGradeSprites(gradeSprites, GetGradeFrameStep(judgmentGrade));
+        ImageSequencer_Grade.PlaySequence(pickedSprites, GetGradeSequenceEndMode(judgmentGrade));
     }
 
     //Good, Nice는 마지막에 글자가 사라지는 연출이라 첫 그림으로 돌아가 등급을 계속 보여준다
@@ -84,6 +88,44 @@ public class ResultUI : UIBase
             default:
                 return SequenceEndMode.HoldLastFrame;
         }
+    }
+
+    //등급마다 몇 장에 1장을 보여줄지 정한다. 장을 솎으면 모니터 주사율과 상관없이 재생 시간이 줄어든다
+    private int GetGradeFrameStep(JudgmentGrade judgmentGrade)
+    {
+        switch (judgmentGrade)
+        {
+            case JudgmentGrade.Good:
+            case JudgmentGrade.Nice:
+                return GoodAndNiceGradeFrameStep;
+
+            case JudgmentGrade.Perfect:
+                return PerfectGradeFrameStep;
+
+            default:
+                return DefaultGradeFrameStep;
+        }
+    }
+
+    //frameStep장마다 1장을 골라 새 배열로 만든다. 끝 모습이 바뀌지 않도록 마지막 장은 항상 넣는다
+    private Sprite[] PickGradeSprites(Sprite[] gradeSprites, int frameStep)
+    {
+        if (frameStep <= DefaultGradeFrameStep)
+        {
+            return gradeSprites;
+        }
+
+        int lastIndex = gradeSprites.Length - 1;
+        int pickedCount = (lastIndex + frameStep - 1) / frameStep + 1; //0번부터 frameStep씩 건너뛴 장 수에 마지막 장 자리 하나를 더한 수
+        Sprite[] pickedSprites = new Sprite[pickedCount];
+
+        for (int i = 0; i < pickedCount; i++)
+        {
+            //마지막 칸은 계산한 번호가 배열을 넘을 수 있어 마지막 장 번호로 맞춘다
+            pickedSprites[i] = gradeSprites[Mathf.Min(i * frameStep, lastIndex)];
+        }
+
+        return pickedSprites;
     }
 
     private void ReleaseGradeSprites()
