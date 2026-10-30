@@ -17,6 +17,7 @@ public class ResultUI : UIBase
     [SerializeField] private TMP_Text Text_InputTime;
     [SerializeField] private TMP_Text Text_TimingError;
     [SerializeField] private TMP_Text Text_TryCount;
+    [SerializeField] private UIButton Button_Exit;
     [SerializeField] private UIButton Button_Retry;
     [SerializeField] private UIButton Button_Next;
 
@@ -24,6 +25,7 @@ public class ResultUI : UIBase
 
     private void OnEnable()
     {
+        Button_Exit.BindOnClickButtonEvent(OnClick_Exit);
         Button_Retry.BindOnClickButtonEvent(OnClick_Retry);
         Button_Next.BindOnClickButtonEvent(OnClick_Next);
     }
@@ -141,6 +143,11 @@ public class ResultUI : UIBase
         }
 
         _loadedGradeAddress = null;
+    }
+
+    private void OnClick_Exit()
+    {
+        GameManager.Instance.RequestExitGamePlay();
     }
 
     private void OnClick_Retry()

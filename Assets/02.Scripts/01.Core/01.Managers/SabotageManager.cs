@@ -183,7 +183,7 @@ public class SabotageManager : SingletonBase<SabotageManager>
     }
 
     //지금 열린 방해요소를 종류에 맞는 곳에서 닫고 기억을 비운다
-    private void CloseCurrentSabotage()
+    public void CloseCurrentSabotage()
     {
         if (_currentSabotage == null)
         {
