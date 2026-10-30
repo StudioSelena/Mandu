@@ -10,6 +10,7 @@ using UnityEngine.Localization.Settings;
 public class GameManager : SingletonBase<GameManager>
 {
     private const int FirstStageIndex = 0;
+    private const int InvalidStageIndex = -1; //Id로 찾지 못한 스테이지
     //화면에 보이는 스테이지 번호는 1부터 센다. 인덱스는 0부터라 1을 더한다
     public const int StageNumberOffset = 1;
     private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
@@ -92,6 +93,45 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         ExitGamePlay().Forget();
+    }
+
+    public void RequestOpenStageSelect()
+    {
+        UIManager.Instance.CloseUI(UIType.LobbyUI);
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
+    }
+
+    public void RequestOpenLobby()
+    {
+        UIManager.Instance.CloseUI(UIType.StageSelectUI);
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.LobbyUI);
+    }
+
+    //스테이지 선택창에서 고른 스테이지로 플레이에 들어간다. 김이 덮이는 동안 또 누르면 무시한다
+    public void RequestEnterGamePlay(string stageId)
+    {
+        if (_isInGamePlay || UIManager.Instance.IsOpenedUI(UIType.TransitionUI))
+        {
+            return;
+        }
+
+        int stageIndex = FindStageIndex(stageId);
+        if (stageIndex == InvalidStageIndex)
+        {
+            return;
+        }
+
+        _currentStageIndex = stageIndex;
+        EnterGamePlay().Forget();
+    }
+
+    public void RequestQuitGame()
+    {
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 
 #if UNITY_EDITOR || DEVELOPMENT_BUILD
@@ -184,6 +224,21 @@ public class GameManager : SingletonBase<GameManager>
     {
         await transitionUI.UncoverAsync();
         UIManager.Instance.CloseUI(UIType.TransitionUI);
+    }
+
+    //스테이지 Id가 엑셀 순서로 몇 번째인지 찾는다. 기록은 Id로, 진행은 인덱스로 다루기 때문에 둘을 잇는다
+    private int FindStageIndex(string stageId)
+    {
+        IReadOnlyList<StageData> stageDataList = GameDataManager.Instance.StageDataList;
+        for (int i = 0; i < stageDataList.Count; i++)
+        {
+            if (stageDataList[i].Id == stageId)
+            {
+                return i;
+            }
+        }
+
+        return InvalidStageIndex;
     }
 
     private string GetCurrentStageId()
@@ -293,7 +348,7 @@ public class GameManager : SingletonBase<GameManager>
 
         await transitionUI.CoverAsync();
 
-        //TODO : 스테이지 선택창 닫기 자리
+        UIManager.Instance.CloseUI(UIType.StageSelectUI);
         _isInGamePlay = true;
         LoadAllJudgmentGradeSprites();
         await SpawnPlayerMandu();
@@ -323,7 +378,7 @@ public class GameManager : SingletonBase<GameManager>
         DestroyPlayerMandu();
         ReleaseAllJudgmentGradeSprites();
 
-        //TODO : 스테이지 선택창 열기 자리. 지금은 배경만 남는다
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
 
@@ -342,9 +397,8 @@ public class GameManager : SingletonBase<GameManager>
         //글자 준비 중에 김을 걷으면 원래 글자가 잠깐 보인다
         await LocalizationSettings.InitializationOperation.ToUniTask();
 
-        //TODO : 로비 열기 자리. 지금은 김을 걷은 뒤 바로 플레이에 들어간다
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.LobbyUI);
         await UncoverAndCloseTransitionAsync(transitionUI);
-        EnterGamePlay().Forget();
     }
 
     private async UniTask SpawnPlayerMandu()
