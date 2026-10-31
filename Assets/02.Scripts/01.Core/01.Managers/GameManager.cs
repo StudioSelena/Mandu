@@ -241,7 +241,7 @@ public class GameManager : SingletonBase<GameManager>
         return InvalidStageIndex;
     }
 
-    private string GetCurrentStageId()
+    public string GetCurrentStageId()
     {
         return GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
     }
@@ -282,6 +282,17 @@ public class GameManager : SingletonBase<GameManager>
         stageRecordModel = new StageRecordModel();
         _stageRecordModels.Add(stageId, stageRecordModel);
         return stageRecordModel;
+    }
+
+    //기록이 없는 스테이지는 0회다. 묻기만 하는 메서드라 기록을 새로 만들지 않는다
+    public int GetStageTryCount(string stageId)
+    {
+        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
+        {
+            return stageRecordModel.TryCount;
+        }
+
+        return 0;
     }
 
     private void OpenResultUI()
