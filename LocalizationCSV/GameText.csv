@@ -14,3 +14,7 @@ UI_Button_MainMenu,스테이지 선택창 메인메뉴 버튼,Main Menu,메인�
 UI_Button_Yes,확인 창 예 버튼,Yes,예
 UI_Button_No,확인 창 아니요 버튼,No,아니요
 UI_Text_QuitConfirm,종료 확인 창 문구,Quit game?,게임을 종료할까요?
+UI_Text_BestGrade,스테이지 선택창 최고 등급 항목,Best Grade,최고 등급
+UI_Text_BestError,스테이지 선택창 최고 오차 항목,Best Error,최고 오차 기록
+UI_Button_Start,스테이지 선택창 시작 버튼,Start,시작
+UI_Text_TryCount,스테이지 선택창 시도 횟수 항목,Tries,시도 횟수

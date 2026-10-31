@@ -78,6 +78,22 @@ MonoBehaviour:
     m_Localized: Quit game?
     m_Metadata:
       m_Items: []
+  - m_Id: 7650931701555200
+    m_Localized: Best Grade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692544
+    m_Localized: Best Error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692545
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692546
+    m_Localized: Tries
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -90,6 +90,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698920648966152
+  - m_Id: 7650931701555200
+    m_Key: UI_Text_BestGrade
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057600
+  - m_Id: 7650931747692544
+    m_Key: UI_Text_BestError
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057601
+  - m_Id: 7650931747692545
+    m_Key: UI_Button_Start
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057602
+  - m_Id: 7650931747692546
+    m_Key: UI_Text_TryCount
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057603
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -162,3 +182,23 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: "\uC885\uB8CC \uD655\uC778 \uCC3D \uBB38\uAD6C"
+    - rid: 5292698940316057600
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uB4F1\uAE09 \uD56D\uBAA9"
+    - rid: 5292698940316057601
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uC624\uCC28 \uD56D\uBAA9"
+    - rid: 5292698940316057602
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uC791
+          \uBC84\uD2BC"
+    - rid: 5292698940316057603
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uB3C4
+          \uD69F\uC218 \uD56D\uBAA9"
