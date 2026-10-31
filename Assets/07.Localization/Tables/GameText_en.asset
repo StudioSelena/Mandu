@@ -42,6 +42,58 @@ MonoBehaviour:
     m_Localized: Don't Push
     m_Metadata:
       m_Items: []
+  - m_Id: 7336258162761728
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704768
+    m_Localized: Single Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704769
+    m_Localized: Multi Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704770
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704771
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704772
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704773
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704774
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704775
+    m_Localized: Quit game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931701555200
+    m_Localized: Best Grade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692544
+    m_Localized: Best Error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692545
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692546
+    m_Localized: Tries
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -45,6 +45,71 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698847993397248
+  - m_Id: 7336258162761728
+    m_Key: UI_Button_Continue
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966144
+  - m_Id: 7336258204704768
+    m_Key: UI_Button_SinglePlay
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966145
+  - m_Id: 7336258204704769
+    m_Key: UI_Button_MultiPlay
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966146
+  - m_Id: 7336258204704770
+    m_Key: UI_Button_Option
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966147
+  - m_Id: 7336258204704771
+    m_Key: UI_Button_Quit
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966148
+  - m_Id: 7336258204704772
+    m_Key: UI_Button_MainMenu
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966149
+  - m_Id: 7336258204704773
+    m_Key: UI_Button_Yes
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966150
+  - m_Id: 7336258204704774
+    m_Key: UI_Button_No
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966151
+  - m_Id: 7336258204704775
+    m_Key: UI_Text_QuitConfirm
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966152
+  - m_Id: 7650931701555200
+    m_Key: UI_Text_BestGrade
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057600
+  - m_Id: 7650931747692544
+    m_Key: UI_Text_BestError
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057601
+  - m_Id: 7650931747692545
+    m_Key: UI_Button_Start
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057602
+  - m_Id: 7650931747692546
+    m_Key: UI_Text_TryCount
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057603
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -80,3 +145,60 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: "\uD074\uB9AD \uB09A\uC2DC \uBC84\uD2BC"
+    - rid: 5292698920648966144
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC774\uC5B4\uD558\uAE30 \uBC84\uD2BC"
+    - rid: 5292698920648966145
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC2F1\uAE00 \uD50C\uB808\uC774 \uBC84\uD2BC"
+    - rid: 5292698920648966146
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uBA40\uD2F0 \uD50C\uB808\uC774 \uBC84\uD2BC"
+    - rid: 5292698920648966147
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC635\uC158 \uBC84\uD2BC"
+    - rid: 5292698920648966148
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC885\uB8CC \uBC84\uD2BC"
+    - rid: 5292698920648966149
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uBA54\uC778\uBA54\uB274
+          \uBC84\uD2BC"
+    - rid: 5292698920648966150
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD655\uC778 \uCC3D \uC608 \uBC84\uD2BC"
+    - rid: 5292698920648966151
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD655\uC778 \uCC3D \uC544\uB2C8\uC694 \uBC84\uD2BC"
+    - rid: 5292698920648966152
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC885\uB8CC \uD655\uC778 \uCC3D \uBB38\uAD6C"
+    - rid: 5292698940316057600
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uB4F1\uAE09 \uD56D\uBAA9"
+    - rid: 5292698940316057601
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uC624\uCC28 \uD56D\uBAA9"
+    - rid: 5292698940316057602
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uC791
+          \uBC84\uD2BC"
+    - rid: 5292698940316057603
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uB3C4
+          \uD69F\uC218 \uD56D\uBAA9"

@@ -18,4 +18,7 @@ public enum UIType
     ClickBaitSabotageUI,
     DevModeUI,
     TransitionUI,
+    LobbyUI,
+    StageSelectUI,
+    QuitGameConfirmUI,
 }
