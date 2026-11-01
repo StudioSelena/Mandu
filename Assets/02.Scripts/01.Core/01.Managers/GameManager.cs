@@ -51,8 +51,8 @@ public class GameManager : SingletonBase<GameManager>
             ReleaseAllJudgmentGradeSprites();
         }
 
-        DestroyPlayerMandu();
-        DestroyBackground();
+        DestroyWorldObject(ref _playerManduInstanceId);
+        DestroyWorldObject(ref _backgroundInstanceId);
 
         if (SabotageManager.Instance != null)
         {
@@ -386,7 +386,7 @@ public class GameManager : SingletonBase<GameManager>
         UIManager.Instance.CloseUI(UIType.ResultUI);
         UIManager.Instance.CloseUI(UIType.StageUI);
         SabotageManager.Instance.CloseCurrentSabotage();
-        DestroyPlayerMandu();
+        DestroyWorldObject(ref _playerManduInstanceId);
         ReleaseAllJudgmentGradeSprites();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
@@ -417,42 +417,26 @@ public class GameManager : SingletonBase<GameManager>
         _playerManduInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(PlayerManduAddress);
     }
 
-    private void DestroyPlayerMandu()
-    {
-        if (GameObjectManager.Instance == null)
-        {
-            return;
-        }
-
-        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
-        if (_playerManduInstanceId == GameObjectManager.InvalidInstanceId)
-        {
-            return;
-        }
-
-        GameObjectManager.Instance.RequestDestroyWorldObject(_playerManduInstanceId);
-        _playerManduInstanceId = GameObjectManager.InvalidInstanceId;
-    }
-
     private async UniTask SpawnBackground()
     {
         _backgroundInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(BackgroundAddress);
     }
 
-    private void DestroyBackground()
+    //번호의 월드 오브젝트를 없애고 번호를 비운다. 부른 쪽 변수를 직접 비우도록 ref로 받는다
+    private void DestroyWorldObject(ref int instanceId)
     {
         if (GameObjectManager.Instance == null)
         {
             return;
         }
 
-        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
-        if (_backgroundInstanceId == GameObjectManager.InvalidInstanceId)
+        //생성에 실패하거나 끝나기 전이면 없앨 것이 없다
+        if (instanceId == GameObjectManager.InvalidInstanceId)
         {
             return;
         }
 
-        GameObjectManager.Instance.RequestDestroyWorldObject(_backgroundInstanceId);
-        _backgroundInstanceId = GameObjectManager.InvalidInstanceId;
+        GameObjectManager.Instance.RequestDestroyWorldObject(instanceId);
+        instanceId = GameObjectManager.InvalidInstanceId;
     }
 }
