@@ -94,6 +94,22 @@ MonoBehaviour:
     m_Localized: Tries
     m_Metadata:
       m_Items: []
+  - m_Id: 8054080383852544
+    m_Localized: Progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184192
+    m_Localized: Stars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184193
+    m_Localized: Last Played
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184194
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

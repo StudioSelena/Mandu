@@ -21,4 +21,5 @@ public enum UIType
     LobbyUI,
     StageSelectUI,
     QuitGameConfirmUI,
+    SaveSlotSelectUI,
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class PlayRecordManager : SingletonBase<PlayRecordManager>
 {
     public const int SaveSlotCount = 3;
-    private const int NoSlotIndex = -1;     //슬롯을 아직 열지 않았을 때
+    public const int NoSlotIndex = -1;     //슬롯을 아직 열지 않았을 때
     private const int FirstStageIndex = 0;
+    private const long NoLastOpenedTicks = 0; //파일이 없는 슬롯. 실제 연 시각은 늘 이보다 크다
 
     private SaveFileService _saveFileService = new SaveFileService();
     private int _currentSlotIndex = NoSlotIndex;
@@ -113,6 +114,51 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
         }
 
         return StageManager.NoInputTimingErrorMs;
+    }
+
+    //열린 슬롯을 바꾸지 않고 파일을 읽기만 한다. 슬롯 카드와 이어하기에서 쓴다
+    public SaveSlotSummary GetSaveSlotSummary(int slotIndex)
+    {
+        SaveSlotModel saveSlotModel = _saveFileService.ReadSaveSlot(slotIndex);
+        if (saveSlotModel == null)
+        {
+            return new SaveSlotSummary(false, NoLastOpenedTicks);
+        }
+
+        return new SaveSlotSummary(true, saveSlotModel.LastOpenedTicks);
+    }
+
+    //이어하기 버튼을 누를 수 있는지. 파일이 있는지만 보므로 읽지 않는다
+    public bool HasAnySaveFile()
+    {
+        for (int i = 0; i < SaveSlotCount; i++)
+        {
+            if (_saveFileService.HasSaveFile(i))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    //세 슬롯 중 마지막으로 연 슬롯. 세이브가 하나도 없으면 NoSlotIndex
+    public int FindLastOpenedSlotIndex()
+    {
+        int lastOpenedSlotIndex = NoSlotIndex;
+        long lastOpenedTicks = NoLastOpenedTicks;
+
+        for (int i = 0; i < SaveSlotCount; i++)
+        {
+            SaveSlotSummary saveSlotSummary = GetSaveSlotSummary(i);
+            if (saveSlotSummary.HasSaveFile && saveSlotSummary.LastOpenedTicks > lastOpenedTicks)
+            {
+                lastOpenedSlotIndex = i;
+                lastOpenedTicks = saveSlotSummary.LastOpenedTicks;
+            }
+        }
+
+        return lastOpenedSlotIndex;
     }
 
     //새 슬롯이라 아직 플레이한 스테이지가 없으면 첫 스테이지

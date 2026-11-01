@@ -18,3 +18,7 @@ UI_Text_BestGrade,스테이지 선택창 최고 등급 항목,Best Grade,최고 
 UI_Text_BestError,스테이지 선택창 최고 오차 항목,Best Error,최고 오차 기록
 UI_Button_Start,스테이지 선택창 시작 버튼,Start,시작
 UI_Text_TryCount,스테이지 선택창 시도 횟수 항목,Tries,시도 횟수
+UI_Text_Progress,세이브 슬롯 진행 스테이지 항목,Progress,진행 스테이지
+UI_Text_Stars,세이브 슬롯 별 항목,Stars,별
+UI_Text_LastPlayed,세이브 슬롯 마지막 플레이 항목,Last Played,마지막 플레이
+UI_Text_NewGame,빈 세이브 슬롯 문구,New Game,새로 시작
