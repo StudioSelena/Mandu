@@ -6,8 +6,6 @@ using UnityEngine;
 
 public class ResultUI : UIBase
 {
-    private const string TimingErrorUnitText = "MS";
-    private const string NoInputTimingErrorText = "-";
     private const int DefaultGradeFrameStep = 1;        //모든 장을 보여준다
     private const int GoodAndNiceGradeFrameStep = 2;    //2장마다 1장을 보여준다
     private const int PerfectGradeFrameStep = 4;        //4장마다 1장을 보여준다
@@ -40,20 +38,10 @@ public class ResultUI : UIBase
         ShowGradeImage(stagePlayResult.JudgmentGrade).Forget();
         Text_TargetTime.text = TimeUtil.GetSecondsDisplayText(stagePlayResult.TargetTimeMs);
         Text_InputTime.text = TimeUtil.GetInputTimeDisplayText(stagePlayResult.InputTimeMs);
-        Text_TimingError.text = GetTimingErrorDisplayText(stagePlayResult.TimingErrorMs);
+        Text_TimingError.text = TimeUtil.GetTimingErrorDisplayText(stagePlayResult.TimingErrorMs);
         Text_TryCount.text = tryCount.ToString(CultureInfo.InvariantCulture);
     }
-
-    private string GetTimingErrorDisplayText(int timingErrorMs)
-    {
-        if (timingErrorMs == StageManager.NoInputTimingErrorMs)
-        {
-            return NoInputTimingErrorText;
-        }
-
-        return timingErrorMs.ToString(CultureInfo.InvariantCulture) + TimingErrorUnitText;
-    }
-
+    
     private async UniTaskVoid ShowGradeImage(JudgmentGrade judgmentGrade)
     {
         ReleaseGradeSprites();
