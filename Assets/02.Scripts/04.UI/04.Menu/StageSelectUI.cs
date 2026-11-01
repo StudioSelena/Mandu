@@ -6,7 +6,7 @@ using UnityEngine;
 public class StageSelectUI : UIBase
 {
     private const string StageNumberTextFormat = "STAGE {0}";
-    private const string EmptyRecordText = "-"; //최고 등급, 최고 오차는 세이브가 생기기 전까지 비워 둔다
+    private const string EmptyRecordText = "-"; //아직 기록이 없는 스테이지의 최고 등급
 
     [SerializeField] private UIButton Button_MainMenu;
     [SerializeField] private UIButton Button_Start;
@@ -26,13 +26,13 @@ public class StageSelectUI : UIBase
         CreateAllStageSlots();
     }
 
-    //플레이하고 돌아오면 바뀌는 값(고른 줄, 시도 횟수)은 열 때마다 다시 그린다
+    //플레이하고 돌아오면 바뀌는 값(고른 줄, 기록)은 열 때마다 다시 그린다
     private void OnEnable()
     {
         Button_MainMenu.BindOnClickButtonEvent(OnClick_MainMenu);
         Button_Start.BindOnClickButtonEvent(OnClick_Start);
 
-        SelectStage(GameManager.Instance.GetCurrentStageId());
+        SelectStage(PlayRecordManager.Instance.GetLastPlayedStageId());
     }
 
     private void CreateAllStageSlots()
@@ -48,6 +48,18 @@ public class StageSelectUI : UIBase
             stageSlotUI.InitStageSlot(stageId, stageNumberText, SelectStage);
             _stageSlotUIs.Add(stageId, stageSlotUI);
         }
+    }
+
+    //결과 화면 등급 이미지와 같은 영어 대문자로 보여준다
+    private string GetBestGradeDisplayText(string stageId)
+    {
+        JudgmentGrade bestGrade = PlayRecordManager.Instance.GetStageBestGrade(stageId);
+        if (bestGrade == JudgmentGrade.None)
+        {
+            return EmptyRecordText;
+        }
+
+        return bestGrade.ToString().ToUpperInvariant();
     }
 
     private void SelectStage(string stageId)
@@ -66,9 +78,9 @@ public class StageSelectUI : UIBase
         }
 
         Text_StageNumber.text = selectedStageSlotUI.StageNumberText;
-        Text_BestGradeValue.text = EmptyRecordText;
-        Text_BestErrorValue.text = EmptyRecordText;
-        Text_TryCountValue.text = GameManager.Instance.GetStageTryCount(stageId).ToString();
+        Text_BestGradeValue.text = GetBestGradeDisplayText(stageId);
+        Text_BestErrorValue.text = TimeUtil.GetTimingErrorDisplayText(PlayRecordManager.Instance.GetStageBestTimingErrorMs(stageId));
+        Text_TryCountValue.text = PlayRecordManager.Instance.GetStageTryCount(stageId).ToString();
     }
 
     private void OnClick_MainMenu()

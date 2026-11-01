@@ -16,9 +16,9 @@ public class GameManager : SingletonBase<GameManager>
     private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
     private const string BackgroundAddress = "Background"; //망점 배경 프리팹 어드레서블 주소
     private const string LobbyManduAddress = "LobbyMandu"; //로비 만두 프리팹 어드레서블 주소
+    private const int TempSaveSlotIndex = 0; //세이브 슬롯 선택창이 생기기 전까지 시작할 때 여는 슬롯. 추후 지움
 
     private int _currentStageIndex = FirstStageIndex;
-    private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
     private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //플레이 구간 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
     private int _lobbyManduInstanceId = GameObjectManager.InvalidInstanceId;  //로비가 열려있는 동안 쓰는 로비 만두 번호. 없앨 때 쓴다
     private int _backgroundInstanceId = GameObjectManager.InvalidInstanceId; //게임 시작부터 끝까지 쓰는 배경 번호. 로비가 생겨도 그대로 둔다
@@ -187,6 +187,7 @@ public class GameManager : SingletonBase<GameManager>
 
         UIManager.Instance.CloseUI(UIType.ResultUI);
         AdvanceToNextStageIndex();
+        PlayRecordManager.Instance.SetLastPlayedStageId(GetCurrentStageId());
         await PrepareCurrentStageAndWaitAsync();
 
         await UncoverAndCloseTransitionAsync(transitionUI);
@@ -249,7 +250,7 @@ public class GameManager : SingletonBase<GameManager>
         return InvalidStageIndex;
     }
 
-    public string GetCurrentStageId()
+    private string GetCurrentStageId()
     {
         return GameDataManager.Instance.StageDataList[_currentStageIndex].Id;
     }
@@ -267,6 +268,10 @@ public class GameManager : SingletonBase<GameManager>
                 IncreaseCurrentStageTryCount();
                 break;
 
+            case StageState.JudgmentComplete:
+                UpdateCurrentStageBestRecord();
+                break;
+
             case StageState.ShowingResult:
                 OpenResultUI();
                 break;
@@ -275,32 +280,14 @@ public class GameManager : SingletonBase<GameManager>
 
     private void IncreaseCurrentStageTryCount()
     {
-        StageRecordModel stageRecordModel = GetStageRecordModel(GetCurrentStageId());
-        stageRecordModel.IncreaseTryCount();
+        PlayRecordManager.Instance.IncreaseStageTryCount(GetCurrentStageId());
     }
 
-    //처음 도전하는 스테이지면 기록을 새로 만든다
-    private StageRecordModel GetStageRecordModel(string stageId)
+    //판정이 끝난 순간 등급과 오차가 정해져있다. 더 좋은 기록인지는 StageRecordModel이 정한다
+    private void UpdateCurrentStageBestRecord()
     {
-        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
-        {
-            return stageRecordModel;
-        }
-
-        stageRecordModel = new StageRecordModel();
-        _stageRecordModels.Add(stageId, stageRecordModel);
-        return stageRecordModel;
-    }
-
-    //기록이 없는 스테이지는 0회다. 묻기만 하는 메서드라 기록을 새로 만들지 않는다
-    public int GetStageTryCount(string stageId)
-    {
-        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
-        {
-            return stageRecordModel.TryCount;
-        }
-
-        return 0;
+        StageManager stageManager = StageManager.Instance;
+        PlayRecordManager.Instance.UpdateStageBestRecord(GetCurrentStageId(), stageManager.CurrentJudgmentGrade, stageManager.CurrentTimingErrorMs);
     }
 
     private void OpenResultUI()
@@ -319,7 +306,7 @@ public class GameManager : SingletonBase<GameManager>
             inputTimeMs: stageManager.CurrentInputTimeMs,
             timingErrorMs: stageManager.CurrentTimingErrorMs);
 
-        int tryCount = GetStageRecordModel(GetCurrentStageId()).TryCount;
+        int tryCount = PlayRecordManager.Instance.GetStageTryCount(GetCurrentStageId());
         resultUI.SetStageResult(stagePlayResult, tryCount);
     }
 
@@ -369,6 +356,7 @@ public class GameManager : SingletonBase<GameManager>
 
         UIManager.Instance.CloseUI(UIType.StageSelectUI);
         _isInGamePlay = true;
+        PlayRecordManager.Instance.SetLastPlayedStageId(GetCurrentStageId());
         LoadAllJudgmentGradeSprites();
         await SpawnPlayerMandu();
 
@@ -447,6 +435,7 @@ public class GameManager : SingletonBase<GameManager>
         //글자 준비 중에 김을 걷으면 원래 글자가 잠깐 보인다
         await LocalizationSettings.InitializationOperation.ToUniTask();
 
+        PlayRecordManager.Instance.LoadSaveSlot(TempSaveSlotIndex);
         await OpenLobbyAsync();
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
