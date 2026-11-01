@@ -46,7 +46,7 @@ public class SaveSlotUI : MonoBehaviour
 
         Text_ProgressValue.text = EmptyRecordText;
         Text_StarsValue.text = EmptyRecordText;
-        Text_LastPlayedValue.text = TimeUtil.GetDateDisplayText(saveSlotSummary.LastOpenedTicks);
+        Text_LastPlayedValue.text = TimeUtil.GetDateTimeDisplayText(saveSlotSummary.LastOpenedTicks);
     }
 
     private void OnClick_Slot()

@@ -17,8 +17,8 @@ public static class TimeUtil
     private const string TimingErrorUnitText = "MS";
     private const string NoInputTimingErrorText = "-";
 
-    //날짜 표시 형식. 언어와 상관없이 숫자로 보여준다 (예: 2026.11.01)
-    private const string DateDisplayFormat = "yyyy.MM.dd";
+    //날짜와 시각 표시 형식. 분까지 표시. 언어와 상관없이 숫자로 2줄로 보여준다 (예: 2026.11.01 / 18:59)
+    private const string DateTimeDisplayFormat = "yyyy.MM.dd\nHH:mm";
 
     //밀리초를 화면 표시용 초 문자열로 돌려준다. 지역 설정과 상관없이 소수점은 마침표로 표시한다
     public static string GetSecondsDisplayText(int timeMs)
@@ -50,9 +50,9 @@ public static class TimeUtil
     }
 
     //UTC로 저장한 Ticks를 플레이어PC의 현지 시각으로 바꿔 날짜 문자열로 돌려준다
-    public static string GetDateDisplayText(long utcTicks)
+    public static string GetDateTimeDisplayText(long utcTicks)
     {
         DateTime localDateTime = new DateTime(utcTicks, DateTimeKind.Utc).ToLocalTime();
-        return localDateTime.ToString(DateDisplayFormat, CultureInfo.InvariantCulture);
+        return localDateTime.ToString(DateTimeDisplayFormat, CultureInfo.InvariantCulture);
     }
 }
