@@ -115,6 +115,31 @@ public class GameManager : SingletonBase<GameManager>
         ReturnToLobby().Forget();
     }
 
+    public void RequestOpenSaveSlotSelect()
+    {
+        CloseLobby();
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.SaveSlotSelectUI);
+    }
+
+    public void RequestLoadSaveSlot(int slotIndex)
+    {
+        UIManager.Instance.CloseUI(UIType.SaveSlotSelectUI);
+        LoadSaveSlotAndOpenStageSelect(slotIndex);
+    }
+
+    //마지막으로 연 슬롯을 바로 불러와 세이브 슬롯 선택창을 건너뛴다. 세이브가 없으면 버튼이 막혀있지만 한 번 더 확인한다
+    public void RequestContinueGame()
+    {
+        int lastOpenedSlotIndex = PlayRecordManager.Instance.FindLastOpenedSlotIndex();
+        if (lastOpenedSlotIndex == PlayRecordManager.NoSlotIndex)
+        {
+            return;
+        }
+
+        CloseLobby();
+        LoadSaveSlotAndOpenStageSelect(lastOpenedSlotIndex);
+    }
+
     //스테이지 선택창에서 고른 스테이지로 플레이에 들어간다. 김이 덮이는 동안 또 누르면 무시한다
     public void RequestEnterGamePlay(string stageId)
     {
@@ -401,6 +426,13 @@ public class GameManager : SingletonBase<GameManager>
     {
         UIManager.Instance.CloseUI(UIType.LobbyUI);
         DestroyWorldObject(ref _lobbyManduInstanceId);
+    }
+
+    //슬롯을 불러온 뒤 스테이지 선택창을 연다. 파일 읽기는 바로 끝나서 김으로 덮지 않는다
+    private void LoadSaveSlotAndOpenStageSelect(int slotIndex)
+    {
+        PlayRecordManager.Instance.LoadSaveSlot(slotIndex);
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
     }
 
     //김으로 덮고 스테이지 선택창을 닫은 뒤 로비를 연다. 로비 만두가 생긴 뒤 김을 걷는다
