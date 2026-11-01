@@ -110,6 +110,26 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698940316057603
+  - m_Id: 8054080383852544
+    m_Key: UI_Text_Progress
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520233
+  - m_Id: 8054080434184192
+    m_Key: UI_Text_Stars
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520234
+  - m_Id: 8054080434184193
+    m_Key: UI_Text_LastPlayed
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520235
+  - m_Id: 8054080434184194
+    m_Key: UI_Text_NewGame
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520236
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -117,6 +137,24 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1225069289337520233
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uC9C4\uD589 \uC2A4\uD14C\uC774\uC9C0
+          \uD56D\uBAA9"
+    - rid: 1225069289337520234
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uBCC4 \uD56D\uBAA9"
+    - rid: 1225069289337520235
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uB9C8\uC9C0\uB9C9 \uD50C\uB808\uC774
+          \uD56D\uBAA9"
+    - rid: 1225069289337520236
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uBE48 \uC138\uC774\uBE0C \uC2AC\uB86F \uBB38\uAD6C"
     - rid: 5292698459609759964
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
