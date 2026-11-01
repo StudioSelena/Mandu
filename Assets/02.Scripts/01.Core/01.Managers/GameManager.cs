@@ -15,10 +15,12 @@ public class GameManager : SingletonBase<GameManager>
     public const int StageNumberOffset = 1;
     private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
     private const string BackgroundAddress = "Background"; //망점 배경 프리팹 어드레서블 주소
+    private const string LobbyManduAddress = "LobbyMandu"; //로비 만두 프리팹 어드레서블 주소
 
     private int _currentStageIndex = FirstStageIndex;
     private Dictionary<string, StageRecordModel> _stageRecordModels = new Dictionary<string, StageRecordModel>();
     private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //플레이 구간 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
+    private int _lobbyManduInstanceId = GameObjectManager.InvalidInstanceId;  //로비가 열려있는 동안 쓰는 로비 만두 번호. 없앨 때 쓴다
     private int _backgroundInstanceId = GameObjectManager.InvalidInstanceId; //게임 시작부터 끝까지 쓰는 배경 번호. 로비가 생겨도 그대로 둔다
     private bool _isInGamePlay = false; //플레이 구간 안인지. 나가기를 두 번 눌러도 한 번만 나가고 이미 반납한 등급 이미지를 종료 때 또 반납하지 않게 한다
     private UniTaskCompletionSource _sabotagePreparedSource; //다음 스테이지 준비를 기다리는 동안만 있다. 없을 때 온 준비 끝을 무시(다시하기, 개발자 모드)
@@ -51,8 +53,9 @@ public class GameManager : SingletonBase<GameManager>
             ReleaseAllJudgmentGradeSprites();
         }
 
-        DestroyPlayerMandu();
-        DestroyBackground();
+        DestroyWorldObject(ref _playerManduInstanceId);
+        DestroyWorldObject(ref _lobbyManduInstanceId);
+        DestroyWorldObject(ref _backgroundInstanceId);
 
         if (SabotageManager.Instance != null)
         {
@@ -97,14 +100,19 @@ public class GameManager : SingletonBase<GameManager>
 
     public void RequestOpenStageSelect()
     {
-        UIManager.Instance.CloseUI(UIType.LobbyUI);
+        CloseLobby();
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
     }
 
+    //로비 만두를 불러오는 동안 김으로 덮는다. 덮는 동안 또 누르면 무시한다
     public void RequestOpenLobby()
     {
-        UIManager.Instance.CloseUI(UIType.StageSelectUI);
-        UIManager.Instance.OpenUI(UIRootType.Main, UIType.LobbyUI);
+        if (UIManager.Instance.IsOpenedUI(UIType.TransitionUI))
+        {
+            return;
+        }
+
+        ReturnToLobby().Forget();
     }
 
     //스테이지 선택창에서 고른 스테이지로 플레이에 들어간다. 김이 덮이는 동안 또 누르면 무시한다
@@ -386,10 +394,41 @@ public class GameManager : SingletonBase<GameManager>
         UIManager.Instance.CloseUI(UIType.ResultUI);
         UIManager.Instance.CloseUI(UIType.StageUI);
         SabotageManager.Instance.CloseCurrentSabotage();
-        DestroyPlayerMandu();
+        DestroyWorldObject(ref _playerManduInstanceId);
         ReleaseAllJudgmentGradeSprites();
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
+        await UncoverAndCloseTransitionAsync(transitionUI);
+    }
+
+    //로비 화면을 열고 로비 만두를 만든다. 로비를 여는 곳은 이 메서드만 부른다
+    private async UniTask OpenLobbyAsync()
+    {
+        UIManager.Instance.OpenUI(UIRootType.Main, UIType.LobbyUI);
+        await SpawnLobbyMandu();
+    }
+
+    //로비 화면을 닫고 로비 만두를 반납한다. 로비를 닫는 곳은 이 메서드만 부른다
+    private void CloseLobby()
+    {
+        UIManager.Instance.CloseUI(UIType.LobbyUI);
+        DestroyWorldObject(ref _lobbyManduInstanceId);
+    }
+
+    //김으로 덮고 스테이지 선택창을 닫은 뒤 로비를 연다. 로비 만두가 생긴 뒤 김을 걷는다
+    private async UniTaskVoid ReturnToLobby()
+    {
+        TransitionUI transitionUI = OpenTransitionUI();
+        if (transitionUI == null)
+        {
+            return;
+        }
+
+        await transitionUI.CoverAsync();
+
+        UIManager.Instance.CloseUI(UIType.StageSelectUI);
+        await OpenLobbyAsync();
+
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
 
@@ -408,7 +447,7 @@ public class GameManager : SingletonBase<GameManager>
         //글자 준비 중에 김을 걷으면 원래 글자가 잠깐 보인다
         await LocalizationSettings.InitializationOperation.ToUniTask();
 
-        UIManager.Instance.OpenUI(UIRootType.Main, UIType.LobbyUI);
+        await OpenLobbyAsync();
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
 
@@ -417,21 +456,9 @@ public class GameManager : SingletonBase<GameManager>
         _playerManduInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(PlayerManduAddress);
     }
 
-    private void DestroyPlayerMandu()
+    private async UniTask SpawnLobbyMandu()
     {
-        if (GameObjectManager.Instance == null)
-        {
-            return;
-        }
-
-        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
-        if (_playerManduInstanceId == GameObjectManager.InvalidInstanceId)
-        {
-            return;
-        }
-
-        GameObjectManager.Instance.RequestDestroyWorldObject(_playerManduInstanceId);
-        _playerManduInstanceId = GameObjectManager.InvalidInstanceId;
+        _lobbyManduInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(LobbyManduAddress);
     }
 
     private async UniTask SpawnBackground()
@@ -439,20 +466,21 @@ public class GameManager : SingletonBase<GameManager>
         _backgroundInstanceId = await GameObjectManager.Instance.RequestSpawnWorldObject(BackgroundAddress);
     }
 
-    private void DestroyBackground()
+    //번호의 월드 오브젝트를 없애고 번호를 비운다. 부른 쪽 변수를 직접 비우도록 ref로 받는다
+    private void DestroyWorldObject(ref int instanceId)
     {
         if (GameObjectManager.Instance == null)
         {
             return;
         }
 
-        //생성에 실패했거나 끝나기 전이면 없앨 것이 없다
-        if (_backgroundInstanceId == GameObjectManager.InvalidInstanceId)
+        //생성에 실패하거나 끝나기 전이면 없앨 것이 없다
+        if (instanceId == GameObjectManager.InvalidInstanceId)
         {
             return;
         }
 
-        GameObjectManager.Instance.RequestDestroyWorldObject(_backgroundInstanceId);
-        _backgroundInstanceId = GameObjectManager.InvalidInstanceId;
+        GameObjectManager.Instance.RequestDestroyWorldObject(instanceId);
+        instanceId = GameObjectManager.InvalidInstanceId;
     }
 }
