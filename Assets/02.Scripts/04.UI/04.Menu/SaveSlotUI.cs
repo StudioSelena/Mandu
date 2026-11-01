@@ -12,7 +12,7 @@ public class SaveSlotUI : MonoBehaviour
     [SerializeField] private UIButton Button_Slot;
     [SerializeField] private TMP_Text Text_SlotNumber;
     [SerializeField] private GameObject Group_Record;       //기록이 있는 슬롯에서만 켠다
-    [SerializeField] private GameObject Group_NewGame;      //빈 슬롯에만 켠다
+    [SerializeField] private GameObject Text_NewGame;      //빈 슬롯에만 켠다
     [SerializeField] private TMP_Text Text_ProgressValue;
     [SerializeField] private TMP_Text Text_StarsValue;
     [SerializeField] private TMP_Text Text_LastPlayedValue;
@@ -37,7 +37,7 @@ public class SaveSlotUI : MonoBehaviour
     public void SetSaveSlotSummary(SaveSlotSummary saveSlotSummary)
     {
         Group_Record.SetActive(saveSlotSummary.HasSaveFile);
-        Group_NewGame.SetActive(saveSlotSummary.HasSaveFile == false);
+        Text_NewGame.SetActive(saveSlotSummary.HasSaveFile == false);
 
         if (saveSlotSummary.HasSaveFile == false)
         {
