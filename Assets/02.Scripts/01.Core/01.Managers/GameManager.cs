@@ -16,7 +16,6 @@ public class GameManager : SingletonBase<GameManager>
     private const string PlayerManduAddress = "PlayerMandu"; //메인만두 프리팹 어드레서블 주소
     private const string BackgroundAddress = "Background"; //망점 배경 프리팹 어드레서블 주소
     private const string LobbyManduAddress = "LobbyMandu"; //로비 만두 프리팹 어드레서블 주소
-    private const int TempSaveSlotIndex = 0; //세이브 슬롯 선택창이 생기기 전까지 시작할 때 여는 슬롯. 추후 지움
 
     private int _currentStageIndex = FirstStageIndex;
     private int _playerManduInstanceId = GameObjectManager.InvalidInstanceId; //플레이 구간 동안 쓰는 메인 만두 번호. 없앨 때 쓴다
@@ -96,12 +95,6 @@ public class GameManager : SingletonBase<GameManager>
         }
 
         ExitGamePlay().Forget();
-    }
-
-    public void RequestOpenStageSelect()
-    {
-        CloseLobby();
-        UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
     }
 
     //로비 만두를 불러오는 동안 김으로 덮는다. 덮는 동안 또 누르면 무시한다
@@ -446,7 +439,9 @@ public class GameManager : SingletonBase<GameManager>
 
         await transitionUI.CoverAsync();
 
+        //로비로 돌아올 수 있는 화면을 모두 닫는다. 열려 있지 않은 화면은 CloseUI가 건너뛴다
         UIManager.Instance.CloseUI(UIType.StageSelectUI);
+        UIManager.Instance.CloseUI(UIType.SaveSlotSelectUI);
         await OpenLobbyAsync();
 
         await UncoverAndCloseTransitionAsync(transitionUI);
@@ -467,7 +462,6 @@ public class GameManager : SingletonBase<GameManager>
         //글자 준비 중에 김을 걷으면 원래 글자가 잠깐 보인다
         await LocalizationSettings.InitializationOperation.ToUniTask();
 
-        PlayRecordManager.Instance.LoadSaveSlot(TempSaveSlotIndex);
         await OpenLobbyAsync();
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
