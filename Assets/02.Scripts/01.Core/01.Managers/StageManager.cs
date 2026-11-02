@@ -20,6 +20,7 @@ public class StageManager : SingletonBase<StageManager>
     public int CurrentTargetTimeMs { get; private set; }
     public int CurrentInputTimeMs { get; private set; }
     public int CurrentStageNumber { get; private set; } //화면에 보이는 스테이지 번호. 1부터 시작
+    public string CurrentStageId { get; private set; }
 
     public string CurrentSabotageId { get; private set; } //방해요소가 없는 스테이지면 null 또는 빈 문자열
 
@@ -127,6 +128,7 @@ public class StageManager : SingletonBase<StageManager>
         CurrentInputTimeMs = NoInputTimeMs;
         CurrentSabotageId = stageData.SabotageId;
         CurrentStageNumber = stageNumber;
+        CurrentStageId = stageId;
 
         //새 판 준비는 이전 상태와 상관없이 Ready를 다시 알린다. Ready에서 다른 스테이지를 고를 때를 위해서다
         _currentStageState = StageState.None;

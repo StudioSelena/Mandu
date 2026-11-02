@@ -32,6 +32,7 @@ public class StageSelectUI : UIBase
         Button_MainMenu.BindOnClickButtonEvent(OnClick_MainMenu);
         Button_Start.BindOnClickButtonEvent(OnClick_Start);
 
+        UpdateAllStageSlots();
         SelectStage(PlayRecordManager.Instance.GetLastPlayedStageId());
     }
 
@@ -47,6 +48,16 @@ public class StageSelectUI : UIBase
             StageSlotUI stageSlotUI = Instantiate(Prefab_StageSlot, Transform_StageSlotRoot);
             stageSlotUI.InitStageSlot(stageId, stageNumberText, SelectStage);
             _stageSlotUIs.Add(stageId, stageSlotUI);
+        }
+    }
+
+    //해금은 플레이하고 돌아오면 바뀌므로 열 때마다 모든 줄에 다시 알린다
+    private void UpdateAllStageSlots()
+    {
+        foreach (KeyValuePair<string, StageSlotUI> stageSlotPair in _stageSlotUIs)
+        {
+            bool isUnlocked = PlayRecordManager.Instance.IsStageUnlocked(stageSlotPair.Key);
+            stageSlotPair.Value.SetStageUnlocked(isUnlocked);
         }
     }
 
