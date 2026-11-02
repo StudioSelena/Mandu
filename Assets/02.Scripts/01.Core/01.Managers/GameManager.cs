@@ -211,14 +211,10 @@ public class GameManager : SingletonBase<GameManager>
         await UncoverAndCloseTransitionAsync(transitionUI);
     }
 
-    //마지막 스테이지 다음은 첫 스테이지로 돌아간다
+    //마지막 스테이지에서는 결과 화면 다음 버튼이 숨겨져 여기까지 오지 않는다
     private void AdvanceToNextStageIndex()
     {
         _currentStageIndex++;
-        if (_currentStageIndex >= GameDataManager.Instance.StageDataList.Count)
-        {
-            _currentStageIndex = FirstStageIndex;
-        }
     }
 
     //스테이지를 준비하고 방해요소 준비 끝까지 기다린다. 방해요소가 없으면 준비 한 줄 안에서 바로 끝이 오므로 대상을 먼저 만든다

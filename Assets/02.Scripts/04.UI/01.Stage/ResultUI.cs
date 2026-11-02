@@ -26,11 +26,27 @@ public class ResultUI : UIBase
         Button_Exit.BindOnClickButtonEvent(OnClick_Exit);
         Button_Retry.BindOnClickButtonEvent(OnClick_Retry);
         Button_Next.BindOnClickButtonEvent(OnClick_Next);
+        UpdateNextButtonState();
     }
 
     private void OnDisable()
     {
         ReleaseGradeSprites();
+    }
+
+    //다음 스테이지가 없으면 버튼을 숨기고, 있지만 잠겼으면 보이되 누를 수 없게한다. 결과화면이 열릴 때는 해금이 이미 끝나있다
+    private void UpdateNextButtonState()
+    {
+        string nextStageId = GameDataManager.Instance.FindNextStageId(StageManager.Instance.CurrentStageId);
+        bool hasNextStage = string.IsNullOrEmpty(nextStageId) == false;
+
+        Button_Next.gameObject.SetActive(hasNextStage);
+        if (hasNextStage == false)
+        {
+            return;
+        }
+
+        Button_Next.SetInteractable(PlayRecordManager.Instance.IsStageUnlocked(nextStageId));
     }
 
     public void SetStageResult(StagePlayResult stagePlayResult, int tryCount)
