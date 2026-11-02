@@ -8,6 +8,7 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
     public const int NoSlotIndex = -1;     //슬롯을 아직 열지 않았을 때
     private const int FirstStageIndex = 0;
     private const long NoLastOpenedTicks = 0; //파일이 없는 슬롯. 실제 연 시각은 늘 이보다 크다
+    private const JudgmentGrade UnlockNextStageGrade = JudgmentGrade.Good;  //굿 등급 이상이면 다음 스테이지가 열린다
 
     private SaveFileService _saveFileService = new SaveFileService();
     private int _currentSlotIndex = NoSlotIndex;
@@ -49,6 +50,19 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
 
         return stageRecordModel;
     }
+    
+    //다음 스테이지 기록을 만들어 연다. 마지막 스테이지면 열 것이 없다. 이미 열려 있으면 그대로 둔다
+    private void UnlockNextStage(string stageId)
+    {
+        string nextStageId = GameDataManager.Instance.FindNextStageId(stageId);
+
+        if (string.IsNullOrEmpty(nextStageId))
+        {
+            return;
+        }
+
+        GetOrCreateStageRecordModel(nextStageId).Unlock();
+    }
 
     //빈 슬롯이면 새로 만든다. 연 시각을 남겨 이어하기가 이 슬롯을 고르게 한다
     public void LoadSaveSlot(int slotIndex)
@@ -76,6 +90,11 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
     public void UpdateStageBestRecord(string stageId, JudgmentGrade judgmentGrade, int timingErrorMs)
     {
         GetOrCreateStageRecordModel(stageId).UpdateBestRecord(judgmentGrade, timingErrorMs);
+        if (judgmentGrade >= UnlockNextStageGrade)
+        {
+            UnlockNextStage(stageId);
+        }
+
         SaveCurrentSlot();
     }
 
@@ -114,6 +133,22 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
         }
 
         return StageManager.NoInputTimingErrorMs;
+    }
+
+    //첫 스테이지는 열어 줄 앞 스테이지가 없어 기록과 상관없이 늘 열려 있다
+    public bool IsStageUnlocked(string stageId)
+    {
+        if (stageId == GameDataManager.Instance.StageDataList[FirstStageIndex].Id)
+        {
+            return true;
+        }
+
+        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
+        {
+            return stageRecordModel.IsUnlocked;
+        }
+
+        return false;
     }
 
     //열린 슬롯을 바꾸지 않고 파일을 읽기만 한다. 슬롯 카드와 이어하기에서 쓴다

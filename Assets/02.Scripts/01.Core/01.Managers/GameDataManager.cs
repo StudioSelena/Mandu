@@ -320,6 +320,31 @@ public class GameDataManager : SingletonBase<GameDataManager>
         return null;
     }
 
+    //엑셀 순서로 바로 다음 스테이지 Id. 마지막 스테이지면 다음이 없어 null
+    public string FindNextStageId(string stageId)
+    {
+        for (int i = 0; i < _stageDataList.Count; i++)
+        {
+            if (_stageDataList[i].Id != stageId)
+            {
+                continue;
+            }
+
+            int nextStageIndex = i + 1;
+            if (nextStageIndex >= _stageDataList.Count)
+            {
+                return null;
+            }
+
+            return _stageDataList[nextStageIndex].Id;
+        }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"[GameDataManager] StageData에 없는 Id라 다음 스테이지를 찾지 못했습니다. {stageId}");
+#endif
+        return null;
+    }
+
     //Id로 목표 시간 데이터를 찾는다. Id가 비었거나 없으면 null
     public TargetTimeData GetTargetTimeData(string targetTimeId)
     {
