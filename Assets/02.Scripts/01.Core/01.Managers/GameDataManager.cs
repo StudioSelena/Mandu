@@ -14,6 +14,7 @@ public class GameDataManager : SingletonBase<GameDataManager>
     private Dictionary<string, List<FakeNumberEventData>> _fakeNumberEventDataListDictionary = new Dictionary<string, List<FakeNumberEventData>>(); //방해요소 Id별 노린 타이밍 목록. 시각 순서
     private Dictionary<string, DancingManduSabotageData> _dancingManduSabotageDataDictionary = new Dictionary<string, DancingManduSabotageData>();
     private Dictionary<string, List<DancingManduBeatData>> _dancingManduBeatDataListDictionary = new Dictionary<string, List<DancingManduBeatData>>();  //방해요소 Id별 박자 목록. 한 묶음 안의 시각 순서
+    private Dictionary<BgmPlaylistType, List<string>> _bgmAddressListDictionary = new Dictionary<BgmPlaylistType, List<string>>(); //목록 종류별 배경음 주소 목록. 무작위로 고르므로 순서는 쓰지 않음
     private List<StageData> _stageDataList = new List<StageData>(); //엑셀 행 순서가 곧 스테이지 순서
 
     //스테이지 순서 목록. 밖에서는 읽기만 가능
@@ -72,6 +73,9 @@ public class GameDataManager : SingletonBase<GameDataManager>
         _stageDataDictionary = BuildDataDictionary(_stageDataList);
         ValidateStageTargetTimeIds();
         ValidateStageSabotageIds();
+
+        List<BgmData> bgmDataList = LoadDataList<BgmData>(nameof(BgmData));
+        _bgmAddressListDictionary = BuildBgmAddressListDictionary(BuildDataDictionary(bgmDataList));
 
 #if UNITY_EDITOR
         Debug.Log($"[GameDataManager] TargetTimeData {_targetTimeDataDictionary.Count}개, StageData {_stageDataDictionary.Count}개, SabotageData {_sabotageDataDictionary.Count}개 로드");
@@ -237,6 +241,41 @@ public class GameDataManager : SingletonBase<GameDataManager>
         }
 
         return beatDataListDictionary;
+    }
+
+    //배경음 행을 목록 종류로 묶어 주소만 모은다. 목록 이름이 틀렸거나 주소가 빈 행은 건너뛰고 에러로 알린다
+    private Dictionary<BgmPlaylistType, List<string>> BuildBgmAddressListDictionary(Dictionary<string, BgmData> bgmDataDictionary)
+    {
+        Dictionary<BgmPlaylistType, List<string>> addressListDictionary = new Dictionary<BgmPlaylistType, List<string>>();
+
+        foreach (BgmData bgmData in bgmDataDictionary.Values)
+        {
+            if (bgmData.TryParsePlaylistTypeName() == false)
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[GameDataManager] {bgmData.Id}의 목록 이름이 BgmPlaylistType에 없습니다. {bgmData.PlaylistTypeName}");
+#endif
+                continue;
+            }
+
+            if (string.IsNullOrEmpty(bgmData.Address))
+            {
+#if UNITY_EDITOR
+                Debug.LogError($"[GameDataManager] {bgmData.Id}의 주소가 비어 있습니다.");
+#endif
+                continue;
+            }
+
+            if (addressListDictionary.TryGetValue(bgmData.PlaylistType, out List<string> addressList) == false)
+            {
+                addressList = new List<string>();
+                addressListDictionary.Add(bgmData.PlaylistType, addressList);
+            }
+
+            addressList.Add(bgmData.Address);
+        }
+
+        return addressListDictionary;
     }
 
     //방해요소 표의 종류 글자를 enum으로 바꾸고 종류에 맞는 상세 표에 같은 Id가 있는지 검사한다
@@ -461,6 +500,20 @@ public class GameDataManager : SingletonBase<GameDataManager>
 
 #if UNITY_EDITOR
         Debug.LogWarning($"[GameDataManager] 박자 목록이 없는 방해요소입니다. {sabotageId}");
+#endif
+        return null;
+    }
+
+    //목록 종류의 배경음 주소 목록을 돌려준다. 곡이 없으면 null. 밖에서는 읽기만 가능
+    public IReadOnlyList<string> GetBgmAddressList(BgmPlaylistType playlistType)
+    {
+        if (_bgmAddressListDictionary.TryGetValue(playlistType, out List<string> addressList))
+        {
+            return addressList;
+        }
+
+#if UNITY_EDITOR
+        Debug.LogWarning($"[GameDataManager] 곡이 없는 배경음 목록입니다. {playlistType}");
 #endif
         return null;
     }

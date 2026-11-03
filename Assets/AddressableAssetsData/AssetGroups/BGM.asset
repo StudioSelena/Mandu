@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: BGM
+  m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetGroup
+  m_GroupName: BGM
+  m_GUID: 814ebb51c67ec2844ac21cc878866054
+  m_SerializeEntries:
+  - m_GUID: 1300825bbd2f4797a230a1dc781ae6ba
+    m_Address: BGM_Play_ManduPansori2_136Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 19ea5e2e30d500c47965ebec10ccbb59
+    m_Address: BGM_Menu_ManduDoraji
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 22cd2972f54b72f409ec62a0344c90c8
+    m_Address: BGM_Menu_ManduScat2
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2db5112199c642d08ab348b087eeeb96
+    m_Address: BGM_Play_ManduKpop2_133Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 37bfc2eeaf6a430ba8fccdc0e76942ac
+    m_Address: BGM_Play_ManduClassical_165Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 465c84c34c6c2884c8effe3cf78c7df8
+    m_Address: BGM_Menu_ManduScat1
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 4ca33ee3f98a44e890f3191f37e7f4fc
+    m_Address: BGM_Play_ManduOpera_146Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ecf2caec3908764cafc9bc5b5443084
+    m_Address: BGM_Menu_ManduOratorio
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6ef5338f926f4aab96a7eb495d4ead0f
+    m_Address: BGM_Play_ManduAfro_163Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 763e81c2e053b994683f165c52be656f
+    m_Address: BGM_Menu_ManduReggae
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 7b23ca2f7dcb49929d67d0a4b940e03e
+    m_Address: BGM_Play_ManduAcappella2_143Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 942f9bcd93b1dff45a813ac24b5acd5a
+    m_Address: BGM_Menu_ManduWinter
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 97d939552134c8648896ddaaca7bb8f4
+    m_Address: BGM_Menu_ManduCasual
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9e6d536f6dd6453a9bb8f5835285d7db
+    m_Address: BGM_Play_ManduPansori1_156Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a1b35b791286493e8a5ee4fc86e19520
+    m_Address: BGM_Play_ManduKpop1_154Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bc7aa7155d96454b8541cb528fbb3269
+    m_Address: BGM_Play_ManduAcappella1_142Bpm
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e0d9079d2fd8d94499856448077da494
+    m_Address: BGM_Menu_ManduScat3
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: f362c6b6aa1a69d4c8b7e5cc7f3211e1, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 2d4cbd4787c301044b477b7dd7b807ae, type: 2}
+    - {fileID: 11400000, guid: 245fbdee2fa16394598699318262ba93, type: 2}
