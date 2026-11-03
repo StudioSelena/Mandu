@@ -370,6 +370,7 @@ public class GameManager : SingletonBase<GameManager>
 
         UIManager.Instance.CloseUI(UIType.StageSelectUI);
         _isInGamePlay = true;
+        SoundManager.Instance.PlayBgmPlaylist(BgmPlaylistType.Play);
         PlayRecordManager.Instance.SetLastPlayedStageId(GetCurrentStageId());
         LoadAllJudgmentGradeSprites();
         await SpawnPlayerMandu();
@@ -398,6 +399,7 @@ public class GameManager : SingletonBase<GameManager>
         SabotageManager.Instance.CloseCurrentSabotage();
         DestroyWorldObject(ref _playerManduInstanceId);
         ReleaseAllJudgmentGradeSprites();
+        SoundManager.Instance.PlayBgmPlaylist(BgmPlaylistType.Menu);
 
         UIManager.Instance.OpenUI(UIRootType.Main, UIType.StageSelectUI);
         await UncoverAndCloseTransitionAsync(transitionUI);
@@ -457,6 +459,8 @@ public class GameManager : SingletonBase<GameManager>
         await SpawnBackground();
         //글자 준비 중에 김을 걷으면 원래 글자가 잠깐 보인다
         await LocalizationSettings.InitializationOperation.ToUniTask();
+
+        SoundManager.Instance.PlayBgmPlaylist(BgmPlaylistType.Menu);
 
         await OpenLobbyAsync();
         await UncoverAndCloseTransitionAsync(transitionUI);
