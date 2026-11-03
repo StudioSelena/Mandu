@@ -51,13 +51,16 @@ public class StageSelectUI : UIBase
         }
     }
 
-    //해금은 플레이하고 돌아오면 바뀌므로 열 때마다 모든 줄에 다시 알린다
+    //해금과 별은 플레이하고 돌아오면 바뀌므로 열 때마다 모든 줄에 다시 알린다
     private void UpdateAllStageSlots()
     {
         foreach (KeyValuePair<string, StageSlotUI> stageSlotPair in _stageSlotUIs)
         {
             bool isUnlocked = PlayRecordManager.Instance.IsStageUnlocked(stageSlotPair.Key);
             stageSlotPair.Value.SetStageUnlocked(isUnlocked);
+
+            JudgmentGrade bestGrade = PlayRecordManager.Instance.GetStageBestGrade(stageSlotPair.Key);
+            stageSlotPair.Value.SetStarCount(GameUtil.GetStarCount(bestGrade));
         }
     }
 
