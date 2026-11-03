@@ -1,8 +1,11 @@
-﻿//상태 없는 게임 계산 함수 모음 (판정, 등급 이미지 주소)
+﻿//상태 없는 게임 계산 함수 모음 (판정, 등급 이미지 주소, 별 개수)
 using UnityEngine;
 
 public static class GameUtil
 {
+    //스테이지 하나에서 받을 수 있는 최대 별 개수. 별 칸 수이자 별 합계의 분모
+    public const int MaxStarCount = 3;
+
     //등급 이미지 어드레서블 주소 앞부분. 뒤에 등급 이름을 붙인다. (예: JudgmentGrade_Perfect)
     private const string JudgmentGradeAddressPrefix = "JudgmentGrade_";
 
@@ -53,5 +56,24 @@ public static class GameUtil
     public static string GetJudgmentGradeAddress(JudgmentGrade judgmentGrade)
     {
         return JudgmentGradeAddressPrefix + judgmentGrade.ToString();
+    }
+
+    //등급에 맞는 별 개수를 돌려준다. 숨겨진 등급 몬스터도 별은 최대 개수
+    public static int GetStarCount(JudgmentGrade judgmentGrade)
+    {
+        switch (judgmentGrade)
+        {
+            case JudgmentGrade.Monster:
+            case JudgmentGrade.Perfect:
+                return MaxStarCount;
+
+            case JudgmentGrade.Nice:
+                return 2;
+
+            case JudgmentGrade.Good:
+                return 1;
+        }
+
+        return 0; //Fail, None
     }
 }
