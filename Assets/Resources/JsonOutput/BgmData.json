@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "Bgm_Menu_01",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduBossaNova"
+  },
+  {
+    "Id": "Bgm_Menu_02",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduDoraji"
+  },
+  {
+    "Id": "Bgm_Menu_03",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduOratorio"
+  },
+  {
+    "Id": "Bgm_Menu_04",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduReggae"
+  },
+  {
+    "Id": "Bgm_Menu_05",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduScat"
+  },
+  {
+    "Id": "Bgm_Menu_06",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduWinter"
+  },
+  {
+    "Id": "Bgm_Play_01",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduCasual"
+  },
+  {
+    "Id": "Bgm_Play_02",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduDoraji"
+  },
+  {
+    "Id": "Bgm_Play_03",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz1"
+  },
+  {
+    "Id": "Bgm_Play_04",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz2"
+  },
+  {
+    "Id": "Bgm_Play_05",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz3"
+  },
+  {
+    "Id": "Bgm_Play_06",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz4"
+  },
+  {
+    "Id": "Bgm_Play_07",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz5"
+  },
+  {
+    "Id": "Bgm_Play_08",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduJazz6"
+  },
+  {
+    "Id": "Bgm_Play_09",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduScat1"
+  },
+  {
+    "Id": "Bgm_Play_10",
+    "PlaylistTypeName": "Play",
+    "Address": "BGM_Play_ManduScat2"
+  }
+]
