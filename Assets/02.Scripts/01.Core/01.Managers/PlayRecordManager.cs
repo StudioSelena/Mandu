@@ -64,6 +64,55 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
         GetOrCreateStageRecordModel(nextStageId).Unlock();
     }
 
+    //해금규칙. 첫 스테이지는 열어 줄 앞 스테이지가 없어 늘 열려있고, 나머지는 기록의 열림 값을 본다. 기록이 없으면 stageRecordModel = null
+    private bool IsStageUnlockedByRecord(string stageId, StageRecordModel stageRecordModel)
+    {
+        if (stageId == GameDataManager.Instance.StageDataList[FirstStageIndex].Id)
+        {
+            return true;
+        }
+
+        if (stageRecordModel == null)
+        {
+            return false;
+        }
+
+        return stageRecordModel.IsUnlocked;
+    }
+
+    //파일에서 읽은 슬롯으로 카드 요약을 만든다. 스테이지 데이터 기준으로 세어 데이터에서 빠진 스테이지의 옛 기록은 세지 않고,
+    //별은 스테이지 선택창처럼 열린 스테이지 것만 센다
+    private SaveSlotSummary CreateSaveSlotSummary(SaveSlotModel saveSlotModel)
+    {
+        Dictionary<string, StageRecordModel> stageRecordModels = new Dictionary<string, StageRecordModel>();
+        foreach (StageRecordModel stageRecordModel in saveSlotModel.StageRecordModels)
+        {
+            stageRecordModels.TryAdd(stageRecordModel.StageId, stageRecordModel);   //같은 Id가 두 번 있으면 앞의 것만 쓴다. 경고는 슬롯 열 때 BuildStageRecordIndex가 남긴다
+        }
+
+        IReadOnlyList<StageData> stageDataList = GameDataManager.Instance.StageDataList;
+        int unlockedStageCount = 0;
+        int earnedStarCount = 0;
+
+        foreach (StageData stageData in stageDataList)
+        {
+            stageRecordModels.TryGetValue(stageData.Id, out StageRecordModel stageRecordModel);
+            if (IsStageUnlockedByRecord(stageData.Id, stageRecordModel) == false)
+            {
+                continue;
+            }
+
+            unlockedStageCount++;
+            if (stageRecordModel != null)
+            {
+                earnedStarCount += GameUtil.GetStarCount(stageRecordModel.BestGrade);
+            }
+        }
+
+        int maxEarnedStarCount = stageDataList.Count * GameUtil.MaxStarCount;
+        return new SaveSlotSummary(true, saveSlotModel.LastOpenedTicks, unlockedStageCount, stageDataList.Count, earnedStarCount, maxEarnedStarCount);
+    }
+
     //빈 슬롯이면 새로 만든다. 연 시각을 남겨 이어하기가 이 슬롯을 고르게 한다
     public void LoadSaveSlot(int slotIndex)
     {
@@ -135,20 +184,11 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
         return StageManager.NoInputTimingErrorMs;
     }
 
-    //첫 스테이지는 열어 줄 앞 스테이지가 없어 기록과 상관없이 늘 열려 있다
+    //열린 슬롯에서 스테이지가 열렸는지. 규칙은 IsStageUnlockedByRecord에 있다
     public bool IsStageUnlocked(string stageId)
     {
-        if (stageId == GameDataManager.Instance.StageDataList[FirstStageIndex].Id)
-        {
-            return true;
-        }
-
-        if (_stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel))
-        {
-            return stageRecordModel.IsUnlocked;
-        }
-
-        return false;
+        _stageRecordModels.TryGetValue(stageId, out StageRecordModel stageRecordModel);
+        return IsStageUnlockedByRecord(stageId, stageRecordModel);
     }
 
     //열린 슬롯을 바꾸지 않고 파일을 읽기만 한다. 슬롯 카드와 이어하기에서 쓴다
@@ -157,10 +197,10 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
         SaveSlotModel saveSlotModel = _saveFileService.ReadSaveSlot(slotIndex);
         if (saveSlotModel == null)
         {
-            return new SaveSlotSummary(false, NoLastOpenedTicks);
+            return new SaveSlotSummary(false, NoLastOpenedTicks, 0, 0, 0, 0); //빈 슬롯은 카드에 기록을 그리지 않는다
         }
 
-        return new SaveSlotSummary(true, saveSlotModel.LastOpenedTicks);
+        return CreateSaveSlotSummary(saveSlotModel);
     }
 
     //이어하기 버튼을 누를 수 있는지. 파일이 있는지만 보므로 읽지 않는다

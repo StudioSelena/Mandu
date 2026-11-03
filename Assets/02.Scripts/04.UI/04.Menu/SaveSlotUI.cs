@@ -7,7 +7,7 @@ public class SaveSlotUI : MonoBehaviour
 {
     private const string SlotNumberTextFormat = "SLOT {0}";
     private const int SlotNumberOffset = 1;     //화면에 보이는 슬롯 번호는 1부터 센다
-    private const string EmptyRecordText = "-"; //해금 규칙이 생기기 전까지 진행 스테이지와 별을 비워둔다
+    private const string CountOutOfTotalTextFormat = "{0} / {1}"; //진행 스테이지와 별 합계. 예) 4 / 8
 
     [SerializeField] private UIButton Button_Slot;
     [SerializeField] private TMP_Text Text_SlotNumber;
@@ -44,8 +44,8 @@ public class SaveSlotUI : MonoBehaviour
             return;
         }
 
-        Text_ProgressValue.text = EmptyRecordText;
-        Text_StarsValue.text = EmptyRecordText;
+        Text_ProgressValue.text = string.Format(CountOutOfTotalTextFormat, saveSlotSummary.UnlockedStageCount, saveSlotSummary.StageCount);
+        Text_StarsValue.text = string.Format(CountOutOfTotalTextFormat, saveSlotSummary.EarnedStarCount, saveSlotSummary.MaxEarnedStarCount);
         Text_LastPlayedValue.text = TimeUtil.GetDateTimeDisplayText(saveSlotSummary.LastOpenedTicks);
     }
 
