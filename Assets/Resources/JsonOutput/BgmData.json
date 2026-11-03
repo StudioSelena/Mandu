@@ -2,7 +2,7 @@
   {
     "Id": "Bgm_Menu_01",
     "PlaylistTypeName": "Menu",
-    "Address": "BGM_Menu_ManduBossaNova"
+    "Address": "BGM_Menu_ManduCasual"
   },
   {
     "Id": "Bgm_Menu_02",
@@ -22,61 +22,66 @@
   {
     "Id": "Bgm_Menu_05",
     "PlaylistTypeName": "Menu",
-    "Address": "BGM_Menu_ManduScat"
+    "Address": "BGM_Menu_ManduScat1"
   },
   {
     "Id": "Bgm_Menu_06",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduScat2"
+  },
+  {
+    "Id": "Bgm_Menu_07",
+    "PlaylistTypeName": "Menu",
+    "Address": "BGM_Menu_ManduScat3"
+  },
+  {
+    "Id": "Bgm_Menu_08",
     "PlaylistTypeName": "Menu",
     "Address": "BGM_Menu_ManduWinter"
   },
   {
     "Id": "Bgm_Play_01",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduCasual"
+    "Address": "BGM_Play_ManduAcappella1_142Bpm"
   },
   {
     "Id": "Bgm_Play_02",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduDoraji"
+    "Address": "BGM_Play_ManduAcappella2_143Bpm"
   },
   {
     "Id": "Bgm_Play_03",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz1"
+    "Address": "BGM_Play_ManduAfro_163Bpm"
   },
   {
     "Id": "Bgm_Play_04",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz2"
+    "Address": "BGM_Play_ManduClassical_165Bpm"
   },
   {
     "Id": "Bgm_Play_05",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz3"
+    "Address": "BGM_Play_ManduKpop1_154Bpm"
   },
   {
     "Id": "Bgm_Play_06",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz4"
+    "Address": "BGM_Play_ManduKpop2_133Bpm"
   },
   {
     "Id": "Bgm_Play_07",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz5"
+    "Address": "BGM_Play_ManduOpera_146Bpm"
   },
   {
     "Id": "Bgm_Play_08",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduJazz6"
+    "Address": "BGM_Play_ManduPansori1_156Bpm"
   },
   {
     "Id": "Bgm_Play_09",
     "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduScat1"
-  },
-  {
-    "Id": "Bgm_Play_10",
-    "PlaylistTypeName": "Play",
-    "Address": "BGM_Play_ManduScat2"
+    "Address": "BGM_Play_ManduPansori2_136Bpm"
   }
 ]
