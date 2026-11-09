@@ -247,4 +247,36 @@ public class PlayRecordManager : SingletonBase<PlayRecordManager>
 
         return lastPlayedStageId;
     }
+
+#if UNITY_EDITOR || DEVELOPMENT_BUILD
+    //개발자 모드. 모든 스테이지를 연다. 등급과 오차는 건드리지 않는다
+    public void UnlockAllStagesForDev()
+    {
+        if (_currentSlotIndex == NoSlotIndex)
+        {
+            Debug.LogWarning("[PlayRecordManager] 열린 슬롯이 없어 전체 해금을 하지 않습니다.");
+            return;
+        }
+
+        foreach (StageData stageData in GameDataManager.Instance.StageDataList)
+        {
+            GetOrCreateStageRecordModel(stageData.Id).Unlock();
+        }
+
+        SaveCurrentSlot();
+    }
+
+    //개발자 모드. 지금 슬롯 파일을 지우고 다시 열어 새 슬롯을 처음 연 상태로 만든다
+    public void ResetCurrentSlotForDev()
+    {
+        if (_currentSlotIndex == NoSlotIndex)
+        {
+            Debug.LogWarning("[PlayRecordManager] 열린 슬롯이 없어 초기화를 하지 않습니다.");
+            return;
+        }
+
+        _saveFileService.DeleteSaveSlot(_currentSlotIndex);
+        LoadSaveSlot(_currentSlotIndex);    //파일이 없으니 새 슬롯을 처음 연 상태로 다시 준비된다
+    }
+#endif
 }

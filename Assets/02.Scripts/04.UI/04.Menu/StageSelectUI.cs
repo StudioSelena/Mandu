@@ -31,9 +31,8 @@ public class StageSelectUI : UIBase
     {
         Button_MainMenu.BindOnClickButtonEvent(OnClick_MainMenu);
         Button_Start.BindOnClickButtonEvent(OnClick_Start);
-
-        UpdateAllStageSlots();
-        SelectStage(PlayRecordManager.Instance.GetLastPlayedStageId());
+    
+        RefreshStageSelectUI();
     }
 
     private void CreateAllStageSlots()
@@ -105,5 +104,12 @@ public class StageSelectUI : UIBase
     private void OnClick_Start()
     {
         GameManager.Instance.RequestEnterGamePlay(_selectedStageId);
+    }
+
+    //지금 기록으로 줄(해금, 별)과 상세 칸을 모두 다시 그린다. 열 때와 개발자 모드에서 부른다
+    public void RefreshStageSelectUI()
+    {
+        UpdateAllStageSlots();
+        SelectStage(PlayRecordManager.Instance.GetLastPlayedStageId());
     }
 }
