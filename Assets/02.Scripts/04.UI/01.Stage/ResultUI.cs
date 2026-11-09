@@ -1,5 +1,6 @@
 ﻿//결과 화면. 등급, 기록, 다시하기와 다음 버튼 등을 맡는 UI
 using Cysharp.Threading.Tasks;
+using System;
 using System.Globalization;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,7 @@ public class ResultUI : UIBase
     private const int DefaultGradeFrameStep = 1;        //모든 장을 보여준다
     private const int GoodAndNiceGradeFrameStep = 2;    //2장마다 1장을 보여준다
     private const int PerfectGradeFrameStep = 4;        //4장마다 1장을 보여준다
+    private const char GradeFrameNumberSeparator = '_'; //등급 그림 이름 규칙. 등급_번호에서 번호가 시트를 자른 순서
 
     [SerializeField] private UISpriteImageSequencer ImageSequencer_Grade;
     [SerializeField] private TMP_Text Text_TargetTime;
@@ -78,6 +80,8 @@ public class ResultUI : UIBase
             return;
         }
 
+        SortGradeSpritesByFrameNumber(gradeSprites);
+
         Sprite[] pickedSprites = PickGradeSprites(gradeSprites, GetGradeFrameStep(judgmentGrade));
         ImageSequencer_Grade.PlaySequence(pickedSprites, GetGradeSequenceEndMode(judgmentGrade));
     }
@@ -132,6 +136,20 @@ public class ResultUI : UIBase
         }
 
         return pickedSprites;
+    }
+
+    //번들에서 받은 배열은 순서가 보장되지 않아 이름끝 번호로 맞춘다. 캐시된 원본을 제자리에서 정렬하며 몇 번 정렬해도 결과가 같다
+    private void SortGradeSpritesByFrameNumber(Sprite[] gradeSprites)
+    {
+        int[] frameNumbers = new int[gradeSprites.Length];
+        for (int i = 0; i < gradeSprites.Length; i++)
+        {
+            string spriteName = gradeSprites[i].name;
+            int separatorIndex = spriteName.LastIndexOf(GradeFrameNumberSeparator);
+            frameNumbers[i] = int.Parse(spriteName.Substring(separatorIndex + 1));
+        }
+
+        Array.Sort(frameNumbers, gradeSprites); //번호 배열을 정렬하면서 같은 칸의 그림도 함께 옮긴다
     }
 
     private void ReleaseGradeSprites()
