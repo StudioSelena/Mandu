@@ -40,4 +40,15 @@ public class SaveFileService
         string json = File.ReadAllText(saveFilePath);
         return JsonUtility.FromJson<SaveSlotModel>(json);
     }
+
+    //개발자 모드 초기화와 세이브 삭제에서 쓴다. 파일이 없어도 File.Delete는 예외를 내지 않는다
+    public void DeleteSaveSlot(int slotIndex)
+    {
+        string saveFilePath = GetSaveFilePath(slotIndex);
+        File.Delete(saveFilePath);
+
+#if UNITY_EDITOR
+        Debug.Log($"[SaveFileService] 삭제 {saveFilePath}");
+#endif
+    }
 }
