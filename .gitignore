@@ -52,3 +52,9 @@ $RECYCLE.BIN/
 !.vscode/extensions.json
 .history/
 Assets/00.RemoteAssets
+
+# 어드레서블 빌드마다 새로 생기는 콘텐츠 상태 파일. 원격 패치를 하지 않으니 올리지 않는다
+Assets/AddressableAssetsData/Windows/
+Assets/AddressableAssetsData/Windows.meta
+Assets/AddressableAssetsData/link.xml
+Assets/AddressableAssetsData/link.xml.meta

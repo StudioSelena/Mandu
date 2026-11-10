@@ -22,6 +22,94 @@ MonoBehaviour:
     m_Localized: Boil
     m_Metadata:
       m_Items: []
+  - m_Id: 14651857674240
+    m_Localized: Pull
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1790797452517376
+    m_Localized: Next
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1843675143708672
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1843675185651712
+    m_Localized: Retry
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6173766464151552
+    m_Localized: Don't Push
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258162761728
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704768
+    m_Localized: Single Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704769
+    m_Localized: Multi Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704770
+    m_Localized: Options
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704771
+    m_Localized: Quit
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704772
+    m_Localized: Main Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704773
+    m_Localized: Yes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704774
+    m_Localized: No
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7336258204704775
+    m_Localized: Quit game?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931701555200
+    m_Localized: Best Grade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692544
+    m_Localized: Best Error
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692545
+    m_Localized: Start
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7650931747692546
+    m_Localized: Tries
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080383852544
+    m_Localized: Progress
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184192
+    m_Localized: Stars
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184193
+    m_Localized: Last Played
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8054080434184194
+    m_Localized: New Game
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

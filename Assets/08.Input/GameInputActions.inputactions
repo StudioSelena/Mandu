@@ -1,0 +1,63 @@
+{
+    "version": 1,
+    "name": "GameInputActions",
+    "maps": [
+        {
+            "name": "Stage",
+            "id": "f17fa90e-4d2f-42a8-b5f4-87e7a35ab26a",
+            "actions": [
+                {
+                    "name": "Pull",
+                    "type": "Button",
+                    "id": "ec91e911-54c9-4085-bf0e-1a07fe2b2f75",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b20c8c45-1fec-4543-9f94-da380761de66",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Pull",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Debug",
+            "id": "06ba932f-23ed-43d3-843b-5dc95d6a1aee",
+            "actions": [
+                {
+                    "name": "ToggleDevMode",
+                    "type": "Button",
+                    "id": "6bd9f996-451a-4350-92af-9e65146a9a5e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7477adb2-5cce-4d6b-9e8f-fdf2d3c4e64c",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ToggleDevMode",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "Id": "FakeNumberEvent_001",
+    "SabotageId": "Sabotage_FakeNumber_01",
+    "ShowTimeMs": 5000,
+    "DisplayText": "6"
+  },
+  {
+    "Id": "FakeNumberEvent_002",
+    "SabotageId": "Sabotage_FakeNumber_01",
+    "ShowTimeMs": 8000,
+    "DisplayText": "10"
+  },
+  {
+    "Id": "FakeNumberEvent_003",
+    "SabotageId": "Sabotage_FakeNumber_02",
+    "ShowTimeMs": 6000,
+    "DisplayText": "7"
+  },
+  {
+    "Id": "FakeNumberEvent_004",
+    "SabotageId": "Sabotage_FakeNumber_02",
+    "ShowTimeMs": 10000,
+    "DisplayText": "11"
+  }
+]

@@ -1,3 +1,24 @@
 ﻿Key,Shared Comments,English(en),Korean(ko)
 UI_Button_Boil,삶기 버튼,Boil,삶기
-UI_Button_Pull,빼기 버튼,,빼기
+UI_Button_Pull,빼기 버튼,Pull,빼기
+UI_Button_Next,결과 화면 다음 버튼,Next,다음
+UI_Button_Exit,결과 화면 나가기 버튼,Exit,나가기
+UI_Button_Retry,결과 화면 다시하기 버튼,Retry,다시하기
+UI_Button_DontPush,클릭 낚시 버튼,Don't Push,누르지 마시오
+UI_Button_Continue,로비 이어하기 버튼,Continue,이어하기
+UI_Button_SinglePlay,로비 싱글 플레이 버튼,Single Play,싱글 플레이
+UI_Button_MultiPlay,로비 멀티 플레이 버튼,Multi Play,멀티 플레이
+UI_Button_Option,로비 옵션 버튼,Options,옵션
+UI_Button_Quit,로비 종료 버튼,Quit,종료
+UI_Button_MainMenu,스테이지 선택창 메인메뉴 버튼,Main Menu,메인메뉴
+UI_Button_Yes,확인 창 예 버튼,Yes,예
+UI_Button_No,확인 창 아니요 버튼,No,아니요
+UI_Text_QuitConfirm,종료 확인 창 문구,Quit game?,게임을 종료할까요?
+UI_Text_BestGrade,스테이지 선택창 최고 등급 항목,Best Grade,최고 등급
+UI_Text_BestError,스테이지 선택창 최고 오차 항목,Best Error,최고 오차 기록
+UI_Button_Start,스테이지 선택창 시작 버튼,Start,시작
+UI_Text_TryCount,스테이지 선택창 시도 횟수 항목,Tries,시도 횟수
+UI_Text_Progress,세이브 슬롯 진행 스테이지 항목,Progress,진행 스테이지
+UI_Text_Stars,세이브 슬롯 별 항목,Stars,별
+UI_Text_LastPlayed,세이브 슬롯 마지막 플레이 항목,Last Played,마지막 플레이
+UI_Text_NewGame,빈 세이브 슬롯 문구,New Game,새로 시작

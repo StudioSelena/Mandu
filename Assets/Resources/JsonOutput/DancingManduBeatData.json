@@ -1,0 +1,20 @@
+[
+  {
+    "Id": "DancingManduBeat_001",
+    "SabotageId": "Sabotage_DancingMandu_01",
+    "BeatTimeMs": 0,
+    "SoundAddress": "DancingMandu_Man"
+  },
+  {
+    "Id": "DancingManduBeat_002",
+    "SabotageId": "Sabotage_DancingMandu_01",
+    "BeatTimeMs": 213,
+    "SoundAddress": "DancingMandu_Man"
+  },
+  {
+    "Id": "DancingManduBeat_003",
+    "SabotageId": "Sabotage_DancingMandu_01",
+    "BeatTimeMs": 425,
+    "SoundAddress": "DancingMandu_Du"
+  }
+]

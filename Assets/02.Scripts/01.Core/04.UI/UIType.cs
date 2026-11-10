@@ -12,4 +12,14 @@ public enum UIRootType
 public enum UIType
 {
     None,
+    StageUI,
+    ResultUI,
+    FakeNumberSabotageUI,
+    ClickBaitSabotageUI,
+    DevModeUI,
+    TransitionUI,
+    LobbyUI,
+    StageSelectUI,
+    QuitGameConfirmUI,
+    SaveSlotSelectUI,
 }

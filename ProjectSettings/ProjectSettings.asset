@@ -12,7 +12,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: KrinkleCut
+  companyName: Millionside
   productName: Mandudu
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -941,7 +941,7 @@ PlayerSettings:
   qnxGraphicConfPath: 
   apiCompatibilityLevel: 6
   captureStartupLogs: {}
-  activeInputHandler: 2
+  activeInputHandler: 1
   windowsGamepadBackendHint: 0
   cloudProjectId: 10da0208-2840-4f99-8612-2ea203d2ef20
   framebufferDepthMemorylessMode: 0

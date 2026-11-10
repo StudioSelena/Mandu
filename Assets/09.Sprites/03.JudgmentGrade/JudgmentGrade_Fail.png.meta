@@ -1,0 +1,1875 @@
+fileFormatVersion: 2
+guid: 3336764eb1a05854fb8c19545dca408d
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67c44333f6822164ca6ad439f659de0a
+      internalID: -1048410542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_1
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc8f1e3b60dd9a4ab70ca627d57358d
+      internalID: -987872248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_2
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0704949212b96224fb12d348f838f243
+      internalID: -1656518283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_3
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b938a9a70d234e408bf9f3870f2020c
+      internalID: 939856023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_4
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12f636bd378aab14081d6187e5b380bd
+      internalID: -1604394544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_5
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71414ee68f51209419b815ddba2ea53f
+      internalID: 1673569605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_6
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19219b02772b1e845a6376408378a7eb
+      internalID: -101639965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_7
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 1296
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24d031110f53326449dedfa76e4f9a1c
+      internalID: -1283447976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e86c4b1265b16948b16b3ef43d580ae
+      internalID: -380383187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_9
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f6bf8270d15e52408592a78c13e23e7
+      internalID: -1051359876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_10
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf8c24b06578694eaba713a3d9cbdb1
+      internalID: 258592014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_11
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3adb1ee4a1d4846847d5f6a34fbc9e
+      internalID: -377469342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_12
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2ac4cbbbe9d9a7458a121769d6c94bf
+      internalID: -935835735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_13
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b80b6f7664ce00341b194482d46e66f1
+      internalID: 544503673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_14
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03630533fe94baf47bdd2596b4b509b0
+      internalID: -2052004193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_15
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 1152
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a49f6c2a448ef574293f39d5c5b30977
+      internalID: 1811656944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97b22dbaabc593f4d81845c793295392
+      internalID: -1516139969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_17
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c97fca9faa7617448a83af3e7a3a76e0
+      internalID: 1111929417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_18
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2772cb49675349442a724797ec25df7c
+      internalID: -2051723368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_19
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 797657b22a92b034c9f460752eb47c99
+      internalID: 523622327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_20
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19b1fda001937854f82f1e10d2accfa1
+      internalID: -100660989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_21
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 054d65e35b8e82b428ec3556e149d3ce
+      internalID: -789751143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_22
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d6e9db6679aca14c9b915e927e82178
+      internalID: 418074185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_23
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 1008
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fad57c072cfa59c489a9e36c096ba39c
+      internalID: 1105370785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db405b1a570a2fd42801d8611a483759
+      internalID: 1853370695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_25
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f568977f5c3a142af34fe9ee84afa8
+      internalID: 321104720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_26
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e17a5cabf0280047a7d9a797d104632
+      internalID: 785176678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_27
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9bd3baf3ecc1945bfac3b91a0d312b
+      internalID: 1383642119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_28
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e797da50a3191b44884901d68fa9752
+      internalID: 1926405362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_29
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ac5b62226603f541890f224460bb4b4
+      internalID: 406407690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_30
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da3f77eb02d4bd439fab9d834bef401
+      internalID: -1272816434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_31
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 864
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b710f4730d5d5794ead5ac270219432e
+      internalID: -1725764471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd1f9b23e14a42946bf91a3501b42a93
+      internalID: -46994823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_33
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b1bcddaecae1e04eb486287bd336fb8
+      internalID: 55107959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_34
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef652c7785eacc047aa3b9e87d9f876c
+      internalID: 608147290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_35
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40032d64d76329145aa9edf3fa7ebfad
+      internalID: 524118527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_36
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82a99adc9ab54914a84914edab4b20a4
+      internalID: 571202753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_37
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74a8b30b4e929ba4f811efd0220d4cd6
+      internalID: 1420444654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_38
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260666e07b0563b4999774f2f6239728
+      internalID: 1195520351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_39
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 720
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1853d66793d064aab1628de7515afe
+      internalID: 1560418439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a0e09702dacc104489dc3f1ded7c1cf
+      internalID: 312740143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_41
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce433fd7f8a04a24d9f6426402c5bf97
+      internalID: 91046754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_42
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47f6ae8830ec07c44aa60e6fcbefdb26
+      internalID: 1019913263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_43
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f683f30e0208964d8c83fbe59ecc9c1
+      internalID: 77335522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_44
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37a68fe2281e1f44fa5d9260ad4a8e17
+      internalID: -1907737796
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_45
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55ba3c44332877e48a300a38bfac2c27
+      internalID: 248505425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_46
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6559b4f0bd7728f43b26d754f3bf23c2
+      internalID: -1708193931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_47
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 576
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f396aa270f0f3e44afc0c95eb134395
+      internalID: 1878089574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b614aea8fea753f45aa07963c2b8e314
+      internalID: 1348170445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_49
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d24cc33b51c12c74d9130fb03f091e05
+      internalID: -2038170226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_50
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9072f7fc18e450f46be068f8e6f490dd
+      internalID: -277754556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_51
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef6d22d5b35ce84d9db0b076ccb0ffb
+      internalID: 1523583235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_52
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 649812072823bee42a688b699f2fe2ac
+      internalID: 1345360351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_53
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f40ab299f58e494e883790d3dd9a19c
+      internalID: 1789906136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_54
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1686badb2e3d49b4ba3ea1d819e937bb
+      internalID: -953590567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_55
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 432
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c52a563422d4f4f88d9e87e8ac151f
+      internalID: -1156903835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_56
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4590d252daa9e2d4e9cef87b41184229
+      internalID: -1146797605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_57
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be141897eca6104296dcde1832a807e
+      internalID: 56325833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_58
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e9ceb3d5ac22314a9d95f3c17b510c4
+      internalID: 1131999645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_59
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5564850d0e91a94ca95f7ef38b53001
+      internalID: 1789507051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_60
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87d350343361494b92873f122981448
+      internalID: 110001718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_61
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdc0000e9fddb184c8a85e4ebdaf997d
+      internalID: 1318030861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_62
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d321707abe7546c4dbdd36e9c4ed5467
+      internalID: -1293492025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_63
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 288
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25c942c9ae660a44b7cded8e35106a3
+      internalID: -1740633633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_64
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4831ead749512f64c99ba67ce87d00a8
+      internalID: -1086731134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_65
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c2186c2f435ed247be63c6c8ab3404f
+      internalID: -1923851622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_66
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b2a0a4987d9a4e44a706f7cd12d2ac5
+      internalID: 1219614859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_67
+      rect:
+        serializedVersion: 2
+        x: 1392
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 266a9c3f52bc0654eb58636a259fe0bf
+      internalID: -891121061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_68
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8755747587e81624da712afa0b4deeab
+      internalID: -1414789671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_69
+      rect:
+        serializedVersion: 2
+        x: 2320
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c04a27d0631b99e4cb9dabfadf2376f2
+      internalID: -389976197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_70
+      rect:
+        serializedVersion: 2
+        x: 2784
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0095cc0cb2c91f342b0964d6486ae701
+      internalID: 1511485821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_71
+      rect:
+        serializedVersion: 2
+        x: 3248
+        y: 144
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b01f2d6795850cd40b1e8b39a3c04d24
+      internalID: -424261844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_72
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc20644f2f78ab24bad6629838d3a210
+      internalID: 1166006281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_73
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 0
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b5780ee18d7b114c9fc28b5adc723a1
+      internalID: -2105440206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: JudgmentGrade_Fail_74
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 464
+        height: 144
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d31fbf33fac1e4cb14df7d5210d8b7
+      internalID: -1877317371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: ffc8f1303614fae4bb57442b5a884281
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":464.0,"y":144.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      JudgmentGrade_Fail_0: -1048410542
+      JudgmentGrade_Fail_1: -987872248
+      JudgmentGrade_Fail_10: 258592014
+      JudgmentGrade_Fail_11: -377469342
+      JudgmentGrade_Fail_12: -935835735
+      JudgmentGrade_Fail_13: 544503673
+      JudgmentGrade_Fail_14: -2052004193
+      JudgmentGrade_Fail_15: 1811656944
+      JudgmentGrade_Fail_16: -1516139969
+      JudgmentGrade_Fail_17: 1111929417
+      JudgmentGrade_Fail_18: -2051723368
+      JudgmentGrade_Fail_19: 523622327
+      JudgmentGrade_Fail_2: -1656518283
+      JudgmentGrade_Fail_20: -100660989
+      JudgmentGrade_Fail_21: -789751143
+      JudgmentGrade_Fail_22: 418074185
+      JudgmentGrade_Fail_23: 1105370785
+      JudgmentGrade_Fail_24: 1853370695
+      JudgmentGrade_Fail_25: 321104720
+      JudgmentGrade_Fail_26: 785176678
+      JudgmentGrade_Fail_27: 1383642119
+      JudgmentGrade_Fail_28: 1926405362
+      JudgmentGrade_Fail_29: 406407690
+      JudgmentGrade_Fail_3: 939856023
+      JudgmentGrade_Fail_30: -1272816434
+      JudgmentGrade_Fail_31: -1725764471
+      JudgmentGrade_Fail_32: -46994823
+      JudgmentGrade_Fail_33: 55107959
+      JudgmentGrade_Fail_34: 608147290
+      JudgmentGrade_Fail_35: 524118527
+      JudgmentGrade_Fail_36: 571202753
+      JudgmentGrade_Fail_37: 1420444654
+      JudgmentGrade_Fail_38: 1195520351
+      JudgmentGrade_Fail_39: 1560418439
+      JudgmentGrade_Fail_4: -1604394544
+      JudgmentGrade_Fail_40: 312740143
+      JudgmentGrade_Fail_41: 91046754
+      JudgmentGrade_Fail_42: 1019913263
+      JudgmentGrade_Fail_43: 77335522
+      JudgmentGrade_Fail_44: -1907737796
+      JudgmentGrade_Fail_45: 248505425
+      JudgmentGrade_Fail_46: -1708193931
+      JudgmentGrade_Fail_47: 1878089574
+      JudgmentGrade_Fail_48: 1348170445
+      JudgmentGrade_Fail_49: -2038170226
+      JudgmentGrade_Fail_5: 1673569605
+      JudgmentGrade_Fail_50: -277754556
+      JudgmentGrade_Fail_51: 1523583235
+      JudgmentGrade_Fail_52: 1345360351
+      JudgmentGrade_Fail_53: 1789906136
+      JudgmentGrade_Fail_54: -953590567
+      JudgmentGrade_Fail_55: -1156903835
+      JudgmentGrade_Fail_56: -1146797605
+      JudgmentGrade_Fail_57: 56325833
+      JudgmentGrade_Fail_58: 1131999645
+      JudgmentGrade_Fail_59: 1789507051
+      JudgmentGrade_Fail_6: -101639965
+      JudgmentGrade_Fail_60: 110001718
+      JudgmentGrade_Fail_61: 1318030861
+      JudgmentGrade_Fail_62: -1293492025
+      JudgmentGrade_Fail_63: -1740633633
+      JudgmentGrade_Fail_64: -1086731134
+      JudgmentGrade_Fail_65: -1923851622
+      JudgmentGrade_Fail_66: 1219614859
+      JudgmentGrade_Fail_67: -891121061
+      JudgmentGrade_Fail_68: -1414789671
+      JudgmentGrade_Fail_69: -389976197
+      JudgmentGrade_Fail_7: -1283447976
+      JudgmentGrade_Fail_70: 1511485821
+      JudgmentGrade_Fail_71: -424261844
+      JudgmentGrade_Fail_72: 1166006281
+      JudgmentGrade_Fail_73: -2105440206
+      JudgmentGrade_Fail_74: -1877317371
+      JudgmentGrade_Fail_75: 597190448
+      JudgmentGrade_Fail_76: 1402661604
+      JudgmentGrade_Fail_77: -531065118
+      JudgmentGrade_Fail_78: -1823848831
+      JudgmentGrade_Fail_79: -2001521105
+      JudgmentGrade_Fail_8: -380383187
+      JudgmentGrade_Fail_9: -1051359876
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

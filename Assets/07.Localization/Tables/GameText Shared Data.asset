@@ -25,6 +25,111 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5292698459609759983
+  - m_Id: 1790797452517376
+    m_Key: UI_Button_Next
+    m_Metadata:
+      m_Items:
+      - rid: 5292698572341117015
+  - m_Id: 1843675143708672
+    m_Key: UI_Button_Exit
+    m_Metadata:
+      m_Items:
+      - rid: 5292698577362485248
+  - m_Id: 1843675185651712
+    m_Key: UI_Button_Retry
+    m_Metadata:
+      m_Items:
+      - rid: 5292698577362485249
+  - m_Id: 6173766464151552
+    m_Key: UI_Button_DontPush
+    m_Metadata:
+      m_Items:
+      - rid: 5292698847993397248
+  - m_Id: 7336258162761728
+    m_Key: UI_Button_Continue
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966144
+  - m_Id: 7336258204704768
+    m_Key: UI_Button_SinglePlay
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966145
+  - m_Id: 7336258204704769
+    m_Key: UI_Button_MultiPlay
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966146
+  - m_Id: 7336258204704770
+    m_Key: UI_Button_Option
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966147
+  - m_Id: 7336258204704771
+    m_Key: UI_Button_Quit
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966148
+  - m_Id: 7336258204704772
+    m_Key: UI_Button_MainMenu
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966149
+  - m_Id: 7336258204704773
+    m_Key: UI_Button_Yes
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966150
+  - m_Id: 7336258204704774
+    m_Key: UI_Button_No
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966151
+  - m_Id: 7336258204704775
+    m_Key: UI_Text_QuitConfirm
+    m_Metadata:
+      m_Items:
+      - rid: 5292698920648966152
+  - m_Id: 7650931701555200
+    m_Key: UI_Text_BestGrade
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057600
+  - m_Id: 7650931747692544
+    m_Key: UI_Text_BestError
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057601
+  - m_Id: 7650931747692545
+    m_Key: UI_Button_Start
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057602
+  - m_Id: 7650931747692546
+    m_Key: UI_Text_TryCount
+    m_Metadata:
+      m_Items:
+      - rid: 5292698940316057603
+  - m_Id: 8054080383852544
+    m_Key: UI_Text_Progress
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520233
+  - m_Id: 8054080434184192
+    m_Key: UI_Text_Stars
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520234
+  - m_Id: 8054080434184193
+    m_Key: UI_Text_LastPlayed
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520235
+  - m_Id: 8054080434184194
+    m_Key: UI_Text_NewGame
+    m_Metadata:
+      m_Items:
+      - rid: 1225069289337520236
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
@@ -32,6 +137,24 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
+    - rid: 1225069289337520233
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uC9C4\uD589 \uC2A4\uD14C\uC774\uC9C0
+          \uD56D\uBAA9"
+    - rid: 1225069289337520234
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uBCC4 \uD56D\uBAA9"
+    - rid: 1225069289337520235
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC138\uC774\uBE0C \uC2AC\uB86F \uB9C8\uC9C0\uB9C9 \uD50C\uB808\uC774
+          \uD56D\uBAA9"
+    - rid: 1225069289337520236
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uBE48 \uC138\uC774\uBE0C \uC2AC\uB86F \uBB38\uAD6C"
     - rid: 5292698459609759964
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
@@ -44,3 +167,76 @@ MonoBehaviour:
       type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
         m_CommentText: "\uBE7C\uAE30 \uBC84\uD2BC"
+    - rid: 5292698572341117015
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB2E4\uC74C \uBC84\uD2BC"
+    - rid: 5292698577362485248
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB098\uAC00\uAE30 \uBC84\uD2BC"
+    - rid: 5292698577362485249
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uACB0\uACFC \uD654\uBA74 \uB2E4\uC2DC\uD558\uAE30 \uBC84\uD2BC"
+    - rid: 5292698847993397248
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD074\uB9AD \uB09A\uC2DC \uBC84\uD2BC"
+    - rid: 5292698920648966144
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC774\uC5B4\uD558\uAE30 \uBC84\uD2BC"
+    - rid: 5292698920648966145
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC2F1\uAE00 \uD50C\uB808\uC774 \uBC84\uD2BC"
+    - rid: 5292698920648966146
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uBA40\uD2F0 \uD50C\uB808\uC774 \uBC84\uD2BC"
+    - rid: 5292698920648966147
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC635\uC158 \uBC84\uD2BC"
+    - rid: 5292698920648966148
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uB85C\uBE44 \uC885\uB8CC \uBC84\uD2BC"
+    - rid: 5292698920648966149
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uBA54\uC778\uBA54\uB274
+          \uBC84\uD2BC"
+    - rid: 5292698920648966150
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD655\uC778 \uCC3D \uC608 \uBC84\uD2BC"
+    - rid: 5292698920648966151
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uD655\uC778 \uCC3D \uC544\uB2C8\uC694 \uBC84\uD2BC"
+    - rid: 5292698920648966152
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC885\uB8CC \uD655\uC778 \uCC3D \uBB38\uAD6C"
+    - rid: 5292698940316057600
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uB4F1\uAE09 \uD56D\uBAA9"
+    - rid: 5292698940316057601
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uCD5C\uACE0
+          \uC624\uCC28 \uD56D\uBAA9"
+    - rid: 5292698940316057602
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uC791
+          \uBC84\uD2BC"
+    - rid: 5292698940316057603
+      type: {class: Comment, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
+      data:
+        m_CommentText: "\uC2A4\uD14C\uC774\uC9C0 \uC120\uD0DD\uCC3D \uC2DC\uB3C4
+          \uD69F\uC218 \uD56D\uBAA9"
